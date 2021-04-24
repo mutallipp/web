@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    {% block header %} {% endblock %}
+<script type="text/javascript" language=\"javascript\" src="/static/js/pingbi/pingbi.js"></script>
+{#检测是否微信浏览器#}
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+
+
+    <style>
+        .content_tew .tew_list:first-child .img {
+            height: 215px !important;
+        }
+
+        .content_tew .tew_list:first-child .img img {
+            height: 110% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+        }
+
+
+
+        .alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 15px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #00aca3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            border-radius: 10px;
+            z-index: 99;
+        }
+
+        .alert .text {
+            width: 80%;
+            padding: 0 10%;
+            text-align: center;
+        }
+
+        .alert .text img {
+            width: 80%;
+            margin: 0 10%;
+        }
+
+        .alert .btn {
+            width: 90%;
+            margin: 10px 5% 10px;
+            display: flex;
+            direction: rtl;
+        }
+
+        .alert .btn p {
+            width: 90%;
+            margin: 0 5%;
+            height: 45px;
+            background: #d6d6d6;
+            border-radius: 5px;
+        }
+
+        .alert .btn p a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 43px;
+            text-align: center;
+            color: #939393;
+            font-size: 14px;
+            transition-duration: .3s;
+        }
+
+        .alert .btn p:hover a {
+            background: rgba(0, 0, 0, .2);
+        }
+
+
+        .alert .text p {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 10px 0;
+            color: #707070;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--ئىزدەش رامكىسى-->
+<div class="izdesh">
+    <div class="menu" id="izdesh_out"><img class="menu_icon" src="https://izqut.wxnet.cc/kino/img/out.png"></div>
+    <div class="inp"><input type="text" id="search" placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ"></div>
+    <div class="search"><img src="https://izqut.wxnet.cc/kino/img/search.png"></div>
+</div>
+
+<!--ئۈستى قورۇلما-->
+<div class="header">
+    <div class="menu" id="menu_btn"><img class="menu_icon" src="https://izqut.wxnet.cc/kino/img/menu.png"></div>
+    <div class="title">كىنوخانا</div>
+    <div id="izdesh_in" class="search"><img src="https://izqut.wxnet.cc/kino/img/search.png"></div>
+</div>
+<div style="width: 100%; height:50px;"></div>
+
+<script>
+
+window.onload=function(){
+    var sea=document.getElementById("search");
+
+
+    sea.onkeyup=function(e){
+        var theEvent = e || window.event;
+        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+        if(code==13){
+{#            搜搜功能    #}
+            location.href="/uyvideo/search/?q="+sea.value+"";
+        }
+    }
+}
+</script>
+
+{#body  部分#}
+{% block body %} {% endblock %}
+
+<div class="bet">
+    {% if  vids_list.has_previous %}
+        <a href="{{request.path}}?page={{ vids_list.previous_page_number }}">ئالدىنقى بەت</a>
+     {% endif %}
+    {% if page_num %}
+        <p>{{ page_num }}/{{ num_pages }}</p>
+    {% endif %}
+    {% if  vids_list.has_next %}
+        <a href="{{request.path}}?page={{ vids_list.next_page_number }}"> كېيىنكى بەت</a>
+    {% endif %}
+
+
+</div>
+<!--ئاستى قورۇلما-->
+<div class="footer">
+    <div class="text">بېكىتىمىزدىكى كىنولار توردىن يىغىۋېلىنغان بولۇپ، نەشر ھوقۇقىغا دەخلى قىلدى دەپ قارىسىڭىز بىز بىلەن ئالاقىلىشڭ</div>
+    <div class="text">741116327@qq.com</div>
+    <div class="url_box">
+        <p class="salon_code">مۇزىكا سالونى </p>
+        <p class="salon_code">سالوننى قوشىۋېلىش</p>
+    </div>
+</div>
+
+<script>
+    $(".salon_code").on('click',function () {
+        $("#code_alert").show(300);
+    });
+
+    $(".alert_no").on('click',function () {
+        $(".alert").hide(300);
+    })
+</script>
+
+
+<div class="alert" id="code_alert">
+    <div class="text">
+        <p>سالونىمىزنى قوشىۋېلىپ تېخىمۇ نادىر مەزمۇنلارنى ھوزۇرلىنىڭ</p>
+        <img width="90%" style="margin: 0 5%" src="https://open.weixin.qq.com/qr/qrcode?username=muzika225">
+    </div>
+    <div class="btn">
+        <p class="alert_no"><a href="javascript:;">قايتىش</a></p>
+    </div>
+</div>
+
+<!--سىكرىپىت ئۇلانمىسى-->
+
+<script src="https://izqut.wxnet.cc/kino/js/main.js"></script>
+<script src="https://izqut.wxnet.cc/kino/js/jquery.lazyload.js?v=1.9.1"></script>
+
+      {% block js %} {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+body{
+	background-color: white ;
+}
+
+.container {
+	min-height: 50px;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 768px;
+	background: #f0f0f6;
+}
+
+.fll{
+	float: left;
+}
+
+.flr{
+	float: right;
+}
+
+.clear{
+	clear: both;
+}
+
+.app-info {
+	height: 140px;
+	background: #5d6a73;
+	width: 100%;
+	overflow: hidden;
+}
+
+.app-info .app-info-content{
+	padding: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+.app-info .app-info-content .app-info-icon{
+	height: 60px;
+	width: 60px;
+	overflow: hidden;
+	border-radius: 7px;
+	margin-left: 10px;
+}
+
+.app-info .app-info-content .app-info-icon img{
+	height: 60px;
+	width: 60px;
+	border-radius: 7px;
+}
+
+.app-info .app-info-content .app-info-content-desc{
+	height: 60px;
+	color: white ;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.app-info .app-info-content .app-info-content-desc .app-info-content-app-title{
+	color: white ;
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.app-info .app-info-content .app-info-content-desc .app-info-content-app-desc{
+	color: white ;
+	height: 35px;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+@media screen and (min-width: 320px){
+	.container {
+		width: 320px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 230px;
+	}
+}
+
+@media screen and (min-width: 360px){
+	.container {
+		width: 360px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 270px;
+	}
+}
+
+@media screen and (min-width: 375px){
+	.container {
+		width: 375px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 285px;
+	}
+}
+
+@media screen and (min-width: 411px){
+	.container {
+		width: 411px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 321px;
+	}
+}
+
+@media screen and (min-width: 414px){
+	.container {
+		width: 414px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 324px;
+	}
+}
+
+@media screen and (min-width: 435px){
+	.container {
+		width: 435px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 345px;
+	}
+}
+
+@media screen and (min-width: 480px){
+	.container {
+		width: 480px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 390px;
+	}
+}
+
+@media screen and (min-width: 533px){
+	.container {
+		width: 533px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 443px;
+	}
+}
+
+@media screen and (min-width: 568px){
+	.container {
+		width: 568px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 478px;
+	}
+}
+
+@media screen and (min-width: 640px){
+	.container {
+		width: 640px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 550px;
+	}
+}
+
+@media screen and (min-width: 667px){
+	.container {
+		width: 667px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 577px;
+	}
+}
+
+@media screen and (min-width: 731px){
+	.container {
+		width: 731px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 641px;
+	}
+}
+
+@media screen and (min-width: 736px){
+	.container {
+		width: 736px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 646px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.container {
+		width: 768px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 678px;
+	}
+}
+
+@media screen and (min-width: 773px){
+	.container {
+		width: 773px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 683px;
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.container {
+		width: 1024px;
+	}
+	.app-info .app-info-content .app-info-icon{
+	}
+	.app-info .app-info-content .app-info-content-desc{
+		width: 934px;
+	}
+}
+
+.app-info .download-btn{
+	height: 32px;
+	line-height: 32px;
+	width: 85px;
+	text-align: center;
+	color: white ;
+	border-radius: 3px;
+	border:1px solid white;
+	display: inline-block;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+.izahat:after{
+	content: '';
+	border-bottom: 1px solid #e7e7eb;
+	width: 100%;
+	height: 1px;
+	display: block;
+}
+
+.izahat:before{
+	content: '卅賶夭丕诰丕鬲' ;
+	font-size: 18px;
+	color: #333;
+	display: block;
+}
+
+.izahat{
+	padding: 10px;
+	min-height: 50px;
+	background: white ;
+	text-align: justify;
+}
+
+.izahat .izahat-mezmun {
+	text-align: justify;
+	line-height: 32px;
+	font-size: 14px;
+	color: #666d69;
+	margin: 10px auto ;
+}
+
+.izahat .share-icon{
+	margin: 5px auto ;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	float: right;
+}
+
+.izahat .share-icon img{
+	width: 30px;
+	height: 30px;
+}
+
+
+.more-info {
+	padding: 10px;
+	min-height: 20px;
+	background: white ;
+	line-height: 25px;
+	font-size: 14px;
+	color: #fb2222;
+	padding-top: 0;
+	text-align: justify;
+}
+
+.c-red{
+	color: red ;
+}
+
+.contact-us {
+	margin: 0 auto ;
+	background: white ;
+	padding: 10px;
+	padding-top: 0 ;
+}
+
+.contact-us img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon {
+	background: url(../images/15-sprite.png) no-repeat;
+	background-size: 50px
+}
+
+.icon-cha {
+	width: 12px;
+	height: 12px;
+	background-position: -15px -390px
+}
+
+.icon-code {
+	width: 30px;
+	height: 30px;
+	background-position: 0 -440px
+}
+
+.c01 {
+	color: #999
+}
+
+.hidden {
+	display: none !important ;
+}
+
+.block {
+	display: block !important ;
+}
+
+.mgtb-10 {
+	margin: 10px 0
+}
+
+.qqmasker {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 200%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 999
+}
+
+.info-masker {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	z-index: 1;
+	background-color: rgba(0,0,0,.6)
+}
+
+.fixed,.page,.pl-qqmasker {
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto
+}
+
+.btn,.btn1,.icon,.icon1 {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none
+}
+
+.lost .qqmasker {
+	background-color: #000;
+	z-index: -1
+}
+
+.lost .container {
+	width: 100%;
+	min-height: auto;
+	padding-bottom: 0;
+	background: #fff url(img/common/404_yuan.png) repeat-x left bottom;
+	background-size: 13.125%
+}
+
+.lost .lost-content {
+	background: url(img/common/404_1.png) no-repeat bottom center;
+	background-size: 71.9%;
+	padding: 18% 0 79.1%
+}
+
+.qqpopup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 240px;
+	margin: -170px 0 0 -120px;
+	color: #0f0f0f;
+	z-index: 1000 ;
+	box-sizing: border-box;
+}
+
+.pop-pic {
+	width: 240px;
+	height: 210px;
+	background-color: #fff;
+	border-radius: 3px 3px 0 0;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: 240px
+}
+
+.pop-pic.pop-pic-img1 {
+	background-image: url(img/popup/pop1.jpg)
+}
+
+.pop-pic.pop-pic-img2 {
+	background-image: url(img/popup/pop2.jpg)
+}
+
+.pop-pic.pop-pic-img3 {
+	background-image: url(img/popup/pop3.jpg)
+}
+
+.pop-pic.pop-pic-img4 {
+	background-image: url(img/popup/pop4.jpg)
+}
+
+.pop-pic.pop-pic-img5 {
+	background-image: url(img/popup/pop5.jpg)
+}
+
+.pop-pic.pop-pic-img6 {
+	background-image: url(img/popup/pop6.jpg)
+}
+
+.popup-border {
+	background: url(img/common/popBd.png) repeat-x;
+	background-size: 239px 10px;
+	height: 10px;
+	margin-top: -10px
+}
+
+.popup-bd {
+	background-color: #fff;
+	border-radius: 0 0 3px 3px;
+	font-size: 15px;
+	padding: 28px 10px;
+	text-align: center
+}
+
+.qqpopup .btn-close {
+	background: url(img/common/sprite2.png) no-repeat 0 -204px;
+	background-size: 64px;
+	width: 25px;
+	height: 39px
+}
+
+.btn-close.right {
+	position: absolute;
+	right: -14px;
+	top: -22px
+}
+
+.qqpopup .btn-dload {
+	width: 180px;
+	margin-top: 20px
+}
+
+.pop-attention-code {
+	width: 280px;
+	padding: 30px 10px;
+	margin: -155px 0 0 -140px;
+	font-size: 13px;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 10px
+}
+
+.pop-attention-code .txt-mid2 {
+	margin-bottom: 7px
+}
+
+.pop-attention-code .code-img {
+	width: 145px;
+	height: 145px;
+	margin: 10px
+}
+
+.pop-attention-code .btn-cha {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 10px 15px
+}

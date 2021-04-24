@@ -1,0 +1,191 @@
+@font-face {
+	font-family: "UKIJ Tor";
+	font-weight: normal;
+	src: local("UKIJ Tor"), url("ukijtor.ttf") format("TrueType");
+}
+@font-face {
+	font-family: "UKIJ Teilliq";
+	font-weight: normal;
+
+}
+
+@-webkit-keyframes rotate {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  0%,
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate {
+  0%,
+  100% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate {
+  0%,
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate{//涓轰簡灏藉彲鑳藉吋瀹瑰悇涓祻瑙堝櫒
+  -moz-animation: rotate 4s linear infinite;
+  -webkit-animation: rotate 4s linear infinite;
+  -o-animation: rotate 4s linear infinite;
+  -ms-animation: rotate 4s linear infinite;
+  animation: rotate 4s linear infinite;
+}
+.share{
+	-webkit-webkit-animation: shareScale 1.6s infinite linear;
+	-moz-webkit-animation: shareScale 1.6s infinite linear;
+	-ms-webkit-animation: shareScale 1.6s infinite linear;
+	-o-webkit-animation: shareScale 1.6s infinite linear;
+	animation: shareScale 1.6s infinite linear;
+}
+.fx{
+	-webkit-webkit-animation: shareScale 1.6s infinite linear;
+	-moz-webkit-animation: shareScale 1.6s infinite linear;
+	-ms-webkit-animation: shareScale 1.6s infinite linear;
+	-o-webkit-animation: shareScale 1.6s infinite linear;
+	animation: shareScale 1.6s infinite linear;
+}
+.asti{
+	;
+	color: #FF6600;
+	font-size: 9px;
+}
+
+
+.ablikim{
+	background-image: url(texi.png);
+	padding: 11px;
+}
+.header{
+	-webkit-webkit-animation: shareScale 1.6s infinite linear;
+	-moz-webkit-animation: shareScale 1.6s infinite linear;
+	-ms-webkit-animation: shareScale 1.6s infinite linear;
+	-o-webkit-animation: shareScale 1.6s infinite linear;
+	animation: shareScale 1.6s infinite linear;
+}
+@-webkit-keyframes shareScale {
+	0% {
+		-webkit-webkit-transform: scale(1.5);
+		-moz-webkit-transform: scale(1.5);
+		-ms-webkit-transform: scale(1.5);
+		-o-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+
+	50%{
+		-webkit-webkit-transform: scale(1.7);
+		-moz-webkit-transform: scale(1.7);
+		-ms-webkit-transform: scale(1.7);
+		-o-webkit-transform: scale(1.7);
+		transform: scale(1.7);
+	}
+	to {
+		-webkit-webkit-transform: scale(1.5);
+		-moz-webkit-transform: scale(1.5);
+		-ms-webkit-transform: scale(1.5);
+		-o-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+}
+@-o-keyframes shareScale {
+	0% {
+		-webkit-webkit-transform: scale(1.5);
+			-moz-webkit-transform: scale(1.5);
+			-ms-webkit-transform: scale(1.5);
+			-o-webkit-transform: scale(1.5);
+			transform: scale(1.5);
+	}
+
+	50%{
+		-webkit-webkit-transform: scale(1.7);
+		-moz-webkit-transform: scale(1.7);
+		-ms-webkit-transform: scale(1.7);
+		-o-webkit-transform: scale(1.7);
+		transform: scale(1.7);
+	}
+	to {
+		-webkit-webkit-transform: scale(1.5);
+		-moz-webkit-transform: scale(1.5);
+		-ms-webkit-transform: scale(1.5);
+		-o-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+}
+@-moz-keyframes shareScale {
+	0% {
+		-webkit-webkit-transform: scale(1.5);
+			-moz-webkit-transform: scale(1.5);
+			-ms-webkit-transform: scale(1.5);
+			-o-webkit-transform: scale(1.5);
+			transform: scale(1.5);
+	}
+
+	50%{
+		-webkit-webkit-transform: scale(1.7);
+		-moz-webkit-transform: scale(1.7);
+		-ms-webkit-transform: scale(1.7);
+		-o-webkit-transform: scale(1.7);
+		transform: scale(1.7);
+	}
+	to {
+		-webkit-webkit-transform: scale(1.5);
+		-moz-webkit-transform: scale(1.5);
+		-ms-webkit-transform: scale(1.5);
+		-o-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+}
+@keyframes shareScale {
+	0% {
+		-webkit-webkit-transform: scale(1.5);
+			-moz-webkit-transform: scale(1.5);
+			-ms-webkit-transform: scale(1.5);
+			-o-webkit-transform: scale(1.5);
+			transform: scale(1.5);
+	}
+
+	50%{
+		-webkit-webkit-transform: scale(1.7);
+		-moz-webkit-transform: scale(1.7);
+		-ms-webkit-transform: scale(1.7);
+		-o-webkit-transform: scale(1.7);
+		transform: scale(1.7);
+	}
+	to {
+		-webkit-webkit-transform: scale(1.5);
+		-moz-webkit-transform: scale(1.5);
+		-ms-webkit-transform: scale(1.5);
+		-o-webkit-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+}

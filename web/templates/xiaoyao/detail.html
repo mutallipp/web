@@ -1,0 +1,147 @@
+{% extends 'xiaoyao/detal_base.html' %}
+{% block headcontent %}
+    <title>{{ title }}</title>
+    <link href="/static/186/css/detail.common.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/index.v3.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/neiye.v3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/186/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/static/186/js/jweixin-1.0.0.js"></script>
+
+{% endblock %}
+{% block detailbase %}
+    <div class="row">
+        <div class="detailCon">
+            {#            电影地址  images 是电影图片地址#}
+            {% if data.type %}
+                <div class="detailPic"><a href="/index/play/?video_url={{ data.video_url }}&title={{ data.title }}&image={{{ data.url_image }}"><img src="{{ data.url_image }}" alt="{{ data.title }}"><i class="globalPlayIcon"></i></a></div>
+                <div class="detailIntro"><span class="sName">{{ data.title }}</span> <span class="sSource"><em class="emTit">类型：</em><em>{{ data.type }}</em>    导演：<em>{{ data.director }}</em></span>
+                    <span class="sDes">主演：{{ data.actors }}</span> <span class="sDes">更新：{{ data.update_time }}</span>
+
+                    {#                也是电影地址#}
+                    <p class="pPlayBtn clearfix" id="detail_play_p">
+                        <a href="/index/play/?video_url={{ video_url }}&title={{ title }}&image={{ image }}" rel="nofollow" class="playBtn_HD">立即播放</a>
+                        <a href="#3" target="_self" class="playDownLoadBtn" rel="nofollow">剧情</a>
+                        <a href="#4" class="playDownLoadBtn" style="background-color:#080;">下载</a></p>
+                </div>
+
+            {% else  %}
+                <div class="detailPic"><a href="/index/play/?video_url={{ video_url }}&title={{ title }}&image={{ image }}"><img src="{{ image }}" alt="无双"><i class="globalPlayIcon"></i></a></div>
+                <div class="detailIntro"><span class="sName">{{ title }}</span> <span class="sSource"><em class="emTit">类型：</em><em>动作/犯罪</em>    导演：<em>庄文强</em></span>
+                    <span class="sDes">主演：周润发/郭富城/张静初/冯文娟</span> <span class="sDes">更新：2018-10-02 00:21</span>
+
+                    {#                也是电影地址#}
+                    <p class="pPlayBtn clearfix" id="detail_play_p">
+                        <a href="/index/play/?video_url={{ video_url }}&title={{ title }}&image={{ image }}" rel="nofollow" class="playBtn_HD">立即播放</a>
+                        <a href="#3" target="_self" class="playDownLoadBtn" rel="nofollow">剧情</a>
+                        <a href="#4" class="playDownLoadBtn" style="background-color:#080;">下载</a></p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block weixin %}
+
+    <script>
+
+        wx.config({
+            debug: false,
+            appId: '{{ appid }}',
+            timestamp: {{ signature.timestamp }},
+            nonceStr: '{{ signature.nonceStr }}',
+            signature: '{{ signature.signature }}',
+            jsApiList: [
+
+                "onMenuShareTimeline",
+
+                "onMenuShareAppMessage",
+
+                "hideMenuItems"
+
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+        });
+
+        wx.ready(function () {
+
+            wx.hideMenuItems({
+
+                menuList: [
+
+                    'menuItem:copyUrl',
+
+
+                ]
+
+            });
+
+
+            var wxData = {
+                appId: '', // 分享标题
+                title: '我正在看《{{ title }}》', // 分享标题
+                desc: '最新热播的电影', // 分享描述
+                link: 'http://www.mutallip.cn/index/share/?key={{ request.session.key }}', // 分享链接
+                imgUrl: '{{ image }}',
+            }
+
+
+            var str_mp = "/play?title={{ title }}&videourl={{ videourl }}";//关注的链接，跳转的链接
+
+
+            wx.ready(function () {
+                // 2. 分享接口
+                // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareAppMessage({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+                    success: function () {
+
+                        alert('亲，你已经分享了朋友，谢谢你的支持~~~~~~')
+                    },
+                    cancel: function () {
+                        alert('亲，取消分享了，宝宝不开心~~~~~~~')
+                    }
+                });
+                // 2.1 监听“分享到朋友圈”，按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareTimeline({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+
+                    success: function () {
+                        pyq = 1;
+                        if (pyq >= 1) {
+                            {#                    if (pyq >= 1 && dos >= 2) {#}
+                            {#                        location.href = str_mp#}
+                            alert('亲，你已经分享了朋友，谢谢你的支持~~~~~~')
+                        } else {
+                            {#                        if (pyq >= 1 && dos < 2) {#}
+                            {#                            alert('你已经分享到朋友圈了，再发' + (parseInt(2) - parseInt(dos)) + '个群才能看的哦~~~~~~~~')#}
+                            alert('不分享就看不了的哦，亲~~~~~~~~')
+                            {#                        }#}
+                        }
+                    },
+                    cancel: function () {
+                        alert('亲，取消分享了，宝宝不开心~~~~~~~')
+                    }
+
+                });
+
+            });
+
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareAppMessage(shareData);
+
+
+        });
+
+        wx.error(function (res) {
+            alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'xiaoyao/base.html' %}
+
+{% block header %}
+    <title>300Udak电影院</title>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+{% endblock %}
+
+{% block dy_list %}
+
+
+    <ul class="clearfix">
+        {% for v in vids_list %}
+            <li><a href="/index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}&id={{ v.id }}">
+                <img src="{{ v.url_image }}"></a>
+                {% if v.suzuk %}
+                    <p class="clearfix leimu"><span class="fl">{{ v.suzuk }}</span></p>
+                {% else %}
+                <p class="clearfix leimu"><span class="fl"></span></p>
+                {% endif %}
+                <a href="index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}&id={{ v.id }}">
+                    <span class="biaoti">{{ v.title }}</span></a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

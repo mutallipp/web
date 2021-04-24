@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="/static/logo.png"
+          type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/uyvideo/css/style.css" type="text/css"/>
+    <script type="text/javascript" src="/static/uyvideo/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/uyvideo/js/default.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="/static/uyvideo/js/pitexs.js"></script>
+    <meta name="applicable-device" content="pc,mobile">
+    <meta property="og:image" content="/static/logo.png"/>
+   <link rel="stylesheet" type="text/css" href="https://izqut.wxnet.cc/kino/css/style.css">
+
+
+    
+        <title> 300udak</title>
+        <script type="text/javascript" src="/static/uyvideo/phjs/core.php"></script>
+        <script type="text/javascript" src="/static/uyvideo/phjs/default.js"></script>
+        <script type="text/javascript" src="/static/uyvideo/phjs/pitexs.js"></script>
+        <script type="text/javascript" src="/static/uyvideo/phjs/jquery.min.js"></script>
+
+    <!--<script>document.writeln("<script type=\"text/javascript\" language=\"javascript\" src=\"/static/js/hidecopy.js\"></script>");</script>-->
+
+
+
+        <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+
+</head>
+<body>
+<header class="stui-header__top clearfix" id="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="stui-header_bd clearfix">
+                <div class="stui-header__logo">
+                    <img class="logo" src="/static/logo.png">
+                </div>
+                <div class="stui-header__side">
+                    <ul class="stui-header__user">
+                        <li class="visible-xs"><a class="open-popup" href="javascript:;"><i
+                                class="icon iconfont icon-viewgallery"></i></a></li>
+                    </ul>
+                    <div class="stui-header__search">
+                        <form name="formsearch" id="formsearch" action='/uyvideo/search/' method="post"
+                              autocomplete="off">
+                            <input class="form-control" id="wd" placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ" name="wd"
+                                   type="text"
+                                   id="keyword" required=""><input type="submit" id="searchbutton" value=""
+                                                                   class="hide">
+                            <button class="submit" id="submit" onclick="$('#formsearch').submit();"><i
+                                    class="icon iconfont icon-search"></i></button>
+                        </form>
+                        
+                        <div id="word" class="autocomplete-suggestions active " style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- 幻灯片 -->
+
+<!--ئايلانما رەسىم-->
+    <iframe src="/uyvideo/swiper/" frameborder="0" width="100%" height="205px" style="overflow: hidden"></iframe>
+
+<!-- 幻灯片 -->
+
+<div class="stui-pannel stui-pannel-bg clearfix">
+    <div class="stui-pannel-box clearfix">
+        <div class="col-lg-wide-75 col-xs-1 padding-0">
+            <div class="stui-pannel_hd">
+                <div class="stui-pannel__head clearfix">
+
+
+                    
+        <a class="more text-muted pull-right" href="#">يېڭى قوشۇلغانلىرى <i class="icon iconfont icon-more"></i></a>
+        <h3 class="title"><img src="/static/uyvideo/images/icon/icon_1.png"/><a
+                href="/uyvideo/index/">كىنو</a></h3>
+
+    
+
+                    <ul class="nav nav-text pull-right hidden-sm hidden-xs">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="stui-pannel_bd clearfix">
+                <ul class="stui-vodlist clearfix">
+                    
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1186">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790850735533.jpg"></div>
+                <div class="list_title">راھىپنىڭ تاغدىن چۈشىش</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1185">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790837660007.jpg"></div>
+                <div class="list_title">مەن كىم</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1184">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179082469031.jpg"></div>
+                <div class="list_title">ئەجدىرھا شەمشەر</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1183">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/155117908117591.jpg"></div>
+                <div class="list_title">ئالۋاستىنىڭ ئالۋاستىنى بابلىشى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1182">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179079867054.jpg"></div>
+                <div class="list_title">مۇتىھەم پەرىشتە</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1181">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179078574385.jpg"></div>
+                <div class="list_title">سۇنۇكۇڭ ۋە پاسىق سۆڭەك ئالۋاستى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1180">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790773051383.jpg"></div>
+                <div class="list_title">قوشكىزەك چىڭلۇڭ</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1179">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179076015676.jpg"></div>
+                <div class="list_title">ئايال پادىشاھ</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1178">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790747449448.jpg"></div>
+                <div class="list_title">ئوغرىلار ئائىلىسى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1177">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790734717832.jpg"></div>
+                <div class="list_title">12 مۆچەل</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1176">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790721790905.jpg"></div>
+                <div class="list_title">ھەقىقى مۇھەببەت</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1175">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790709060183.jpg"></div>
+                <div class="list_title">پەلەك ئەجدىھاسى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1174">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179069431724.jpg"></div>
+                <div class="list_title">رومىيو - جۇلىتتا</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1173">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179068142506.jpg"></div>
+                <div class="list_title">ئالۋاستى ھالاكىتى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1172">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790668682866.jpg"></div>
+                <div class="list_title">ئىلاھلار غەزىپى 2</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1171">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790655996687.jpg"></div>
+                <div class="list_title">رەھىمسىز چايان</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1170">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179064325193.jpg"></div>
+                <div class="list_title">ئادەمخور بېلىق</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1169">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790630547054.jpg"></div>
+                <div class="list_title">يۇلتۇز جەڭچىسى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1168">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790610589406.jpg"></div>
+                <div class="list_title">ئوغرىلار ئىتىپاقى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1167">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790592291906.jpg"></div>
+                <div class="list_title">جۇڭگۇغا سەپەر</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1166">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790579477518.jpg"></div>
+                <div class="list_title">قاچقۇن بودەك</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1165">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/1551179056672921.jpg"></div>
+                <div class="list_title">ئامەتلىك چىڭلوڭ</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1164">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790553986647.jpg"></div>
+                <div class="list_title">تەلەيلىك بەش يۇلتۇز</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1163">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790541296725.jpg"></div>
+                <div class="list_title">بۆرە رىۋايىتى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1162">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790528756278.jpg"></div>
+                <div class="list_title">يىڭى لوڭمىن سارىيى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1161">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790516058767.jpg"></div>
+                <div class="list_title">تەغدىر ئۇيۇنى</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1160">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790503495283.jpg"></div>
+                <div class="list_title">كومدىيىلىك قوشماقلار</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1159">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790490911193.jpg"></div>
+                <div class="list_title">ئالماشقان چىراي</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1158">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790478120537.jpg"></div>
+                <div class="list_title">PK</div>
+            </a>
+
+        </div>
+    
+            <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id=1157">
+                <div class="img"><img class="lazy" src="/static/uyvideo/video_img/15511790465397866.jpg"></div>
+                <div class="list_title">چېنناي تېز پويىزى </div>
+            </a>
+
+        </div>
+    
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="stui-page text-center cleafix">
+    
+    
+        <li class="wap active"><span class="num">1/23</span></li>
+    
+    
+        <li class="wap"><a href="/uyvideo/index/?page=2"> كېيىنكى بەت</a></li>
+    
+
+</ul>
+
+
+<!-- 友情链接 -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="stui-foot clearfix">
+            
+            
+            
+            <p class="text-center">
+                بېكىتىمىزدىكى كىنولار توردىن يىغىۋېلىنغان بولۇپ، نەشر ھوقۇقىغا دەخلى قىلدى دەپ قارىسىڭىز بىز بىلەن
+                ئالاقىلىشڭ
+            </p>
+            <p class="text-center">
+                741116327@qq.com
+            </p>
+        </div>
+    </div>
+</div>
+<ul class="stui-extra clearfix">
+    <li><a class="backtop" href="javascript:scroll(0,0)" style="display: none;"><i class="icon iconfont icon-less"></i></a>
+    </li>
+    <li title="点击交流" alt="点击交流"><a target="_blank" href="#" class="open-share"><i class="icon iconfont icon-smile"></i></a>
+    </li>
+    <!--<li class="hidden-xs" title="微信公众号" alt="微信公众号"><span><i class="icon iconfont icon-qrcode"></i></span>
+    <div class="sideslip">
+        <div class="col-pd">
+            <p>
+                <img title="二维码" alt="二维码" src="http://186.kk3199.cn/template/mobile/video_1/images/weixin.png" width="180" height="180"/>
+            </p>
+            <p class="text-center font-12">
+                微信扫码快捷搜索
+            </p>
+        </div>
+    </div>
+    </li>-->
+
+    <li><a href="#" title="留言" alt="留言"><i class="icon iconfont icon-comments"></i></a></li>
+</ul>
+<div class="hide">
+    <script src="https://s4.cnzz.com/z_stat.php?id=5923995&web_id=5923995" language="JavaScript"></script>
+</div>
+<script type="text/javascript" charset="utf-8">
+    window._bd_share_config = {
+        common: {
+            bdText: '',
+            bdDesc: '',
+            bdUrl: '',
+            bdPic: ''
+        },
+        share: [{
+            "bdSize": 24,
+            bdCustomStyle: '/static/uyvideo/css/default.css'
+        }]
+    }
+    with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+  
+</body>
+</html>

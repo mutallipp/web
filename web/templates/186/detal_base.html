@@ -1,0 +1,132 @@
+{% extends '186/base.html' %}
+
+{% block headcontent %}
+    <title>{{ title }}</title>
+
+    <link href="/static/186/css/detail.common.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/index.v3.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/neiye.v3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+{% endblock %}
+
+
+{% block content %}
+    <section class="main" id="detail_main">
+
+
+        {#    播放和详细内容介绍页#}
+        {% block detailbase %}{% endblock %}
+
+
+
+        <div>
+            <img src="/static/186/images/weixin.png" width="96%" style="margin:0 1.8%">
+
+        </div>
+        <div class="row numTabListCon">
+            <div class="tabList" id="episode_tab">
+                <div class="con">
+                    <h3>极速云无需安装任何插件，即可快速播放</h3>
+                </div>
+            </div>
+{#            <div class="numList clearfix">#}
+{#                <li1>#}
+{#                    <script type="text/javascript" src="/index.php?c=aps&id=11"></script>#}
+{#                </li1>#}
+{#                <li><a title='Ts抢先版' href='/index.php?c=play&id=15783' target="_self">Ts抢先版</a></li>#}
+{#            </div>#}
+        </div>
+
+
+
+        <div class="row">
+            <div class="mod_z">
+                <div class="th_z"><span class="sMark" id="4">百度云下载</span></div>
+                <div class="tb_z">
+                    <p class="pIntroTxt">
+                        <!--input value="" style="width: 100%;height: 30px;line-height: 30px;"-->
+                        <a href="" target="_self"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mod_z">
+                <div class="th_z">
+                    <i class="iLine"></i><span class="sMark" id="3">剧情简介</span></div>
+                <div class="tb_z">
+                    {% if data.type %}
+                        <p class="pIntroTxt">
+                        {{ data.content }}
+                        </p>
+                    {% else %}
+                        <p class="pIntroTxt">《无双》讲述了以代号“画家”（周润发
+                            饰）为首的犯罪团伙，掌握了制造伪钞技术，难辨真伪，并在全球进行交易获取利益，引起警方高度重视。然而“画家”和其他成员的身份一直成谜，警方的破案进度遭受到了前所未有的挑战。在关键时刻，擅长绘画的李问（郭富城
+                            饰）打开了破案的突破口，而“画家”的真实身份却让众人意想不到……
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mod_z">
+                <div class="th_z"><span class="sMark">视频评论</span></div>
+                <div class="tb_z">
+                    <p class="pIntroTxt"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row rowA">
+            <div class="mod_a">
+                <div class="th_a"><span class="sMark">猜你喜欢<em>(同类型)</em></span></div>
+                <div class="tb_a">
+                    <ul class="picTxtA guessLike clearfix">
+                        {% if like %}
+                            {% for i in like %}
+                                <li>
+                                    <div class="pic"><img src="{{ i.url_image }}" alt=""></div>
+                                    <div class="txt">
+                                        <span class="sTit">{{ i.title }}</span>
+                                        <span class="sDes">{{ i.suzuk }}</span>
+                                        <span class="sDes">类型：{{ i.type }}</span>
+                                        <span class="sStyle"><em class="styleBlue">更新时间：{{ i.update_time }}</em></span>
+                                    </div>
+        {#                            电影地址#}
+
+                                    <a href="{% url 'detail' %}?id={{ i.id }}" target="_self" class="aMask"></a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <h2>没找到你喜欢类型的电影~~~~~~~</h2>
+                        {% endif %}
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row rowIvy"></div>
+    </section>
+
+
+{% endblock %}
+
+
+{#实现强制分享的代码块 #}

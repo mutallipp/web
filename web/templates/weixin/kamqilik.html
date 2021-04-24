@@ -1,0 +1,426 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+
+        <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ئەڭ چوڭ كەمچىلىكىڭىز نېمە؟</title>
+     <link type="text/css" rel="stylesheet" href="/static/weixin/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/static/weixin/css/small_test.css">
+
+    <link type="text/css" rel="stylesheet" href="/static/weixin/css/ablum.css">
+    <script type="text/javascript" src="/static/weixin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/weixin/js/myqrcode.js"></script>
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+{#        var useragent = navigator.userAgent;#}
+{#        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {#}
+{#// 这里警告框会阻塞当前页面继续加载#}
+{#            alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');#}
+{#// 以下代码是用javascript强行关闭当前页面#}
+{#            var opened = window.open('about:blank', '_self');#}
+{#            opened.opener = null;#}
+{#            opened.close();#}
+{#        }#}
+
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+             // 通过下面这个API隐藏右上角按钮
+            WeixinJSBridge.call('hideOptionMenu');
+         });
+
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+                window.location = '';
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+        });
+    </script>
+
+<style type="text/css">
+        .public_toast {
+            padding: 10px 15px;
+            border-radius: 3px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            left: 50%;
+            top: 40%;
+            max-width: 100%;
+            z-index: 9999;
+            color: #FFF;
+            font-size: 18px;
+            opacity: 0;
+            -webkit-transform: translate3d(-50%, 100%, 0);
+            transition: all linear .1s;
+            white-space: nowrap;
+        }
+
+        .public_toast_show {
+            opacity: 1;
+        }
+    body {
+	background-color: #6CB55E;
+}
+    </style>
+</head>
+<body>
+<div id="qrcode" style="width:100px; height:100px; margin-top:15px;display:none"></div>
+<div style="z-index: 999999; top: 0%; background-color: #6CB55E;">
+    <div id='pic' style='display:none;' align="center">
+        <canvas width="600" height="800" id="canvas" style="display:none"></canvas><img src="/static/weixin/images/usti2.png" alt="" width="320" height="75">
+   
+                  <p><img src="" width="85%"  class="ablikim" id="img"></p>
+        <span style="font-size:14px; color: #FFF;" >👆👆👆 رەسىمنى بېسىپ تۇرۇپ 保存到手机 دىگەن خەتنى بېسىپ ساقلىۋېلىپ دوسلىرىڭىزغا چەمبىرەككە يوللاپ كۆز كۆز قىلىڭ</span>
+    </div>
+    <div id='bottom'>
+        <div id="luckTest">
+            <div class="luckTest">
+                <div class="imgFrom">
+
+                  <a href="/weixin/arzu/"><img src="/static/weixin/images/usti.png" alt="" width="320" height="70"></a>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  
+                  
+                  <p><center></center>
+                  </p>
+                  
+                 
+                  <input name="name" type="text" class="w3-agile" id="name" style="color: #49C13C; border-radius: 30px;" placeholder="ئىسمىڭىزنى كىرگۈزۈڭ" size="15" maxlength="30">
+                  <br/>
+                  <br/>
+                    
+                  <label style='padding-right: 10px; float: right; width: 50%; font-size: 16px; display: inline-block; color: #FFF;'>
+                    <input
+                            type='radio' value='1' name='sex'>
+                    ئوغۇل </label>
+                  <label style='padding-right: 15px; float: right; width: 50%; font-size: 16px; display: inline-block; color: #FFF;'>
+                    <input
+                            type='radio' value='2' name='sex'>
+                    قىز </label>
+                </div>
+                <br>
+                <input id="text" type="hidden" value="" style="width:80%"/>
+                <br><br>
+
+               <div class="w3l-main">
+                  <p><p class="asti">
+        61175</p>
+                  <p>
+                    <input type="submit" id="send" style="border-radius:35px;" value="كەمچىلىكىم چىقسۇن">
+                </p>
+                  <p>
+                     <p>&nbsp;</p><p>&nbsp;</p>
+{#                    <iframe src="/weixin/arzu/" height="90"></iframe>#}
+                  </p>
+                  
+                
+              </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="game">
+    </div>
+
+</div>
+<div class="menwrap">
+  <div class="menu">
+            <div class="bt-name"><a href="/weixin/top/">تېخىمۇ كۆپ <i class="iconfont icon-collected"></i>ئويۇنلار مەركىزى</a>
+       
+    </div>
+  </div>
+</div>
+</div>
+<script>
+$(".menu").click(function() {
+    if ($(this).hasClass("cura")) {
+        $(this).children(".new-sub").hide(); //当前菜单下的二级菜单隐藏
+        $(".menu").removeClass("cura"); //同一级的菜单项
+    } else {
+        $(".menu").removeClass("cura"); //移除所有的样式
+        $(this).addClass("cura"); //给当前菜单添加特定样式
+        $(".new-sub").hide(); //隐藏所有的二级菜单
+        $(this).children(".new-sub").show(); //展示当前的二级菜单
+    }
+});
+</script>
+<script type="text/javascript">
+var count = document.getElementById("thelist").getElementsByTagName("img").length;	
+
+var count2 = document.getElementsByClassName("menuimg").length;
+
+for(i=0;i<count;i++){
+ document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+}
+
+document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+
+setInterval(function(){
+	myScroll.scrollToPage('next', 0,400,count);
+},3500 );
+
+window.onresize = function(){ 
+	for(i=0;i<count;i++){
+		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+	}
+ document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+}
+</script>
+<script type="text/javascript">
+</script>
+</body>
+<script src="/static/weixin/js/zepto.min.js"></script>
+
+<script type="text/javascript">
+    getQrcode();
+
+    function getQrcode() {
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 100,
+            height: 100
+        });
+
+        function makeCode() {
+            var elText = document.getElementById("text");
+            qrcode.makeCode(elText.value);
+        }
+
+        makeCode();
+    }
+
+
+    $('#send').click(function () {
+        var name = $('input[name="name"]').val();
+        var sex = $("input[type='radio']:checked").val();
+        if (sex == '1') {
+            var rand = sui;
+        } else {
+            var rand = sui;
+        }
+        if (name == '') {
+            toast1('ئىسمىڭىزنى كىرگۈزمىدىڭىز');
+            return;
+        }
+        if (!sex) {
+            toast1('جىنسىڭىزنى تاللاڭ');
+            return;
+        }
+        draw(name, rand, sex);
+        toast('سەل ساقلاڭ...');
+    });
+
+    var sui = parseInt(10 * Math.random());
+
+
+    function draw(username, rand, sex) {
+        {% if request.session.code_image %}
+            var myqrcode = "{{ request.session.code_image }}";
+        {% else %}
+{#            var myqrcode = "/static/weixin/300Udak.png";#}
+            var myqrcode = "/static/weixin/muzika.jpg";
+        {% endif %}
+        var c = document.getElementById("canvas")
+        var ctx = c.getContext("2d");
+
+        var imgbg = document.createElement('img');
+        var imgSrc = "/static/weixin/kamqilik/" + sex + "/" + rand + ".png";
+        imgbg.src = imgSrc;
+        imgbg.setAttribute("crossOrigin",'Anonymous')
+
+        imgbg.onload = function (e) {
+            ctx.drawImage(imgbg, 0, 0, 600, 800);
+            var qrcode = document.createElement('img');
+            var qrcodeWidth = 110;
+            // var qrcodeX = c.width - qrcodeWidth-25;
+            // var qrcodeY = c.height - qrcodeWidth - 25;
+            var qrcodeX = 14;
+            var qrcodeY = 680;
+            qrcode.src = myqrcode;
+            qrcode.onload = function (e) {
+                ctx.drawImage(qrcode, qrcodeX, qrcodeY, qrcodeWidth, qrcodeWidth)
+
+                ctx.font = "60px UKIJ Teilliq";
+                ctx.fillStyle = "#ffffff";
+				
+//                ctx.fillStyle = "#0066ff";
+                var name = username;
+                var nameW = ctx.measureText(name).width;
+                var nameX = 305 - (nameW / 2);
+                ctx.fillText(name, 368, 256);
+
+                var dataUrl = c.toDataURL("images/jpeg", 0.8);
+                $('#img').attr('src', dataUrl);
+                $('#pic').css('display', 'block');
+                $('#bottom').css('display', 'none');
+//                 $('#p').css('display','none');
+                document.title = 'ئەڭ چوڭ كەمچىلىكىڭىز مۇشۇكەن';
+                $('.public_toast').css('display', 'none');
+            }
+        }
+    }
+
+    function toast(text, ms) {
+        if (!text) {
+            return false;
+        }
+        var dom = $('<div class="public_toast">' + text + '</div>');
+        var ms = ms || 1000;
+        $('body').append(dom);
+        setTimeout(function () {
+            dom.addClass('public_toast_show');
+        }, 10);
+
+    }
+
+    function toast1(text, ms) {
+        if (!text) {
+            return false;
+        }
+        var dom = $('<div class="public_toast">' + text + '</div>');
+        var ms = ms || 1000;
+        $('body').append(dom);
+        setTimeout(function () {
+            dom.addClass('public_toast_show');
+        }, 10);
+        setTimeout(function () {
+            dom.removeClass('public_toast_show');
+            dom.on('webkitTransitionEnd', function () {
+                dom.remove();
+            })
+        }, ms)
+    }
+</script>
+
+</html>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+ 
+</table>
+</html>

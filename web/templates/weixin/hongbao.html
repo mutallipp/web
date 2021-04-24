@@ -1,0 +1,464 @@
+<!--   ! بەتتە ئانىڭىزنىڭ ھەققى بولمىغاندىكىن ئوغۇرلىماڭ-->
+<!--   ! ئابدان كۈچۈرۈڭ جالاپ خۇتۇننىڭ بالىسى -->
+<!--   !سىزدەك جالاپ خۇتۇننىڭ باللىرى كۈچۈرمىسۇن-->
+<!--   !دەپ مۇشۇنداق ئاق قىلىپ قويدۇق بەتنى -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <title>200يۈەنلىك قىزىل بولاق ئېلىۋېلىڭ</title>
+    <link rel="stylesheet" href="/static/weixin/hongbao/css/nhb.css">
+    <link rel="stylesheet" href="/static/weixin/hongbao/css/inv.css">
+
+
+    <!-- <script type="text/javascript">
+   function setCookie(name, value) {
+       var Days = 30;
+       var exp = new Date();
+       exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+       document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+   }
+   function getCookie(name) {
+       var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+       if (arr = document.cookie.match(reg)) return unescape(arr[2]);
+       else return null;
+   }
+   var cishu = getCookie('cishu');
+
+   if(cishu==1){
+       alert('مۇبارەك بولسۇن راسلا مۇكاپاتقا ئېرىشتىڭىز');
+
+           location.href='index.php';
+
+   }
+   function choujiang(){
+
+       setCookie("cishu","1","s20");
+   }
+   </script>-->
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+    var system = {};
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac || system.xll) {
+        alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+        var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+
+<script type="text/javascript">
+    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+    var useragent = navigator.userAgent;
+    if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+        // 这里警告框会阻塞当前页面继续加载
+        alert('请在微信里面打开');
+        // 以下代码是用javascript强行关闭当前页面
+        var opened = window.open('http://www.21084s.cn', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+</script>
+
+
+{##}
+{# <script type="text/javascript">#}
+{#    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器#}
+{#    var useragent = navigator.userAgent;#}
+{#    if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {#}
+{#        // 这里警告框会阻塞当前页面继续加载#}
+{#        alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ!');#}
+{#        // 以下代码是用javascript强行关闭当前页面#}
+{#        var opened = window.open('http://www.21084s.cn', '_self');#}
+{#        opened.opener = null;#}
+{#    }#}
+{#</script>#}
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+
+
+    /*
+
+     *TvresTa SaLoni tuzup qikkan bat
+
+     *haligan qa kalaymikan koqurmang
+
+     */
+
+    var pyq = 0;
+
+    var dos = 0;
+
+    /////////////////////////
+
+    wx.config({
+        debug: false,
+        appId: '{{ appid }}',
+        timestamp: {{ signature.timestamp }},
+        nonceStr: '{{ signature.nonceStr }}',
+        signature: '{{ signature.signature }}',
+        jsApiList: [
+
+            "onMenuShareTimeline",
+
+            "onMenuShareAppMessage",
+
+            "hideMenuItems"
+
+        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+    });
+
+
+    wx.ready(function () {
+
+
+        wx.hideMenuItems({
+
+
+            menuList: [
+
+
+                'menuItem:copyUrl',
+
+
+            ]
+
+
+        });
+
+
+        var wxData = {
+            appId: 'wxc45981bc2f9eaad8', // 分享标题
+            title: 'مەن 21.5يۈەن ئېلىۋالدىم سىزمۇ ئېلىۋېلىڭ', // 分享标题
+            desc: 'قىزىل بولاق ئېلىۋېلىڭ', // 分享描述
+            link: 'http://www.mutallip.cn/index/share/?key={{key }}', // 分享链接
+            imgUrl: 'http://www.mutallip.cn/static/weixin/hongbao/hongbao.png',
+        };
+        var str_mp = "/weixin/hongbao1/?key={{key }}";//关注的链接，跳转的链接
+
+        wx.ready(function () {
+            // 2. 分享接口
+            // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+            wx.onMenuShareAppMessage({
+                title: wxData.title,
+                desc: wxData.desc,
+                link: wxData.link,
+                imgUrl: wxData.imgUrl,
+                success: function () {
+                    dos = dos + 1;
+                    if (pyq == 1 && dos == 3) {
+                        location.href = str_mp
+                    } else {
+                        if (pyq < 1 && dos < 3) {
+                            document.getElementById('share-wx').style.display = 'none';
+                            document.getElementById('dialog3').style.display = 'block';
+                            document.getElementById("mezmun").innerHTML = "يەنە " + (parseInt(3) - parseInt(dos)) + " توپقا ۋە دوستلار چەمبىرىكىگە يوللاڭ";
+                        }
+                        if (pyq >= 1 && dos < 3) {
+                            document.getElementById('share-wx').style.display = 'none';
+                            document.getElementById('dialog3').style.display = 'block';
+                            document.getElementById("mezmun").innerHTML = "يەنە " + (parseInt(3) - parseInt(dos)) + " توپقا يوللاڭ";
+                        }
+                        if (dos >= 3 && pyq < 1) {
+                            document.getElementById('share-wx').style.display = 'none';
+                            document.getElementById('dialog3').style.display = 'block';
+                            document.getElementById("mezmun").innerHTML = "ئەمدى چەمبىرەككە يوللىسىڭىزلا بولدۇ ";
+                        }
+                    }
+                },
+                cancel: function () {
+                    document.getElementById('dialog3').style.display = 'block';
+                    document.getElementById("mezmun").innerHTML = "يوللىمىسىڭىز ئالالمايسىز ";
+                }
+            });
+            wx.onMenuShareTimeline({
+                title: wxData.title,
+                desc: wxData.desc,
+                link: wxData.link,
+                imgUrl: wxData.imgUrl,
+
+                success: function () {
+                    pyq = 1;
+                    if (pyq >= 1 && dos >= 3) {
+                        location.href = str_mp
+                    } else {
+                        if (pyq >= 1 && dos < 3) {
+                            document.getElementById('dialog3').style.display = 'block';
+                            document.getElementById("mezmun").innerHTML = "چەمبىرەككە يوللىدىڭىز،يەنە " + (parseInt(3) - parseInt(dos)) + " توپقا يوللىسىڭىزلا ئالالايسىز ";
+                        }
+                    }
+                },
+                cancel: function () {
+                    document.getElementById('dialog3').style.display = 'block';
+                    document.getElementById("mezmun").innerHTML = "يوللىمىسىڭىز ئالالمايسىز ";
+                }
+
+            });
+
+        });
+
+        wx.onMenuShareTimeline(shareData);
+        wx.onMenuShareAppMessage(shareData);
+
+
+    });
+    wx.error(function (res) {
+        alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+    });
+</script>
+<center>
+    <body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false"
+          onselectstart="event.returnValue=false">
+    <div class="feed" id="feed2">
+        <div class="heart" id="like3" rel="like"></div>
+        <span class="htmleaf-small STYLE5"><span class="STYLE5">
+  </span></span>
+</center>
+<div id="share-wx" onClick="javascript:this.style.display='none'" style="display: none;"><p
+        style="text-align: right; padding-left: 15px;color:#fff;font-size:16px">
+    <!---<img src="images/sr.png" id="share-wx-img" style="max-width: 320px; padding-right: 20px;">-->
+    <div id="share-wx" onClick="javascript:this.style.display='none'">
+        <div class="weui_dialog weui_dialog_visible">
+            <div class="weui_dialog_hd">
+                <strong class="weui_dialog_title" style=color:red;>
+                    <font color="red">ئەسكەرتىش</font>
+                </strong></div>
+            <div class="weui_dialog_bd">
+                ئۈستىدىكى ئۈچ تال چىكىتىنى چىكىپ
+                <br>
+                بۇ بەتنى ئىككى توپ ۋە چەمبىرەككە
+                <br>
+                يوللاپ بولسىڭىزلا قىزىل بولاق ئەۋەتىلىدۇ
+
+            </div>
+            <div class="weui_dialog_ft"><a href="javascript:;" class="weui_btn_dialog primary"><font
+                    color="blue">ماقۇل </font></a></div>
+        </div>
+    </div>
+</div>
+
+<!--BEGIN dialog3-->
+<div class="weui_dialog_alert" id="dialog3" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title"><font color="red">ئەسكەرتىش</font></strong></div>
+        <div class="weui_dialog_bd">
+            <div id="mezmun"></div>
+        </div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" class="weui_btn_dialog primary"
+               onClick="javascript:document.getElementById('dialog3').style.display='none'"><font
+                    color="blue">ماقۇل </font></a>
+        </div>
+    </div>
+</div>
+<!--END dialog3-->
+
+
+<div class="asti">
+    <p align="center" style="color:#999;"></p>
+</div>
+
+
+<div class="container" id="container">
+    <div class="hongbao">
+        <div class="topcontent">
+            <div class="avatar">
+                <img src="http://32ir.cn/xahla/aa/avatar.png">
+                <span>+</span></div>
+            <h2>قىزىل بولاق </h2>
+            <span class="text">سىزگە قىزىل بولاق كەلدى</span>
+            <div class="description">مۇبارەك بولسۇن</div>
+        </div>
+        <div class="chai" id="chai">
+            <span>ئېچىش</span></div>
+    </div>
+</div>
+<div id="showmain" style="display: none;">
+    <section class="top">قىزىل بولاق</section>
+    <section class="main">
+        <div id="qrcode">
+            <img src="http://32ir.cn/xahla/aa/88.png"></div>
+        <div class="readme">
+            <div class="tixian">
+                <p id="tixian">
+                <div class="top" onClick="javascript:document.getElementById('share-wx').style.display='block'">
+                    <button class="button gray" onClick="choujiang()" id="button" type="submit">پۇلنى ئېلىش</button>
+                </div>
+                <p class="money_info">مۇبارەك بولسۇن<span>50</span>يۈئەنگە ئېرىشتىڭىز</p></div>
+        </div>
+    </section>
+    <section class="bottom">
+        <div class="frend_list">
+            <div class="act_title">
+                <h4>باشقا دوسلىرىڭىزمۇ ئېرىشتى</h4></div>
+            <div class="invite2get" style="padding-bottom: 0px;">
+                <section>
+
+
+                    <div class="scrolllist">
+                        <div class="bd">
+                            <div id="demo"
+                                 style="overflow:hidden;height:400px; line-heigh:400px;line-height:15px;twidth:100%; background:#fff;color:#ffffff">
+                                <div id="demo1">
+                                    <ul id="pst_1" style="height:540px; overflow: hidden;">
+                                        <li style="opacity: 0.000335803110671939; margin-top: -47.9838814506878px;"></li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0"><strong>ئەلى</strong>11:01 52يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96"><strong>ئىمران</strong>21:15 104يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0(1)"> <strong>ئەخمەتجان</strong>17:18
+                                            35يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(1)"> <strong>زۇلپىيە</strong>09:51
+                                            155يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(2)"> <strong>قەدىريە</strong>09:31
+                                            99يۈئەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(3)"> <strong>مەمەتجان</strong>05:02
+                                            47يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(4)"> <strong>东玲</strong>19:22 获得64元红包
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(5)"><strong>告别无聊</strong>14:08 获得39元红包
+                                        </li>
+
+                                        <li style="opacity: 0.000335803110671939; margin-top: -47.9838814506878px;"></li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0"><strong>ئەلى</strong>11:01 52يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96"><strong>ئىمران</strong>21:15 104يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0(1)"> <strong>ئەخمەتجان</strong>17:18
+                                            35يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(1)"> <strong>زۇلپىيە</strong>09:51
+                                            155يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(2)"> <strong>قەدىريە</strong>09:31
+                                            99يۈئەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(3)"> <strong>مەمەتجان</strong>05:02
+                                            47يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(4)"> <strong>东玲</strong>19:22 获得64元红包
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(5)"><strong>告别无聊</strong>14:08 获得39元红包
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div id="demo2">
+                                    <ul id="pst_1" style="height:540px; overflow: hidden;">
+                                        <li style="opacity: 0.000335803110671939; margin-top: -47.9838814506878px;"></li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0"><strong>ئەلى</strong>11:01 52يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96"><strong>ئىمران</strong>21:15 104يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0(1)"> <strong>ئەخمەتجان</strong>17:18
+                                            35يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(1)"> <strong>زۇلپىيە</strong>09:51
+                                            155يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(2)"> <strong>قەدىريە</strong>09:31
+                                            99يۈئەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(3)"> <strong>مەمەتجان</strong>05:02
+                                            47يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(4)"> <strong>东玲</strong>19:22 获得64元红包
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(5)"><strong>告别无聊</strong>14:08 获得39元红包
+                                        </li>
+
+                                        <li style="opacity: 0.000335803110671939; margin-top: -47.9838814506878px;"></li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0"><strong>ئەلى</strong>11:01 52يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96"><strong>ئىمران</strong>21:15 104يۈەنگە
+                                            ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/0(1)"> <strong>ئەخمەتجان</strong>17:18
+                                            35يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(1)"> <strong>زۇلپىيە</strong>09:51
+                                            155يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(2)"> <strong>قەدىريە</strong>09:31
+                                            99يۈئەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(3)"> <strong>مەمەتجان</strong>05:02
+                                            47يۈەنگە ئېرىشتى
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(4)"> <strong>东玲</strong>19:22 获得64元红包
+                                        </li>
+                                        <li><img src="http://32ir.cn/xahla/aa/96(5)"><strong>告别无聊</strong>14:08 获得39元红包
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    var speed = 50
+    demo2.innerHTML = demo1.innerHTML
+    function Marquee() {
+        if (demo2.offsetTop - demo.scrollTop <= 0)
+            demo.scrollTop -= demo1.offsetHeight
+        else {
+            demo.scrollTop++
+        }
+    }
+    var MyMar = setInterval(Marquee, speed)
+    demo.onmouseover = function () {
+        clearInterval(MyMar)
+    }
+    demo.onmouseout = function () {
+        MyMar = setInterval(Marquee, speed)
+    }
+
+
+</script>
+<div id="shade" onClick="shade()">
+    <div class="share" style="display:block;">
+        <img src="http://32ir.cn/xahla/aa/457890.png">
+        <center><span style="color: white;font-size: 1.5em;font-family: Alkatip Basma Tom;">ئېلىۋېلىڭ <span
+                id="get_money2">96.68</span> يۈەن&nbsp;&nbsp;</span></center>
+    </div>
+</div>
+<script src="http://32ir.cn/xahla/js/1main.js"></script>
+
+</body>
+</html>

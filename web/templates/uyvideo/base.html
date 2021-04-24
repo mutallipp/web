@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="/static/logo.png"
+          type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/uyvideo/css/style.css" type="text/css"/>
+    <script type="text/javascript" src="/static/uyvideo/js/jquery.min.js"></script>
+{#    <script type="text/javascript" src="/static/uyvideo/phjs/default.js"></script>#}
+{#    <script type="text/javascript" language="javascript"#}
+{#            src="/static/uyvideo/js/pitexs.js"></script>#}
+    <meta name="applicable-device" content="pc,mobile">
+    <meta property="og:image" content="/static/logo.png"/>
+   <link rel="stylesheet" type="text/css" href="/static/uyvideo/css/style_izqut.css">
+
+
+    {% block header %} {% endblock %}
+</head>
+<body>
+<header class="stui-header__top clearfix" id="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="stui-header_bd clearfix">
+                <div class="stui-header__logo">
+                    <img class="logo" src="/static/logo.png">
+                </div>
+                <div class="stui-header__side">
+                    <ul class="stui-header__user">
+                        <li class="visible-xs"><a class="open-popup" href="javascript:;"><i
+                                class="icon iconfont icon-viewgallery"></i></a></li>
+                    </ul>
+                    <div class="stui-header__search">
+                        <form name="formsearch" id="formsearch" action='/uyvideo/search/' method="post"
+                              autocomplete="off">
+                            <input class="form-control" id="wd" placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ" name="wd"
+                                   type="text"
+                                   id="keyword" required=""><input type="submit" id="searchbutton" value=""
+                                                                   class="hide">
+                            <button class="submit" id="submit" onclick="$('#formsearch').submit();"><i
+                                    class="icon iconfont icon-search"></i></button>
+                        </form>
+                        {% csrf_token %}
+                        <div id="word" class="autocomplete-suggestions active " style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- 幻灯片 -->
+{%  block huanding %}   {% endblock %}
+<!-- 幻灯片 -->
+
+<div class="stui-pannel stui-pannel-bg clearfix">
+    <div class="stui-pannel-box clearfix">
+        <div class="col-lg-wide-75 col-xs-1 padding-0">
+            <div class="stui-pannel_hd">
+                <div class="stui-pannel__head clearfix">
+
+
+                    {% block lable %} {% endblock %}
+
+                    <ul class="nav nav-text pull-right hidden-sm hidden-xs">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="stui-pannel_bd clearfix">
+                <ul class="stui-vodlist clearfix">
+                    {#                电影列表#}
+
+                    {% block body %}    {% endblock %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="stui-page text-center cleafix">
+
+{#    分页#}
+{% block panger %}
+
+    {% endblock %}
+{#分页结束#}
+{#    <li class="wap"><a href="<select onchange=javascript:window.location=this.options[this.selectedIndex].value;><option value='/index.php?c=lists&id=1&page=1' selected>第1页</option><option value='/index.php?c=lists&id=1&page=2'>第2页</option><option value='/index.php?c=lists&id=1&page=3'>第3页</option><option value='/index.php?c=lists&id=1&page=4'>第4页</option><option value='/index.php?c=lists&id=1&page=5'>第5页</option><option value='/index.php?c=lists&id=1&page=6'>第6页</option><option value='/index.php?c=lists&id=1&page=7'>第7页</option><option value='/index.php?c=lists&id=1&page=8'>第8页</option></select>">尾页</a></li>#}
+</ul>
+
+
+<!-- 友情链接 -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="stui-foot clearfix">
+            {#			<p class="bdsharebuttonbox text-center margin-0 hidden-sm hidden-xs">#}
+            {#				<span class="bds_shere"></span><a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a><a class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a><a class="bds_more" data-cmd="more" title="更多"></a>#}
+            {#			</p>#}
+            <p class="text-center">
+                بېكىتىمىزدىكى كىنولار توردىن يىغىۋېلىنغان بولۇپ، نەشر ھوقۇقىغا دەخلى قىلدى دەپ قارىسىڭىز بىز بىلەن
+                ئالاقىلىشڭ
+            </p>
+            <p class="text-center">
+                741116327@qq.com
+            </p>
+        </div>
+    </div>
+</div>
+<ul class="stui-extra clearfix">
+    <li><a class="backtop" href="javascript:scroll(0,0)" style="display: none;"><i class="icon iconfont icon-less"></i></a>
+    </li>
+    <li title="点击交流" alt="点击交流"><a target="_blank" href="#" class="open-share"><i class="icon iconfont icon-smile"></i></a>
+    </li>
+    <!--<li class="hidden-xs" title="微信公众号" alt="微信公众号"><span><i class="icon iconfont icon-qrcode"></i></span>
+    <div class="sideslip">
+        <div class="col-pd">
+            <p>
+                <img title="二维码" alt="二维码" src="http://186.kk3199.cn/template/mobile/video_1/images/weixin.png" width="180" height="180"/>
+            </p>
+            <p class="text-center font-12">
+                微信扫码快捷搜索
+            </p>
+        </div>
+    </div>
+    </li>-->
+
+    <li><a href="#" title="留言" alt="留言"><i class="icon iconfont icon-comments"></i></a></li>
+</ul>
+<div class="hide">
+    <script src="https://s4.cnzz.com/z_stat.php?id=5923995&web_id=5923995" language="JavaScript"></script>
+</div>
+<script type="text/javascript" charset="utf-8">
+    window._bd_share_config = {
+        common: {
+            bdText: '',
+            bdDesc: '',
+            bdUrl: '',
+            bdPic: ''
+        },
+        share: [{
+            "bdSize": 24,
+            bdCustomStyle: '/static/uyvideo/css/default.css'
+        }]
+    }
+    with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+{% block js %}  {% endblock %}
+</body>
+</html>

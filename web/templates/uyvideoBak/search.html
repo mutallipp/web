@@ -1,0 +1,47 @@
+{% extends 'uyvideo/base.html' %}
+
+
+{% block header %}
+<!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<div class="tur_box">
+    <div class="title">
+        {% if vids_list %}
+
+        <p><span>ئىزدەش نەتىجىسى {{ length }} دانە </span></p>
+        {% else  %}
+         <p><span> ئىزدەش نەتىجىسى  0  دانە </span></p>
+        {% endif %}
+        <p></p>
+    </div>
+
+    {% for v in vids_list %}
+
+
+            <div class="tur_list">
+            <a href="/uyvideo/play/?id={{ v.id }}">
+                <div class="img"><img class="lazy" src="{{ v.image_url }}" style="display: block;"></div>
+                <div class="list_title">{{ v.title }}</div>
+            </a>
+        </div>
+{% endfor %}
+
+{% endblock %}

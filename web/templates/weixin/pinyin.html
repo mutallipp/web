@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى</title>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link href="http://altun.gz01.bdysite.com/sumrugh/css/css.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://altun.gz01.bdysite.com/sumrugh/js/zepto.min.js"></script>
+    <script type="text/javascript" src="http://altun.gz01.bdysite.com/sumrugh/js/tips_mob_public.js"></script>
+    <script type="text/javascript">
+        var slider_status = true;
+        var slider;
+        $(document).ready(function () {
+            $(".convert").each(function (i) {
+                $(this).html(convertThisText($(this).html()));
+            });
+            slider = $("#slider_slider").slider({
+                change: function (e) {
+                    if (e == 1) {
+                        $("#footpanel").hide();
+                    } else {
+                        $("#footpanel").show();
+                    }
+                    document.body.scrollTop = 0;
+                    /* return toop */ //console.log(e);
+                }, maxWidth: "100%", minWidth: "100%", className: "slider_1", menu_hover: "ok", menu_ul: "menus",
+                list_map: "slider_map", list_hover: "slider_hover", list_warp: "slider_warp", return_first: true
+            });
+            $("#thumbList").on("touchmove", function (event) {
+                slider_status = false;
+            });
+            change_download_toolbar();
+            setTimeout(change_download_toolbar, 2000);
+
+        });
+        /* click_f943c30c96f2d901aacdbbe3555785ab_010444 */
+        $(window).resize(function () {
+            change_download_toolbar();
+            slider.tab_index(0);
+        });
+        function likes_count(md5) {
+            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>ھۆرمەتلىك قېرىندىشىم! ياخشى نەرسىدىن تەڭ بەھىرلىنەيلى، باشقا دوستلارغىمۇ يوللاپ قويسىڭىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+        }
+        function likes_count2(md5) {
+            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>ھۆرمەتلىك قېرىندىشىم، مەزكۇر ئەپنى 2 توپقا ۋە چەمبىرەككە يوللاپ قويسىڭىزلا ئاپتوماتىك چۈشىدۇ<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+        }
+    </script>
+{#    <script type="text/javascript">#}
+{#        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器#}
+{#        var useragent = navigator.userAgent;#}
+{#        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {#}
+{#            // 这里警告框会阻塞当前页面继续加载#}
+{#            // 以下代码是用javascript强行关闭当前页面#}
+{#            var opened = window.open('http://mp.weixin.qq.com/', '_self');#}
+{#            opened.opener = null;#}
+{#        }#}
+{#    </script>#}
+</head>
+
+<body class="PC">
+<script type="text/javascript"
+        src='http://res.wx.qq.com/open/http://altun.gz01.bdysite.com/sumrugh/js/jweixin-1.0.0.js'></script>
+<script>
+    /*
+     *Ziminjan tuzup qikkan bat
+     *haligan qa kalaymikan koqurmang
+     */
+    var pyq = 0;
+    var dos = 0;
+    /////////////////////////
+    wx.config({
+        debug: false,
+        appId: 'wxe71765df6e8f2333',
+        timestamp: 1542794081,
+        nonceStr: 'Nnx9Aiaig844RUqh',
+        signature: '4f53df2b0715944e3f260674bdaa7cded06bf767',
+        jsApiList: [
+
+            "onMenuShareTimeline",
+
+            "onMenuShareAppMessage",
+
+            "hideMenuItems"
+
+        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+    });
+
+    wx.ready(function () {
+
+        wx.hideMenuItems({
+
+            menuList: [
+
+                'menuItem:copyUrl',
+
+
+            ]
+
+        });
+
+
+        var wxData = {
+            appId: 'wx0f32dfb19cd2adf9', // 分享标题
+            title: 'خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى', // 分享标题
+            desc: 'خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى', // 分享描述
+            link: 'http://app.7333ah.cn/sumrugh/wx/?id=31', // 分享链接
+            imgUrl: 'https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=445855e3d4c451daf6f60bed8ec6355b/3b87e950352ac65c4fb5abcef2f2b21192138adf.jpg',
+        };
+
+        var str_mp = "http://sj.qq.com/myapp/detail.htm?apkName=com.kapp.ifont";//关注的链接，跳转的链接
+
+        wx.ready(function () {
+            // 2. 分享接口
+            // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+            wx.onMenuShareAppMessage({
+                title: wxData.title,
+                desc: wxData.desc,
+                link: wxData.link,
+                imgUrl: wxData.imgUrl,
+                success: function () {
+                    dos = dos + 1;
+                    if (pyq == 1 && dos == 2) {
+                        location.href = str_mp
+                    } else {
+                        if (pyq < 1 && dos < 2) {
+                            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>سىزگە كۆپتىن كۆپ رەھمەت قېرىندىشىم! ئەپنى يەنە " + (parseInt(2) - parseInt(dos)) + " توپقا ۋە دوستلار چەمبىرىكىگە يوللاڭ<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                        }
+                        if (pyq >= 1 && dos < 2) {
+                            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>سىزگە كۆپتىن كۆپ رەھمەت قېرىندىشىم! ئەپنى يەنە " + (parseInt(2) - parseInt(dos)) + " توپقا يوللىسىڭىزلا چۈشۈرەلەيسىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                        }
+                        if (dos >= 2 && pyq < 1) {
+                            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>قوللىغىنىڭىزغا كۆپتىن كۆپ رەھمەت قېرىندىشىم! ئەمدى چەمبىرەككە چىقارسىڭىزلا چۈشۈرەلەيسىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                        }
+                    }
+                },
+                cancel: function () {
+                    tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>ھۆرمەتلىك قېرىندىشىم! ياخشى نەرسىدىن تەڭ بەھىرلىنەيلى، باشقا دوستلارغىمۇ يوللاپ قويسىڭىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                }
+            });
+            wx.onMenuShareTimeline({
+                title: wxData.title,
+                desc: wxData.desc,
+                link: wxData.link,
+                imgUrl: wxData.imgUrl,
+
+                success: function () {
+                    pyq = 1;
+                    if (pyq >= 1 && dos >= 2) {
+                        location.href = str_mp
+                    } else {
+                        if (pyq >= 1 && dos < 2) {
+                            tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>سىزگە كۆپتىن كۆپ رەھمەت قېرىندىشىم! ئەپنى يەنە " + (parseInt(2) - parseInt(dos)) + " توپقا يوللىسىڭىزلا چۈشۈرەلەيسىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                        }
+                    }
+                },
+                cancel: function () {
+                    tips_Win("ئەسكەرتىش كۆزنىكى", "text:<div style=\"line-height:40px;\"><br>ھۆرمەتلىك قېرىندىشىم! ياخشى نەرسىدىن تەڭ بەھىرلىنەيلى، باشقا دوستلارغىمۇ يوللاپ قويسىڭىز<br><input type=\"button\" onclick=\"tips_Win_colse()\" name=\"button\" id=\"button\" value=\" كۆزنەكنى تاقاش \"></div>", "280", "180", "true", "", "true", "text");
+                }
+
+            });
+
+        });
+
+        wx.onMenuShareTimeline(shareData);
+        wx.onMenuShareAppMessage(shareData);
+
+
+    });
+
+
+    wx.error(function (res) {
+        alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+    });
+</script>
+<div class="div_c" id="header">
+    <div class="otkax convert">سەرۋان سالونى - ئەپ چۈشۈرۈش مەركىزى</div>
+</div>
+
+
+<div id="slider_slider" class="slider_1">
+
+    <ul class="menus">
+        <li class="ok convert">ئەپ تەپسىلاتى</li>
+        <li class="convert">مۇناسىۋەتلىك ئەپلەر</li>
+    </ul>
+
+    <div class="slider_map slider_hover">
+        <div class="view_body slider_warp">
+            <div class="div_c uqur_view div_clear siyril shadow">
+
+                <div class="ico"><img
+                        src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=445855e3d4c451daf6f60bed8ec6355b/3b87e950352ac65c4fb5abcef2f2b21192138adf.jpg">
+                </div>
+                <div class="div_a tima convert">خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى<em>(3.0)</em></div>
+                <div class="div_a infos"><span>2017-12-11</span>
+                    <span class="convert"><em>108777</em> قېتىم چۈشۈرۈلدى</span></div>
+                <div class="div_a desc"><span class="convert">تىلى : </span>
+                    <span class="convert">تۈرى : خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى</span></div>
+                <div class="div_a info convert">خەنزۇچە خەت ئۈستىگە پىنيىن چېقىرىش دىتالى</div>
+            </div><!--uqur_view-->
+
+
+            <div id="diagram" class="shadow div_clear">
+                <!--w-->
+                <div class="col-left">
+
+                    <div class="div_c software-img" id="thumbList">
+                        <img src="http://pp.myapp.com/ma_pic2/0/shot_209260_1_1508118345/550" alt="قىززىق سالونى"> <img
+                            src="http://pp.myapp.com/ma_pic2/0/shot_209260_2_1508118345/550" alt="قىززىق سالونى"> <img
+                            src="http://pp.myapp.com/ma_pic2/0/shot_209260_4_1508118345/550" alt="قىززىق سالونى"></div>
+                    <!--thumbList-->
+                </div>
+                <!--w-->
+                <div class="div_a clear5"></div>
+            </div>
+            <div id="Explain" class="shadow div_clear siyril">
+                <div class="Content convert">ناھايتى ئاسان</div>
+            </div>
+
+            <div id="Explain" class="shadow div_c div_clear siyril">
+                <div class="div_c title div_clear convert">بۇ نەشىردىكى يېڭىلىقلار</div>
+                <div class="Content convert">ئىشلىتىش ئىنتايىن ئاددىي ھەم قۇلايلىق،</div>
+            </div>
+
+            <div id="Explain" class="shadow div_clear tordax_down siyril">
+                <div class="title div_c convert">تورداشلار يەنە بۇ ئەپلەرنىمۇ چۈشۈرۋاتىدۇ</div>
+                <div class="Content div_c">
+                    <ul class="galleryinner">
+                        <li class="tord panel">
+
+                            <a class="pic" href="?id=104" target="_blank"><img
+                                    src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=476756010,145957599&fm=27&gp=0.jpg"
+                                    alt="سالونلاردىكى ناخشا، سۈرەتلىك فىلىملەرنى چۈشۈرۈش "><br/>
+                                <h1 class="convert">سالونلاردىكى ناخشا، سۈرەتلىك فىلىملەرنى چۈشۈرۈش دېتالى</h1></a>
+
+
+                            <a class="pic" href="?id=102" target="_blank"><img
+                                    src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                    alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"><br/>
+                                <h1 class="convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</h1></a>
+
+
+                            <a class="pic" href="?id=101" target="_blank"><img
+                                    src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                    alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"><br/>
+                                <h1 class="convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</h1></a>
+
+
+                            <a class="pic" href="?id=99" target="_blank"><img
+                                    src="http://pp.myapp.com/ma_icon/0/icon_12225000_1513663965/96"
+                                    alt="ئەڭ قالتىس رەسىم كىرىشتۈرۈش دېتالىنى چۈشۈرۋېلىڭ"><br/>
+                                <h1 class="convert">ئەڭ قالتىس رەسىم كىرىشتۈرۈش دېتالىنى چۈشۈرۋېلىڭ</h1></a>
+
+
+                            <a class="pic" href="?id=98" target="_blank"><img
+                                    src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509971415301&di=4b781efa2418a303c0ba859d4c5ac6e2&imgtype=0&src=http%3A%2F%2Fpic.92to.com%2F201708%2F12%2F108257359_2.jpg"
+                                    alt="نادىر كىنولارنى چۈشۈرۈش ھەم تورسىزشارايىتتا كۆرۈش"><br/>
+                                <h1 class="convert">نادىر كىنولارنى چۈشۈرۈش ھەم تورسىزشارايىتتا كۆرۈش</h1></a>
+
+
+                            <a class="pic" href="?id=97" target="_blank"><img
+                                    src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1423635706,2340940224&fm=200&gp=0.jpg"
+                                    alt="نامىڭىزداقانچە تال يانفۇن كارتىسى بارلىغىنى بىلەمسىز؟تەكشۈرۋېلىڭ"><br/>
+                                <h1 class="convert">نامىڭىزداقانچە تال يانفۇن كارتىسى بارلىغىنى
+                                    بىلەمسىز؟تەكشۈرۋېلىڭ</h1></a>
+
+
+                            <a class="pic" href="?id=96" target="_blank"><img
+                                    src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513107675460&di=cd762df5976d4a17da6a71d5d1d0c312&imgtype=0&src=http%3A%2F%2Fwww.wifigx.com%2Fuploadfile%2F2014%2F0212%2F20140212114324477.jpg"
+                                    alt="ھەر قانداق سىمسىز تورنىڭ مەخپى نومۇرنى يىشىش دېتالى"><br/>
+                                <h1 class="convert">ھەر قانداق سىمسىز تورنىڭ مەخپى نومۇرنى يىشىش دېتالى</h1></a>
+
+
+                            <a class="pic" href="?id=95" target="_blank"><img
+                                    src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                    alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"><br/>
+                                <h1 class="convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</h1></a>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+            <div class="div_c clear5"></div>
+
+
+        </div><!--view_body-->
+
+
+        <div class="siyril slider_warp">
+
+            <div class="mlist"><a class="url" href="?id=104" target="_blank"></a>
+                <div class="down"><a href="?id=104" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">سالونلاردىكى ناخشا، سۈرەتلىك فىلىملەرنى چۈشۈرۈش</div>
+                <div class="ico"><img
+                        src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=476756010,145957599&fm=27&gp=0.jpg"
+                        alt="سالونلاردىكى ناخشا، سۈرەتلىك فىلىملەرنى چۈشۈرۈش "></div>
+                <div class="div_a tima convert">سالونلاردىكى ناخشا، سۈرەتلىك فىلىملەرنى چۈشۈرۈش دېتالى<em>(1.3)</em>
+                </div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">14791 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=102" target="_blank"></a>
+                <div class="down"><a href="?id=102" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</div>
+                <div class="ico"><img src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                      alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"></div>
+                <div class="div_a tima convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ<em>(3.0)</em>
+                </div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">17904 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=101" target="_blank"></a>
+                <div class="down"><a href="?id=101" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</div>
+                <div class="ico"><img src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                      alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"></div>
+                <div class="div_a tima convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ<em>(3.0)</em>
+                </div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">15843 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=99" target="_blank"></a>
+                <div class="down"><a href="?id=99" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">ئەڭ قالتىس رەسىم كىرىشتۈرۈش دېتالىنى چۈشۈرۋېلىڭ</div>
+                <div class="ico"><img src="http://pp.myapp.com/ma_icon/0/icon_12225000_1513663965/96"
+                                      alt="ئەڭ قالتىس رەسىم كىرىشتۈرۈش دېتالىنى چۈشۈرۋېلىڭ"></div>
+                <div class="div_a tima convert">ئەڭ قالتىس رەسىم كىرىشتۈرۈش دېتالىنى چۈشۈرۋېلىڭ<em>(3.0)</em></div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">60660 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=98" target="_blank"></a>
+                <div class="down"><a href="?id=98" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">نادىر كىنولارنى چۈشۈرۈش ھەم تورسىزشارايىتتا كۆرۈش</div>
+                <div class="ico"><img
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509971415301&di=4b781efa2418a303c0ba859d4c5ac6e2&imgtype=0&src=http%3A%2F%2Fpic.92to.com%2F201708%2F12%2F108257359_2.jpg"
+                        alt="نادىر كىنولارنى چۈشۈرۈش ھەم تورسىزشارايىتتا كۆرۈش"></div>
+                <div class="div_a tima convert">نادىر كىنولارنى چۈشۈرۈش ھەم تورسىزشارايىتتا كۆرۈش<em>(3.0)</em></div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh//til_1.jpg"></span>
+                    <span class="convert">20869 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=97" target="_blank"></a>
+                <div class="down"><a href="?id=97" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">نامىڭىزداقانچە تال يانفۇن كارتىسى بارلىغىنى بىلەمسىز؟تەكشۈرۋېلىڭ</div>
+                <div class="ico"><img
+                        src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1423635706,2340940224&fm=200&gp=0.jpg"
+                        alt="نامىڭىزداقانچە تال يانفۇن كارتىسى بارلىغىنى بىلەمسىز؟تەكشۈرۋېلىڭ"></div>
+                <div class="div_a tima convert">نامىڭىزداقانچە تال يانفۇن كارتىسى بارلىغىنى بىلەمسىز؟تەكشۈرۋېلىڭ<em>(3.0)</em>
+                </div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">53323 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=96" target="_blank"></a>
+                <div class="down"><a href="?id=96" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">ھەر قانداق سىمسىز تورنىڭ مەخپى نومۇرنى يىشىش دېتالى</div>
+                <div class="ico"><img
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513107675460&di=cd762df5976d4a17da6a71d5d1d0c312&imgtype=0&src=http%3A%2F%2Fwww.wifigx.com%2Fuploadfile%2F2014%2F0212%2F20140212114324477.jpg"
+                        alt="ھەر قانداق سىمسىز تورنىڭ مەخپى نومۇرنى يىشىش دېتالى"></div>
+                <div class="div_a tima convert">ھەر قانداق سىمسىز تورنىڭ مەخپى نومۇرنى يىشىش دېتالى<em>(4.2)</em></div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">4127201 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+            <div class="mlist"><a class="url" href="?id=95" target="_blank"></a>
+                <div class="down"><a href="?id=95" target="_blank" class="convert">چۈشۈرۈش</a></div>
+                <div class="div_a info convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ</div>
+                <div class="ico"><img src="http://pp.myapp.com/ma_icon/0/icon_52452633_1521204302/96"
+                                      alt="پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ"></div>
+                <div class="div_a tima convert">پىراۋا 2 - تۈر ۋە 3 - تۈر ئىمتھانىنىمۇ تېلفۇندا ئۆگۈنۈڭ<em>(3.0)</em>
+                </div>
+                <div class="div_a desc"><span><img src="http://altun.gz01.bdysite.com/sumrugh/css/til_1.jpg"></span>
+                    <span class="convert">12826 قېتىم چۈشۈرۈلگەن</span><span></span></div>
+            </div>
+            <div class="clear1"></div>
+
+
+        </div><!--koxolma_body-->
+
+    </div><!--map-->
+
+</div>
+
+<div id="footpanel">
+    <div id="download">
+        <div class="down">
+            <a href="javascript:void(0)" onclick="likes_count('fHAUjMFJFj2ioSUi')" target="_top" class="ts1"></a>
+            <a href="javascript:void(0)" onclick="likes_count2('fHAUjMFJFj2ioSUi')" class="ts2 convert">تېز سۆرەتتە
+                چۈشۈرۈش</a>
+            <a href="javascript:void(0)" onclick="likes_count('fHAUjMFJFj2ioSUi')" target="_top" class="ts3"></a>
+        </div>
+    </div>
+</div><!--footpanel-->
+
+<div style="display: none;">
+
+    <div class="grid-music-container f-usn">
+        <div class="m-music-play-wrap">
+            <div class="u-cover play"><img src="6/icon.png"></div>
+            <div class="m-now-info">
+                <strong class="soft-name"></strong>
+                <h3 class="u-music-title"></h3>
+                <div class="m-now-controls">
+                    <div class="u-control u-process">
+                        <span class="buffer-process" style="width: 68.7598px;"></span>
+                        <span class="current-process" style="width: 65.0977px;"></span>
+                    </div>
+                    <div class="u-control u-time">00:04/00:28</div>
+                    <div class="u-control u-volume">
+                        <div class="volume-process" data-volume="0.7">
+                            <span class="volume-current" style="height: 35px;"></span>
+                            <span class="volume-bar" style="bottom: 35px;"></span>
+                            <span class="volume-event"></span>
+                        </div>
+                        <a class="volume-control"></a>
+                    </div>
+                </div>
+                <div class="m-play-controls">
+                    <a class="u-play-btn prev" title="上一曲"></a>
+                    <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                    <a class="u-play-btn next" title="下一曲"></a>
+                    <a class="u-play-btn mode mode-list current" title="列表循环"></a>
+                    <a class="u-play-btn mode mode-random" title="随机播放"></a>
+                    <a class="u-play-btn mode mode-single" title="单曲循环"></a>
+                </div>
+            </div>
+        </div>
+        <div class="f-cb">&nbsp;</div>
+        <div class="m-music-list-wrap"></div>
+    </div>
+    <script type="text/javascript" src="http://altun.gz01.bdysite.com/sumrugh/js/smusic.min.js"></script>
+    <script type="text/javascript">
+        var musicList = [
+            {
+                title: 'چەمبىرەككە',
+                singer: 'يوللاڭ',
+                cover: 'http://app.vipmp3.cn/New05/icon.jpg',
+                src: 'http://tools.vipmp3.cn/awaz2.mp3'
+            },
+            {
+                title: 'ئازراق ساقلىسىڭىزلا',
+                singer: 'چۈشۈرۈش بېتىگە ئاتلايدۇ',
+                cover: 'http://app.vipmp3.cn/New05/icon.jpg',
+                src: 'http://tools.vipmp3.cn/awaz3.mp3'
+            },
+
+        ];
+        new SMusic({
+            musicList: musicList
+        });
+    </script>
+
+</div>
+</body>
+</html>

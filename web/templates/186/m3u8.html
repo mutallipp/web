@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<title>m3u8视频解析</title>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<div align="center">
+
+    <head>
+
+        <style type="text/css">body, html, div {
+            background-color: black;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }</style>
+
+    </head>
+
+    <body marginwidth="0" marginheight="0">
+
+    <div id="a1"></div>
+
+    <script type="text/javascript" src="/static/186/ckplayer/ckplayer.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+
+        var flashvars = {
+
+            f: '/static/186/ckplayer/m3u8.swf',
+
+            a: '{{ video_url }}',
+
+            s: 4,
+
+            c: 0,
+
+            p: 1,
+
+            lv: 0
+        }
+
+        var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always'};
+
+        var video = ['{{ video_url }}'];
+
+        CKobject.embed('/static/186/ckplayer/ckplayer.swf', 'a1', 'ckplayer_a1', '100%', '100%', false, flashvars, video, params);
+
+    </script>
+
+    <div style="display:none">
+
+        <script src="/static/186/ckplayer/m3u8.js" language="JavaScript"></script>
+
+    </div>
+
+    </body>
+
+</html>
+

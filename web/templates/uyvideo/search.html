@@ -1,0 +1,49 @@
+{% extends 'uyvideo/base.html' %}
+{{ length }}
+{% block header %}
+        <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+{% endblock %}
+{% block lable %}
+    {% if vids_list %}
+
+        <a class="more text-muted pull-right" href="#"> ئىزدەش نەتىجىسى {{ length }} دانە <i
+                class="icon iconfont icon-more"></i></a>
+        <h3 class="title"><img src="/static/uyvideo/images/icon/icon_1.png"/><a
+                href="/uyvideo/index/">كىنو</a></h3>
+    {% else %}
+        <a class="more text-muted pull-right" href="#"> ئىزدەش نەتىجىسى 0 دانە<i
+                class="icon iconfont icon-more"></i></a>
+        <h3 class="title"><img src="/static/uyvideo/images/icon/icon_1.png"/><a
+                href="/uyvideo/index/">كىنو</a></h3>
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% for v in vids_list %}
+        <div class="tur_list" style="dis">
+            <a href="/uyvideo/play/?id={{ v.id }}">
+                <div class="img"><img class="lazy" src="{{ v.image_url }}"></div>
+                <div class="list_title">{{ v.title }}</div>
+            </a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,790 @@
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Sat, 05 Jan 2019 10:58:46 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+X-Powered-By: PHP/7.0.32
+Set-Cookie: PHPSESSID=9c119dc877cec038b9e9cda3df0a0de7; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Set-Cookie: 8b92_logout=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; secure
+Content-Length: 31594
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../addons/uzchi/static/js/dist/foxui/css/foxui.min.css?v=20181222123807">
+    <link rel="stylesheet" type="text/css" href="../addons/uzchi/template/mobile/default/static/css/style.css?v=20181222123807">
+    <link rel="stylesheet" type="text/css" href="../addons/uzchi/static/fonts/iconfont.css?v=20181222123807">
+    <script src="./resource/js/lib/jquery-1.11.1.min.js"></script>
+    <script src='//res.wx.qq.com/open/js/jweixin-1.1.0.js'></script>
+    <script src="../addons/uzchi/static/js/require.js?v=20181222123807"></script>
+    <script src="../addons/uzchi/static/js/config.js?v=20181222123807"></script>
+    <script language="javascript">require(['core'],function(modal){
+        modal.init({
+            siteUrl: "https://wx.km3v.cn/",
+            baseUrl: "./index.php?i=12&c=entry&m=uzchi&do=mobile&mod=ROUTES&mid=686380",
+            ad_Url:"https://wx.km3v.cn/app/index.php?i=12&c=entry&m=uzchi&do=mobile&mod=ad&mid=686380"
+        })
+    });
+    </script>
+
+</head>
+<body ontouchstart>
+<div class='fui-page-group '><style>
+    .jw-title-primary.jw-reset{
+        font-family:"UKIJ Tor";
+        direction:rtl; font-size:16px !important;
+        padding: 10px;
+    width:100%;
+    }
+    .jw-state-idle .jw-controls{ background:none !important}
+    .jwplayer .jw-preview, .jw-error .jw-preview{ background-size:cover;}
+    .jw-text{ font-weight:normal; font-family:UKIJ Tor !important; direction:rtl}
+    .jw-text-elapsed, .jw-text-duration{ direction:ltr !important}
+    .posterbg{
+
+    }
+    .share-btn{
+        left:20%;
+        position: absolute;
+        bottom: 5px;
+        width:60%;
+        line-height: 44px;
+        border-radius: 22px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        direction: rtl;
+        background-color:#F11519;
+    }
+  .message>.vheader{
+display: block;
+    padding: 10px;
+  background-color:#ffe1b5;
+    padding-bottom: 10px;
+    margin: 5px 0;
+  }
+    .message>.vbody{
+      height: 40px;
+    padding: 5px 0;
+    }
+</style>
+<div class='fui-page fui-page-current  page-video-player ' id='page-video-player-index'>
+<div class="fui-content basic-block ">
+    <div class="video-player">
+        <div id="video-loader" class="dots-loading">
+            <div class="dot dot-a"></div>
+            <div class="dot dot-b"></div>
+            <div class="dot dot-c"></div>
+            <div class="dot dot-d"></div>
+        </div>
+        <div class="posterbg">
+            <span class="poster_mask_a mask_a"></span>
+            <span class="poster_mask_b mask_b"></span>
+            <div class="player-vip"></div>
+        </div>
+        <div id="mediaPlayer"></div>
+    </div>
+
+        <div class="video-info">
+           <div class="info-title"> ئازىراق ساقلاڭ</div>
+             <div class="info-like">
+              <span class="like-yes"><em id="no">0</em></span>
+              <span class="views"><em id="no">0</em></span>
+           </div>
+        </div>
+    <div class="player-page" style="display:none">
+        <div class="player-page-title">
+            <span class="pull-right">فىلىم قىسىملىرى</span>
+            <div class="pull-left">ئوڭ سولغا سىيرىڭىز بولىدۇ</div>
+        </div>
+        <div class="player-list">
+            <div class="player-list-box"></div>
+        </div>
+    </div>
+
+    <div class="message" id="message"></div>
+    <div style=" padding-top:10px; padding-left:10px; padding-right:10px; clear:both">
+      <img src="/ad.jpg?v=20181210" style="width:100%; height:auto">
+     </div>
+
+    <!--<div class="fui-list-group comment">-->
+        <!--<div class="fui-list-group-title">-->
+            <!--<span class="comment-title"><i class="icon icon-comment"></i> ئىنكاس</span>-->
+            <!--<span class="comment-add btn btn-sm btn-danger-o pull-left">-->
+          <!--<i class="icon icon-add"></i> ئىنكاس يېزىش</span>-->
+        <!--</div>-->
+        <!--<div class='comment-block' data-getcount='1' id='comments-list-container'>-->
+            <!--<div class='content-empty' static='display:none;'>-->
+                <!--<i class='icon icon-community'></i><br/>ۋاقتىنچە ئىنكاس يوق-->
+            <!--</div>-->
+            <!--<div class='container' id="comments-all"></div>-->
+            <!--<div class='infinite-loading'><span class='fui-preloader'></span><span class='text'>يۈكلىنىۋاتىدۇ...</span></div>-->
+        <!--</div>-->
+    <!--</div>-->
+        <div class="related">
+        <div class="videos-group-hd">
+            <div class="videos-group-title">مۇناسىۋەتلىك فىلىملەر</div>
+        </div>
+        <ul class="videos-group  block border">
+                        <li class="videos-item" data-videoid="28328" data-type="1">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/7d5008b0bf7933a7dbc1ed2e2f9795f2.jpg?imageView2/2/w/400">
+                                                                        <span class="figure_mask"><em class="mask_txt">جەمئىي 2 قىسىم</em></span>
+                                                <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">2396</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">ھىندىستانلىق لى شياۋلۇڭ</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28295" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/ee543297071ac406ca4821c8bc5d7b2d.jpg?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">711</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">قىزىل يوپۇرماق</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28322" data-type="1">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/59334981a0327cd71aa327e4229a14fb.jpg?imageView2/2/w/400">
+                                                                        <span class="figure_mask"><em class="mask_txt">جەمئىي 4 قىسىم</em></span>
+                                                <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">1354</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">قىساس يولى</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28059" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/fbaf84fd11b9c0262f9ff1fe10f1ac0d.jpg?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">8786</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">ھايات - ماماتلىق مۇسابىقىسى (3)</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28227" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/db7318b4de4be3071af5aec0408f262c.jpg?imageView2/2/w/400">
+                                                <span class="isvip">vip</span>
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">715</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">ئالاۋىدىن</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="27579" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/711564fe02f1b11b56ed6ad8eb2a7a49.png?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">3511</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">باش پەللە</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28281" data-type="1">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/ebbb4005bdfac9ee83d750f33f15fa83.jpg?imageView2/2/w/400">
+                                                                        <span class="figure_mask"><em class="mask_txt">جەمئىي 2 قىسىم</em></span>
+                                                <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">1435</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">شەھىدەنىڭ سەرگۈزەشتىلىرى</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28275" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/92e073a2b9c8aa92f866f91f333718d9.jpg?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">824</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">ئانىنىڭ قىساسى</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28278" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/c14112d1e8eb6297f43f6323f8fbbee5.jpg?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">395</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">تۇرمۇشنى سۆي</div>
+                    </div>
+                </a>
+            </li>
+                        <li class="videos-item" data-videoid="28220" data-type="2">
+                <a class="video-links" data-nocache='false'>
+                    <div class="image" data-lazy-background="http://cdn.uzchi.com/02021036e489a3fe11c8a540376ec96b.jpg?imageView2/2/w/400">
+                                                                        <div class="view-count">
+                        <div class="views">
+                            <span class="text"></span>
+                            <span class="num">4327</span>
+                        </div>
+                        <div class="comment">
+                            <span class="bg-icon"></span>
+                            <span class="num">0</span>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="name">بۇ يىللىق فىلىم Dassehra</div>
+                    </div>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div class="fui-navbar bottom-buttons">
+    <a href="./index.php?i=12&c=entry&m=uzchi&do=mobile&mid=686380" class="nav-item">
+        <span class="icon icon-home"></span>
+        <span class="label">باشبەت</span>
+    </a>
+    <a  class="nav-item favorite-item " data-isfavorite="0">
+        <span class="icon icon-like"></span>
+        <span class="label" >ساقلىۋېلىش</span>
+    </a>
+    <a  class="nav-item external" href="./index.php?i=12&c=entry&m=uzchi&do=mobile&mod=member.vip&mid=686380">
+        <span class="icon icon-vip"></span>
+        <span class="label" >ئاچقۇزۇش VIP</span>
+    </a>
+    <a  class="nav-item external" href="./index.php?i=12&c=entry&m=uzchi&do=mobile&mod=member&mid=686380">
+        <span class="icon icon-person2"></span>
+        <span class="label" >مەن</span>
+    </a>
+</div>
+
+
+<!--page end-->
+</div>
+<script id="tpl_getcomment" type="text/html">
+  <div class="fui-list-group" style=" background-color:#f7f7f7">
+    <div class="fui-list-group-title">
+    <span class="pull-right"><i class="icon icon-comment"></i> ئىنكاس يېزىش</span>
+    <span class="pull-left" id="close"> <i class="icon icon-guanbi1"></i></span>
+  </div>
+     <div class="comment-from">
+      <textarea id="comment_txt" dir="rtl" class="txt"></textarea>
+    <div class="fui-list">
+      <div class="fui-list-inner">
+        <div class="text">پەقەت بىر قېتىملا ئىنكاس يازغىلى بولىدۇ ، قايتا ئىنكاس يازالمايسىز</div>
+      </div>
+    </div>
+    <a class="btn btn-danger block" id="comment_add">تاپشۇرۇش</a>
+   </div>
+  </div>
+</script>
+<style type="text/css">
+    .option-picker{
+        padding-bottom:2.25rem
+    }
+    .picker-bulk .header {
+        height: 4.5rem;
+        padding: 0 0.6rem 0.3rem 0.6rem;
+    }
+    .picker-bulk .header .thumb {
+        height: 5rem;
+        width: 5rem;
+        background: #eee;
+        border-radius: 0.2rem;
+        position: absolute;
+        top: -0.8rem;
+        left: 0.7rem;
+    }
+    .picker-bulk .header .thumb img {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 0.2rem;
+    }
+    .picker-bulk .header .inner {
+        height: inherit;
+        padding: 0.8rem 1.7rem 0 5.5rem;
+    }
+    .picker-bulk .header .inner .title {
+        height: 1.8rem;
+        font-size: 0.75rem;
+        line-height: 0.9rem;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .picker-bulk .header .inner .price {
+        height: 1.5rem;
+        line-height: 2rem;
+        font-size: 0.9rem;
+        color: #ff5555;
+    }
+    .picker-bulk .header .inner .price small {
+        font-size: 0.5rem;
+    }
+    .picker-bulk .header .icon-guanbi1 {
+        color: #5d5d5d;
+        font-size: 1.4rem;
+        position: absolute;
+        top: 0.1rem;
+        right: 0.5rem;
+    }
+    .picker-bulk .header .icon-guanbi1:before {
+        font-weight: 100;
+    }
+    .picker-bulk .specs {
+        height: 2.35rem;
+        padding: 0 0.3rem;
+        font-size: 0.75rem;
+        color: #333;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f2f2f2;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .picker-bulk .specs .go-left,
+    .picker-bulk .specs .go-right {
+        height: 2.35rem;
+        line-height: 2.35rem;
+        color: #9e9e9e;
+    }
+    .picker-bulk .specs .inner {
+        padding: 0.6rem 0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    .picker-bulk .specs .inner .item {
+        width: 33.33%;
+        text-align: center;
+        float: left;
+        position: relative;
+    }
+    .picker-bulk .specs .inner .item:before {
+        content: "";
+        border-left: 2px solid #f3f3f3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .picker-bulk .specs .inner .item:first-child:before {
+        border: 0;
+    }
+    .picker-bulk .specs .inner .item.active:after {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid #ff5555;
+        width: 2rem;
+        left: 50%;
+        margin-left: -1rem;
+        bottom: -0.55rem;
+    }
+    .picker-bulk .specs .inner .item .dot {
+        position: absolute;
+        right: 0.25rem;
+        top: -0.25rem;
+        font-size: 0.5rem;
+        color: #fff;
+        background: #ff4444;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        border-radius: 0.8rem;
+        padding: 0 0.15rem;
+    }
+    .picker-bulk .body {
+        max-height: 11.8rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .picker-bulk .body .item {
+        height: 3.3rem;
+        padding: 0 0.6rem;
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .picker-bulk .body .item:before {
+        content: "";
+        position: absolute;
+        border-top: 1px solid #e3e3e3;
+        top: 0;
+        left: 0.6rem;
+        right: 0.6rem;
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+    .picker-bulk .body .item:first-child:before {
+        border: 0;
+    }
+    .picker-bulk .body .item .left {
+        width: 1%;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        line-height: 1rem;
+        font-size: 0.75rem;
+    }
+    .picker-bulk .body .item .left .title {
+        height: 1rem;
+        padding-right: 0.2rem;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .picker-bulk .body .item .left .price {
+        color: #999;
+        font-size: 0.65rem;
+        line-height: 0.65rem;
+        padding-bottom: 0.2rem;
+    }
+    .picker-bulk .body .item .right {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .picker-bulk .body .item .right .total {
+        color: #666;
+        font-size: 0.55rem;
+        padding-right: 0.4rem;
+    }
+    .picker-bulk .counts {
+        height: 2.2rem;
+        padding: 0.2rem 0.6rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+    }
+    .picker-bulk .counts:before {
+        content: "";
+        border-top: 1px solid #e6e6e6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+    .picker-bulk .counts .tip {
+        padding: 0.1rem 0.35rem;
+        border: 1px solid #ff5555;
+        color: #ff5555;
+        font-size: 0.55rem;
+        border-radius: 1rem;
+    }
+    .picker-bulk .counts .tip.size1 {
+        font-size: 0.5rem;
+    }
+    .picker-bulk .counts .tip.size2 {
+        font-size: 0.45rem;
+    }
+    .picker-bulk .counts .inner {
+        text-align: right;
+        font-size: 0.65rem;
+        line-height: 0.9rem;
+        color: #737373;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        vertical-align: bottom;
+    }
+    .picker-bulk .counts .inner .countprice {
+        color: #ff5555;
+        font-size: 0.8rem;
+        vertical-align: bottom;
+    }
+    .picker-bulk .counts .inner .countprice span {
+        font-size: 0.5rem;
+    }
+    .option-picker .fui-navbar .btn {
+        font-size: 0.85rem;
+    }
+    .fui-number {
+        height: 1.6rem;
+        width: 5.95rem;
+    }
+    .fui-number .minus,
+    .fui-number .plus {
+        width: 1.6rem;
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
+</style>
+
+<script type="text/html" id="option-payment">
+    <div class="option-picker">
+        <div class="option-picker-inner picker-bulk">
+            <div class="header">
+                <div class="thumb">
+                    <img src="<%video.thumb%>" />
+                </div>
+                <div class="inner">
+                    <div class="title"><%video.title%></div>
+                    <div class="price"><%if video.minprice>0%><small>￥</small><%video.minprice%>-<%/if%><small>￥</small><%video.maxprice%></div>
+                </div>
+                <i class="icon icon-guanbi1"></i>
+            </div>
+
+            <div class="counts">
+                <div class="tip size2" id="again"></div>
+                <div class="inner">
+                    <p  id="UnitPrice"></p>
+                    <p class="countprice">باھاسى : ￥<span id='totalprice'></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="fui-navbar">
+            <a href="javascript:;" class="nav-item btn buybtn"  style='display:none' >سېتىۋېلىشنى جەزىملەش</a>
+            <a href="javascript:;" class="nav-item btn confirmbtn"  style='display:none'>جەزىملەشتۈرۈش</a>
+        </div>
+    </div>
+</script><script type='text/html' id='tpl_video_comments_list'>
+    <div class="fui-cell-group fui-comment-group">
+        <%each list as comment%>
+        <div class="fui-cell">
+            <div class="fui-cell-text comment ">
+                <div class="info head">
+                    <div class='img'><img src='<%comment.headimgurl%>'/></div>
+                    <div class='nickname'><%comment.nickname%></div>
+                    <div class="date"><%comment.createtime%></div>
+                </div>
+                <div class="remark"><%comment.content%></div>
+                <%if comment.replychecked == 1%>
+                <div class="reply-content" style="background:#EDEDED;">جاۋاب:<%comment.reply_content%></div>
+                <%/if%>
+
+            </div>
+        </div>
+        <%/each%>
+    </div>
+</script>
+<div id="picker-download-modal" style="margin-bottom: -100%;display: none;">
+    <div class='picker-sales page-goods-detail'>
+        <div class="fui-cell-group fui-sale-group" style="margin-top:0;background: #f7f7f7;">
+            <div class="fui-cell-title text-center offic-share-info" style="margin:1rem 0;text-align: left;">
+                <div class="offic-step-copy">
+                    <p><i class="icon icon-roundcheckfill"></i>تەشۋىقات مەزمۇنىنى كۆچۈرۈش</p>
+                    <p><i class="icon icon-roundcheckfill"></i>رەسىمنى ئالبۇمغا ساقلاش</p>
+                </div>
+                <div class="offic-step-share">
+                    <p>دوستقا تەۋسىيە قىلىش</p>
+                </div>
+                <div class="offic-step-info">
+                    <p><i>1</i> <span>ئۈندىدار،مىكروبلوگنى ئىچىش</span></p>
+                    <p><i>2</i> <span>مەزمۇن چاپلاش،رەسىم يوللاش</span></p>
+                    <p><i>3</i> <span>يوللاش</span></p>
+                </div>
+            </div>
+
+            <div class="btn btn-default block officbtn" style="margin:0;border:none;background: #fff;">بولدى</div>
+        </div>
+    </div>
+</div>
+<div id="alert-picker">
+    <div id="alert-mask"></div>
+    <div class="alert-content">
+        <div class="alert" style="padding:0;">
+            <i class="alert-close alert-close1 icon icon-close"></i>
+            <div class="fui-list alert-header" style="-webkit-border-radius: 0.3rem;border-radius: 0.3rem;padding:0;">
+                <img width="100%" height="100%" class="alert-video-img" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .share-text1{text-align: center;padding:0.5rem 0.5rem 0;font-size:0.6rem;color:#666;line-height: 1rem;}
+    .share-text2{text-align: center;padding:0 0.5rem 0.5rem;font-size:0.6rem;color:#666;line-height: 1rem;}
+</style>
+<script language="javascript">
+    require(['biz/video/watch'], function (videoWatch) {
+        videoWatch.init({
+            video_id:28056,
+            playlist:"./index.php?i=12&c=entry&m=uzchi&do=mobile&mod=video.playlist&mid=686380",
+            attachurl_local:"https://wx.km3v.cn/attachment/",
+            attachurl_remote:"http://cdn.uzchi.com/",
+        });
+    });
+</script>
+
+<script language='javascript'>
+  $(function(){
+    $.getJSON("./index.php?i=12&c=entry&m=uzchi&do=mobile&mod=util.task&mid=686380");
+  })
+</script>
+
+<script language="javascript">
+    clearTimeout(window.interval);
+    window.interval = setTimeout(function () {
+        window.shareData = {"title":"2018 - \u064a\u0649\u0644\u0644\u0649\u0642 \u0626\u06d5\u06ad \u064a\u06d0\u06ad\u0649 \u0641\u0649\u0644\u0649\u0645 ZERO ( \u0632\u06d0\u0631\u0648 )","imgUrl":"http:\/\/cdn.uzchi.com\/3d214e1b948fdfa1e297831a460efb06.jpg","desc":"\u0626\u06c6\u0632 \u0626\u0627\u06cb\u0627\u0632 \u0645\u06d0\u062f\u0649\u064a\u0627 \u0642\u0627\u0646\u0649\u0644\u0649","link":"https:\/\/wx.km3v.cn\/app\/index.php?i=12&c=entry&m=uzchi&do=mobile&mod=video.watch&mid=686380&id=28056","data_url":"https:\/\/wx.km3v.cn\/app\/index.php?i=12&c=entry&m=uzchi&do=mobile&mid=686380","way":"core.getshare({share:1})","hideMenus":["menuItem:share:qq","menuItem:share:QZone","menuItem:share:email","menuItem:copyUrl","menuItem:openWithSafari","menuItem:openWithQQBrowser"]};
+        jssdkconfig = {"appId":"wxdc41ac21dc2a56d9","nonceStr":"LujFZN96l066Lzai","timestamp":"1546685926","signature":"d2a0221066342e42c1e1dd0de0b0d13cfab86062"} || { jsApiList:[] };
+        jssdkconfig.debug = false;
+        jssdkconfig.jsApiList = ['checkJsApi','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','showOptionMenu', 'hideMenuItems', 'onMenuShareQZone', 'scanQRCode','openLocation'];
+        wx.config(jssdkconfig);
+        wx.ready(function (e) {
+            wx.showOptionMenu();
+            window.shareData.success = "core.getshare({share:1})";
+            if(window.shareData.success){
+                var success = window.shareData.success;
+                window.shareData.success = function(){
+                    eval(success)
+                };
+            }
+            wx.onMenuShareAppMessage(window.shareData);
+            wx.onMenuShareTimeline(window.shareData);
+            wx.onMenuShareQQ(window.shareData);
+            wx.onMenuShareWeibo(window.shareData);
+            wx.onMenuShareQZone(window.shareData);
+        });
+    },500);
+</script>
+    <script>
+        var imgs = document.getElementsByTagName('img');
+        for (var i = 0, len = imgs.length; i < len; i++) {
+            imgs[i].onerror = function () {
+                if (!this.getAttribute('check-src') && (this.src.indexOf('http://') > -1 || this.src.indexOf('https://') > -1)) {
+                    this.src = this.src.indexOf('https://wx.km3v.cn/attachment/') == -1 ? this.src.replace('http://cdn.uzchi.com/', 'https://wx.km3v.cn/attachment/') : this.src.replace('https://wx.km3v.cn/attachment/', 'http://cdn.uzchi.com/');
+                    this.setAttribute('check-src', true);
+                }
+            }
+        }
+        ;</script>
+    <script type="text/javascript" src="https://wx.km3v.cn/app/index.php?i=12&c=utility&a=visit&do=showjs&m=uzchi"></script>
+</body>
+</html>

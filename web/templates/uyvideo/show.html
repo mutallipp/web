@@ -1,0 +1,108 @@
+{% extends 'uyvideo/base.html' %}
+{% block header %}
+     <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+    <title>{{ title }}</title>
+    <script type="text/javascript" src="/static/186/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/static/186/js/jweixin-1.0.0.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="stui-pannel stui-pannel-bg clearfix">
+                <div class="stui-pannel-box">
+                    <div class="stui-pannel-bd">
+                        <div class="stui-player">
+{#                            <script>setTimeout(function () {#}
+{#                                document.getElementById("test").style.display = "none";#}
+{#                            }, 8000);</script>#}
+{#                            <div id="test">#}
+{#                                <iframe id="buffer" src="/static/uyvideo/loding.html" frameborder="0" scrolling="no"#}
+{#                                        width="98%" height="100%" style="position: absolute; z-index: 99998;"></iframe>#}
+{#                            </div>#}
+{#                                    <div id="share_mask" style="display: none; height: 320px;background-color: black">#}
+{#                                        <img src="https://izqut.wxnet.cc/kino/img/pyq.png">#}
+{#                                        <img src="http://weixin.gcc921.cn//addons/iweite_vipvods/template/themes/images/fx.gif">#}
+{#                                        <p style="color: #ff9898; margin-bottom: 5px">ھەقسىز كۆرۈش ۋاقتىڭىز توشتى !</p>#}
+{#                                        <p style="font-size: 14px">بۇ فىلىمنى <span>چەمبىرەككە</span> يوللىغاندىن كىيىن كۆرەلەيسىز !</p>#}
+{#                                    </div>#}
+
+                            <div id="box" class="b" style="height:310px;">
+{#                                <iframe src="https://wx.remdp.com/ckplayer/m3u8.php?url={{ video_url }}"#}
+{#                                        marginwidth="0" marginheight="0" border="0" scrolling="no" frameborder="0"#}
+{#                                        topmargin="0" width="100%" height="100%"></iframe>#}
+                                {% include 'uyvideo/playm3u8.html' %}
+                            </div>
+                            <div class="stui-player__detail detail">
+
+                                <p class="data margin-0">
+                                    <span class="text-muted">354:</span><a href="">ئاۋاتلىقى</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 播放器-->
+            {#        <div>#}
+            {#          <script type="text/javascript" src="http://www.413143.net/template/mobile/skin02/js/gz.js"></script>#}
+            {#            <img src="http://yun.kanniuer.com/images/328228cb3d324500.jpg" width="96%" style="margin:0 1.8%">#}
+            {#          </div>#}
+
+            <script>
+                $('#tab_1,#play_1').addClass('active');
+                $('#p_1_1').css('color', 'red');
+            </script>
+            <!-- 播放列表-->
+
+            <div>
+                <script type="text/javascript" src="https://open.weixin.qq.com/qr/qrcode?username=muzika225"></script>
+            </div>
+            <div class="stui-pannel stui-pannel-bg clearfix">
+                <div class="stui-pannel-box">
+                    <div class="stui-pannel_hd">
+                        <div class="stui-pannel__head clearfix">
+                            <h3 class="title"><img
+                                    src="http://186.kk3199.cn/template/mobile/video_1/images/icon/icon_6.png"/>تەۋسىيە
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="stui-pannel_bd">
+                        <ul class="stui-vodlist__bd clearfix">
+{#                        推荐列表#}
+                            {% for v in like %}
+                                <div class="tur_list" style="dis">
+                                    <a href="/uyvideo/play/?id={{ v.id }}">
+                                        <div class="img"><img class="lazy" src="{{ v.image_url }}"></div>
+                                        <div class="list_title">{{ v.title }}</div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 猜你喜欢-->
+        </div>
+    </div>
+
+{% endblock %}
+

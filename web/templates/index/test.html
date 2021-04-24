@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ug">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>چۈشۈرۈش مەركىزى</title>
+
+    <meta name="viewport" content="#">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body dir="rtl" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false"
+      onselectstart="event.returnValue=false">
+<div class="box" id="ios" style="display: block;">
+    <img src="img/a.png">
+</div>
+<div class="box" id="ios">
+    <img src="img/ios.jpg">
+</div>
+
+<script type="text/javascript">
+
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+    window.onload = function () {
+        var div = document.getElementsByTagName('div');
+        // Epning Chushurush Adersi
+        var iosUrl = '';
+        var androidUrl = '';
+
+        if (isiOS && !isWeiXin()) {
+            location.href = iosUrl;
+        }
+
+        if (isAndroid && !isWeiXin()) {
+            location.href = androidUrl;
+        }
+
+        if (isWeiXin() && isAndroid) {
+            if (false == androidUrl) {
+                alert('مەزكۇر دېتالنىڭ ئاندروئىد نەشىرى يوقكەن');
+            }
+            div[0].style.display = 'block';
+        }
+
+        if (isWeiXin() && isiOS) {
+            if (false == iosUrl) {
+                alert('مەزكۇر دېتالنىڭ ئالما نەشىرى يوقكەن');
+            }
+            div[1].style.display = 'block';
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+

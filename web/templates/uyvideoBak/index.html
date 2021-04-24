@@ -1,0 +1,108 @@
+{% extends 'uyvideo/base.html' %}
+
+{% block header %}
+
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<!--ئايلانما رەسىم-->
+    <iframe src="/uyvideo/swiper/" frameborder="0" width="100%" height="205px" style="overflow: hidden"></iframe>
+
+<!--تەۋسىيە كىنولار-->
+<div class="content_tew">
+
+    {% for s in tawsiya %}
+        <div class="tew_list">
+            <a href="/uyvideo/play/?id={{ s.id }}">
+                <div class="img"><img class="lazy" src="{{ s.image_url}}">
+                </div>
+                <div class="title">{{ s.title }}</div>
+            </a>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+<div class="tur_box">
+    <div class="title">
+        <p><span>يېڭى قوشۇلغانلىرى</span></p>
+        <p></p>
+    </div>
+
+    {% for v in vids_list %}
+
+
+            <div class="tur_list">
+            <a href="/uyvideo/play/?id={{ v.id }}">
+                <div class="img"><img class="lazy" src="{{ v.image_url }}"></div>
+                <div class="list_title">{{ v.title }}</div>
+            </a>
+        </div>
+    {% endfor %}
+
+
+</div>
+
+
+
+
+{#    <!--تۈلەر باشلاندى-->#}
+{#    <div class="tur_box">#}
+{#        <div class="title">#}
+{#            <p><span>كىنو - فىلىم</span></p>#}
+{#            <p></p>#}
+{#            <p><a href="content.php?type=1"><span>تېخىمۇ كۆپ ...</span></a></p>#}
+{#        </div>#}
+{##}
+{#            <div class="tur_list">#}
+{#                <a href="play.php?id=298">#}
+{#                    <div class="img"><img class="lazy" data-original="http://wolqan.gz01.bdysite.com/kino_images/153725770115.jpg"></div>#}
+{#                    <div class="list_title">گىگانىت ئادەم بىلەن ئېلىشىش</div>#}
+{#                </a>#}
+{#            </div>#}
+
+
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+      $(function() {
+
+      $("img.lazy").lazyload({effect: "fadeIn"});
+
+  });
+
+      $(".salon_code").on('click',function () {
+          $("#code_alert").show(300);
+      });
+
+      $(".alert_no").on('click',function () {
+          $(".alert").hide(300);
+      })
+
+
+
+</script>
+{% endblock %}

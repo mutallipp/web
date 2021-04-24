@@ -1,0 +1,97 @@
+{% extends 'users/base.html' %}
+{% block css %}
+<style>
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-right: 3px;
+    padding-left: 3px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "users/menu.html" %}
+<div class="col-md-9">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;会员中心</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    {% if data.key %}
+                        <div class="form-group">
+                            <label for="input_name"><span class="glyphicon glyphicon-net"></span>&nbsp;首页</label>
+                            <p>http://www.mutallip.cn/weixin/top/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_email"><span class="glyphicon glyphicon-net"></span>&nbsp;arzu</label>
+                            <p>http://www.mutallip.cn/weixin/arzu/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_phone"><span class="glyphicon glyphicon-net"></span>&nbsp;kamqilik</label>
+                            <p>http://www.mutallip.cn/weixin/kamqilik/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_email"><span class="glyphicon glyphicon-net"></span>&nbsp;kadimki</label>
+                            <p>http://www.mutallip.cn/weixin/kadimki/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_email"><span class="glyphicon glyphicon-net"></span>&nbsp;mijaz</label>
+                            <p>http://www.mutallip.cn/weixin/mijaz/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="input_email"><span class="glyphicon glyphicon-net"></span>&nbsp;yurak</label>
+                            <p>http://www.mutallip.cn/weixin/yurak/?key={{ data.key }}</p>
+                        </div>
+                         <div class="form-group">
+                            <label for="input_email"><span class="glyphicon glyphicon-net"></span>&nbsp;boytak</label>
+                            <p>http://www.mutallip.cn/weixin/boytak/?key={{ data.key }}</p>
+                        </div>
+                        <div class="form-group">
+                        <label for="input_face"><span class="glyphicon glyphicon-picture"></span>&nbsp;二维码</label>
+                            {% if data.code_image %}
+                                <img src="{{ data.code_image.url }}" class="img-responsive img-rounded">
+                            {% else %}
+                                <img src="/static/weixin/300Udak.png" class="img-responsive img-rounded">
+                            {% endif %}
+{#                        <a class="btn btn-primary" style="margin-top:6px;"><span#}
+{#                                class="glyphicon glyphicon-open"></span>&nbsp;上传头像</a>#}
+                        <input id="input_face" class="form-control" name="code_image" type="file" autofocus>
+                    </div>
+                    {% else %}
+                        <P>你还没没有属于自己的地址，请尽快联系管理员获取属于自己的小游戏地址吧</P>
+                        <div class="form-group" >
+                        <label for="input_face"><span class="glyphicon glyphicon-picture"></span>&nbsp;二维码</label>
+                        <img src="/static/weixin/300Udak.png" class="img-responsive img-rounded" >
+{#                        <a class="btn btn-primary" style="margin-top:6px;"><span#}
+{#                                class="glyphicon glyphicon-open"></span>&nbsp;上传头像</a>#}
+                        <input id="input_face" class="form-control" name="code_image" type="file" autofocus>
+                    </div>
+                    {% endif %}
+
+                    <div class="col-md-12" id="error_info"></div>
+                    <input type="button" class="btn btn-primary" value="上传二维码" onclick="user_games.check()">
+                    {% csrf_token %}
+                </fieldset>
+            </form>
+            {% if form %}
+                <div class="col-md-12" style="color: red" id="error_password">{% for key,error in form.errors.items %}{{ error }}{% endfor %}</div>
+            {% elif mes %}
+                <div class="col-md-12" id="error_password" style="color: red">{{ mes }}</div>
+            {% endif %} <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}}
+
+{%block js %}
+    <script src="/static/js/layer/dialog.js"></script>
+    <script src="/static/js/layer/layer.js"></script>
+    <script src="/static/users/js/user_games.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#m-3").addClass(" active")
+    });
+</script>
+{% endblock %}

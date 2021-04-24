@@ -1,0 +1,374 @@
+<!--   ! بەتتە ئانىڭىزنىڭ ھەققى بولمىغاندىكىن ئوغۇرلىماڭ -->
+<!-- ! بايقىلىپ قالسىڭىز پاش قىلىنىسىز -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>بويتاقلار بايرىمىنى قانداق ئۆتكۈزۈسىز؟</title>
+     <link type="text/css" rel="stylesheet" href="1111/param/style.css">
+    <link type="text/css" rel="stylesheet" href="1111/param/small_test.css">
+
+    <link type="text/css" rel="stylesheet" href="1111/param/ablum.css">
+    <script type="text/javascript" src="1111/param/jquery.min.js"></script>
+<script type="text/javascript" src="1111/param/myqrcode.js"></script>
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+// 这里警告框会阻塞当前页面继续加载
+            alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+// 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('about:blank', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+             // 通过下面这个API隐藏右上角按钮
+            WeixinJSBridge.call('hideOptionMenu');
+         });
+
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            pushHistory();
+            window.addEventListener("popstate", function(e) {
+//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+                window.location = '';
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+        });
+    </script>
+
+<style type="text/css">
+        .public_toast {
+            padding: 10px 15px;
+            border-radius: 3px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            left: 50%;
+            top: 40%;
+            max-width: 100%;
+            z-index: 9999;
+            color: #FFF;
+            font-size: 18px;
+            opacity: 0;
+            -webkit-transform: translate3d(-50%, 100%, 0);
+            transition: all linear .1s;
+            white-space: nowrap;
+        }
+
+        .public_toast_show {
+            opacity: 1;
+        }
+    body {
+	background-color: #FF0099;
+}
+    </style>
+</head>
+<body>
+<div id="qrcode" style="width:100px; height:100px; margin-top:15px;display:none"></div>
+<div style="z-index: 999999; top: 0%; background-color: #FF0099;">
+    <div id='pic' style='display:none;' align="center">
+        <canvas width="600" height="800" id="canvas" style="display:none"></canvas><img src="1111/param/usti2.png" alt="" width="350">
+      <img src="" width="95%"  class="ablikim" id="img">
+        <p> <span style="font-size:14px; color: #FFF;" >👆👆👆 رەسىمنى بېسىپ تۇرۇپ 保存到手机 دىگەن خەتنى بېسىپ ساقلىۋېلىپ دوسلىرىڭىزغا چەمبىرەككە يوللاڭ</span></p>
+    </div>
+    <div id='bottom'>
+        <div id="luckTest">
+            <div class="luckTest">
+                <div class="imgFrom">
+
+                  <p><img src="1111/param/usti.png" alt="" width="320" height="70"></p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+
+
+                  <p><center></center>
+                  </p>
+
+
+                  <input name="name" type="text" class="w3-agile" id="name" style="color: #FF3399; border-radius: 30px;" placeholder="ئىسمىڭىزنى كىرگۈزۈڭ" size="15" maxlength="30">
+                  <br/>
+                  <br/>
+
+                  <label style='padding-right: 10px; float: right; width: 50%; font-size: 16px; display: inline-block; color: #FFF;'>
+                    <input
+                            type='radio' value='1' name='sex'>
+                    ئوغۇل </label>
+                  <label style='padding-right: 15px; float: right; width: 50%; font-size: 16px; display: inline-block; color: #FFF;'>
+                    <input
+                            type='radio' value='2' name='sex'>
+                    قىز </label>
+                </div>
+                <br>
+                <input id="text" type="hidden" value="" style="width:80%"/>
+                <br><br>
+
+               <div class="w3l-main">
+                  <p><p class="asti">
+        795</p>
+                  <p>
+                    <input type="submit" id="send" style="border-radius:35px;" value="كۈنجۈت ئىشىكنى ئاچ">
+                </p>
+                  <p>
+                     <p>&nbsp;</p><p>&nbsp;</p>
+                    <iframe src="asti_elan/asti_ad.html" height="90"></iframe>
+                  </p>
+
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="game">
+    </div>
+
+</div>
+<div class="menwrap">
+  <div class="menu">
+            <div class="bt-name"><a href="../baxbat/bilgar.php">تېخىمۇ كۆپ <i class="iconfont icon-collected"></i>ئويۇنلار مەركىزى</a>
+
+    </div>
+  </div>
+</div>
+</div>
+<script>
+$(".menu").click(function() {
+    if ($(this).hasClass("cura")) {
+        $(this).children(".new-sub").hide(); //当前菜单下的二级菜单隐藏
+        $(".menu").removeClass("cura"); //同一级的菜单项
+    } else {
+        $(".menu").removeClass("cura"); //移除所有的样式
+        $(this).addClass("cura"); //给当前菜单添加特定样式
+        $(".new-sub").hide(); //隐藏所有的二级菜单
+        $(this).children(".new-sub").show(); //展示当前的二级菜单
+    }
+});
+</script>
+<script type="text/javascript">
+var count = document.getElementById("thelist").getElementsByTagName("img").length;
+
+var count2 = document.getElementsByClassName("menuimg").length;
+
+for(i=0;i<count;i++){
+ document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+}
+
+document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+
+setInterval(function(){
+	myScroll.scrollToPage('next', 0,400,count);
+},3500 );
+
+window.onresize = function(){
+	for(i=0;i<count;i++){
+		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+	}
+ document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+}
+</script>
+<script type="text/javascript">
+</script>
+</body>
+<script src="1111/param/zepto.min.js"></script>
+
+<script type="text/javascript">
+    getQrcode();
+
+    function getQrcode() {
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 100,
+            height: 100
+        });
+
+        function makeCode() {
+            var elText = document.getElementById("text");
+            qrcode.makeCode(elText.value);
+        }
+
+        makeCode();
+    }
+
+
+    $('#send').click(function () {
+        var name = $('input[name="name"]').val();
+        var sex = $("input[type='radio']:checked").val();
+        if (sex == '1') {
+            var rand = sui;
+        } else {
+            var rand = sui;
+        }
+        if (name == '') {
+            toast1('ئىسمىڭىزنى كىرگۈزمىدىڭىز');
+            return;
+        }
+        if (!sex) {
+            toast1('جىنسىڭىزنى تاللاڭ');
+            return;
+        }
+        draw(name, rand, sex);
+        toast('سەل ساقلاڭ...');
+    });
+
+    var sui = parseInt(15 * Math.random());
+
+
+    function draw(username, rand, sex) {
+        var myqrcode = "1111/qrcode/bilgar.png";
+        var c = document.getElementById("canvas")
+        var ctx = c.getContext("2d");
+
+        var imgbg = document.createElement('img');
+        var imgSrc = "1111/img/" + sex + "/" + rand + ".png";
+        imgbg.src = imgSrc;
+
+        imgbg.onload = function (e) {
+            ctx.drawImage(imgbg, 0, 0, 600, 800);
+            var qrcode = document.createElement('img');
+            var qrcodeWidth = 110;
+            // var qrcodeX = c.width - qrcodeWidth-25;
+            // var qrcodeY = c.height - qrcodeWidth - 25;
+             var qrcodeX = 13;
+            var qrcodeY = 687;
+            qrcode.src = myqrcode;
+            qrcode.onload = function (e) {
+                ctx.drawImage(qrcode, qrcodeX, qrcodeY, qrcodeWidth, qrcodeWidth)
+
+                ctx.font = "58px UKIJ Moy Qelem";
+                ctx.fillStyle = "#ffffff";
+//                ctx.fillStyle = "#0066ff";
+                var name = username;
+                var nameW = ctx.measureText(name).width;
+                var nameX = 305 - (nameW / 2);
+                ctx.fillText(name, 550, 205);
+
+                var dataUrl = c.toDataURL("images/jpeg", 0.8);
+                $('#img').attr('src', dataUrl);
+                $('#pic').css('display', 'block');
+                $('#bottom').css('display', 'none');
+//                 $('#p').css('display','none');
+                document.title = 'بويتاقلار بايرىمىنى مۇشۇنداق ئۆتكۈزىدىكەنسىز';
+                $('.public_toast').css('display', 'none');
+            }
+        }
+    }
+
+    function toast(text, ms) {
+        if (!text) {
+            return false;
+        }
+        var dom = $('<div class="public_toast">' + text + '</div>');
+        var ms = ms || 1000;
+        $('body').append(dom);
+        setTimeout(function () {
+            dom.addClass('public_toast_show');
+        }, 10);
+
+    }
+
+    function toast1(text, ms) {
+        if (!text) {
+            return false;
+        }
+        var dom = $('<div class="public_toast">' + text + '</div>');
+        var ms = ms || 1000;
+        $('body').append(dom);
+        setTimeout(function () {
+            dom.addClass('public_toast_show');
+        }, 10);
+        setTimeout(function () {
+            dom.removeClass('public_toast_show');
+            dom.on('webkitTransitionEnd', function () {
+                dom.remove();
+            })
+        }, ms)
+    }
+</script>
+
+</html>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+</table>
+</html>

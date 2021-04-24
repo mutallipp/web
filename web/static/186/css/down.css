@@ -1,0 +1,105 @@
+@font-face {
+
+  font-family: 'UKIJ Tor';
+
+  src: url('UKIJTor/UKIJTor.eot?#iefix') format('embedded-opentype'),  url('UKIJTor/UKIJTor.woff') format('woff'), url('UKIJTor/UKIJTor.ttf')  format('truetype'), url('UKIJTor/UKIJTor.svg#UKIJTor') format('svg');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+}
+
+
+
+
+
+html {
+
+  font-family: "UKIJ Tor","alkatip_torregular","UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+
+  -webkit-text-size-adjust: 100%;
+
+      -ms-text-size-adjust: 100%;
+
+}
+
+
+
+
+
+
+
+body{
+	font-family: "UKIJ Tor","alkatip_torregular","UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+	direction:rtl;
+	background-color: #F5F5F5;
+}
+
+.hat {
+	border-radius: 3px;
+	text-align: justify;
+	direction: rtl;
+	font-family: "UKIJ Tor", "alkatip_torregular", "UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+	background-color:#09F;
+	color: #000000;
+}
+
+.tema{
+	text-align:center;
+	
+	color:#000;
+	FONT-SIZE: 15px;
+	font-family: "UKIJ Tor", "alkatip_torregular", "UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+}
+
+.askart { margin-top:10px; border-top:#999 solid 1px; padding-top:5px;
+	text-indent:40px;
+	text-align:center;
+	text-align:justify;
+	padding-left:15px;
+	 padding-right:15px;
+	color:#000;
+	FONT-SIZE: 15px;
+	font-family: "UKIJ Tor", "alkatip_torregular", "UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+}
+
+
+.kunupka {
+	width: 90%;
+	padding: 8px;
+	margin-top: 10px;
+	border: 1px solid #0000;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px #000;
+	font-family: "UKIJ Tor","alkatip_torregular","UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+	background: #1CAD10;
+}
+
+.text {
+	width: 100%;
+	padding: 9px;
+	text-align: justify;
+	margin-top: 3px;
+
+	fint-size:16px;
+	color:#FFF;
+	font-family: "UKIJ Tor", "alkatip_torregular", "UKIJ Tuz Tor", "Microsoft Uighur", sans-serif;
+	background: #09F;
+	border-top-width: 1px;
+	border-right-width: 2px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	
+}
+
+.adris {
+    width: 90%;
+    direction: ltr;
+    padding: 8px;
+    border: 1px solid #163D37;
+}

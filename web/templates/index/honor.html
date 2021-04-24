@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" href="/static/index/css/main.css"/>
+    <link rel="stylesheet" href="/static/index/css/swiper.min.css"/>
+    <script src="/static/index/js/jquery-1.11.2.min.js"></script>
+    <script src="/static/index/js/main.js"></script>
+    <title></title>
+</head>
+<style>
+    .swiper-slide {
+        text-align: center;
+    }
+</style>
+<body>
+<!--头部导航begin-->
+<header>
+    <div class="container clearfix">
+        <div class="logo fl">
+            <img class="middle" src="/static/index/images/logo.png" alt="logo"/>
+        </div>
+        <ul class="nav fl">
+            <li class="fl"><a href="/index">推荐</a></li>
+            <li class="fl"><a href="/index/library">片库</a></li>
+            <li class="fl"><a class="current" href="/index/honor">榜单</a></li>
+        </ul>
+        <div class="search fr rlt">
+            <form action=""method="post">
+                <input class="hide abs" id="keyword" type="text" placeholder="电影、影人、影院、电视剧"/>
+                <input class="middle" id="search" type="button" value="" onClick="submit_btn()"/>
+            </form>
+        </div>
+    </div>
+</header>
+<!--头部导航end-->
+<!--轮播图begin-->
+<section>
+<div class="swiper-container ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg" alt=""/></a></div>
+        <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg" alt=""/></a></div>
+        <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg" alt=""/></a></div>
+        <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg" alt=""/></a></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<!--轮播图end-->
+<!--榜单列表begin-->
+<div class="honor-list">
+    <div class="container">
+        <div class="list rlt">
+            <a href="/index/detail"><img class="auto" src="/static/index/images/honor1.png" alt=""/></a>
+            <div class="list1 abs"><a href="#">影视高到电视打榜</a></div>
+        </div>
+        <div class="list rlt">
+            <a href="/index/detail"><img class="auto" src="/static/index/images/honor2.jpg" alt=""/></a>
+            <div class="list2 abs"><a href="#">大陆榜啊大陆榜</a></div>
+        </div>
+    </div>
+</div>
+<div class="full hide"></div>
+<!--底部begin-->
+<div class="foot1">
+    Copyright© 2015-2025 Dianying.com
+</div>
+</section>
+<!--榜单列表end-->
+<script src="/static/index/js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop:true
+    });
+</script>
+</body>
+</html>

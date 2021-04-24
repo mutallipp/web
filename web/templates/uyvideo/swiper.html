@@ -1,0 +1,97 @@
+{#<div class="container">#}
+{#	<div class="row">#}
+{#		<div class="stui-pannel stui-pannel-bg clearfix">#}
+{#			<div class="stui-pannel-box clearfix">#}
+{#				<div class="stui-pannel-bd">#}
+{#					<div class="carousel carousel_default flickity-page">#}
+{#                        {% for s in swiper %}#}
+{#						<div class="col-md-2 col-xs-1">#}
+{#							<a href="/uyvideo/index/?id={{ s.id }}" class="stui-vodlist__thumb" title="{{ s.title }}" alt="{{ s.title }}" style="background: url({{ s.image_url }}) no-repeat; background-position:50% 50%; background-size: cover; padding-top: 45%;"><span class="pic-text text-center" style="font-size: 20px;color: black;">{{ s.title }}</span></a>#}
+{#						</div>#}
+{#                        {% endfor %}#}
+{##}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#    </div>#}
+{#</div>#}
+
+{#<!--幻灯片代码--><link href="/static/weixin/css/css.css" rel="stylesheet" type="text/css">#}
+{#<script type="text/javascript" src="/static/weixin/js/iscroll.js"></script>#}
+{#<script type="text/javascript" src="/static/weixin/css/iscroll.css"></script>#}
+{#<script type="text/javascript" src="/static/weixin/css/ablum.css"></script>#}
+{#<script type="text/javascript" src="/static/weixin/css/small_test.css"></script>#}
+{#<script type="text/javascript" src="/static/weixin/css/style.css"></script>#}
+{#<script type="text/javascript" src="/static/weixin/css/style_top.css"></script>#}
+
+{#<script type="text/javascript">#}
+{#var myScroll;#}
+{#function loaded() {#}
+{#	myScroll = new iScroll('wrapper', {#}
+{#		snap: true,#}
+{#		momentum: false,#}
+{#		hScrollbar: false,#}
+{#		onScrollEnd: function () {#}
+{#			document.querySelector('#indicator > li.active').className = '';#}
+{#			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';#}
+{#		}#}
+{#	});#}
+{#}#}
+{##}
+{#document.addEventListener('DOMContentLoaded', loaded, false);#}
+{#</script>#}
+{##}
+{#<div class="banner">#}
+{#	<div id="wrapper">#}
+{#		<div id="scroller">#}
+{#			<ul id="thelist">#}
+{#                {% for s in swiper %}#}
+{#                    <li><p><a href="/uyvideo/index/?id={{ s.id }}">{{ s.title }}</a></p><a href="/uyvideo/index/?id={{ s.id }}"><img src="{{ s.image_url }}" height="135" /></a></li>#}
+{#			    {% endfor %}#}
+{#            </ul>#}
+{#		</div>#}
+{#	</div>#}
+{#	<div id="nav">#}
+{#		<ul id="indicator">#}
+{#			<li class="active"></li>#}
+{#			<li></li>#}
+{#			<li></li>#}
+{#			<li></li>#}
+{#		</ul>#}
+{#	</div>#}
+{#</div>#}
+
+<!-- begain头部banner图片切换 -->
+<style>
+.banner{ width:100%;  overflow:hidden; position:relative; height: 250px;}
+.banner img{ width:100%;height: 250px;}
+.banner div{ width:100%; height:250px; overflow:hidden; position:relative;}
+.banner div p{ width:100%; height:auto; overflow:hidden; float:left; position:relative;}
+.banner div p span{ width:100%; bottom: 25px; left: 10px;color: red; font-size: 18px;overflow:hidden; position:absolute;}
+.synav{ width:100%; height: auto; overflow:hidden; position:absolute; bottom:2%; left:2%;}
+.synav ul{  margin:0 auto; display:block;}
+.synav ul li{ width:1em; height:1em; margin-right:1%; border-radius:0.5; background:#CCCCCC; float:left; cursor:pointer;}
+.synav ul li.on{ width:1em; height:1em; border-radius:0.5; background:#1365BE;}
+</style>
+<div class="banner">
+    <div id="mySwipe">
+        <div>
+            {% for s in swiper %}
+                <p>
+                    <a href="/uyvideo/play/?id={{ s.id }}" title="{{ s.title }}" alt="{{ s.title }}"><img src="{{ s.image_url }}" /></a>
+                    <span >{{ s.title }}</span>
+                </p>
+{#                <p><a href=""><img src="./img/ban2.jpg" /></a></p>#}
+            {% endfor %}
+        </div>
+    </div>
+    <nav class="synav">
+        <ul id="position">
+            <li class="on"></li>
+            <li></li>
+         </ul>
+    </nav>
+</div>
+<script type="text/javascript" src="/static/uyvideo/js/swipe.js"></script>
+<!-- end头部banner图片切换 -->

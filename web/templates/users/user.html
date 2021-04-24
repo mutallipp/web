@@ -1,0 +1,93 @@
+{% extends 'users/base.html' %}
+{% block css %}
+<style>
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-right: 3px;
+    padding-left: 3px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "users/menu.html" %}
+<div class="col-md-9">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;会员中心</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" >
+                <fieldset>
+                    <div class="form-group">
+                        <label for="input_name"><span class="glyphicon glyphicon-user"></span>&nbsp;跳转地址</label>
+                        <input id="input_name" class="form-control" placeholder="请填写自己公众号的海报地址" name="url" type="text" autofocus
+                               value="">
+                    </div>
+{#                    <div class="col-md-12" id="error_name"></div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="input_email"><span class="glyphicon glyphicon-envelope"></span>&nbsp;邮箱</label>#}
+{#                        <input id="input_email" class="form-control" placeholder="邮箱" name="email" type="email"#}
+{#                               autofocus value="1780316635@qq.com">#}
+{#                    </div>#}
+{#                    <div class="col-md-12" id="error_email"></div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="input_phone"><span class="glyphicon glyphicon-phone"></span>&nbsp;手机</label>#}
+{#                        <input id="input_phone" class="form-control" placeholder="手机" name="phone" type="text" autofocus#}
+{#                               value="13700632835">#}
+{#                    </div>#}
+{#                    <div class="col-md-12" id="error_phone"></div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="input_face"><span class="glyphicon glyphicon-picture"></span>&nbsp;头像</label>#}
+{#                        <img src="holder.js/100x100" class="img-responsive img-rounded">#}
+{#                    <div class="col-md-12" id="error_face"></div>#}
+
+{#                    <div class="col-md-12" id="error_info"></div>#}
+{#                    <a href="user.html" class="btn btn-success"><span class="glyphicon glyphicon-saved"></span>&nbsp;保存修改</a>#}
+                    <input type="button" class="btn btn-success" value="保存修改" onclick="user_home.check()">
+                </fieldset>
+                {% csrf_token %}
+            </form><br>
+            {% if form %}
+                <div class="col-md-12" style="color: red" id="error_password">{% for key,error in form.errors.items %}{{ error }}{% endfor %}</div>
+            {% else%}
+                <div class="col-md-12" id="error_password"></div>
+            {% endif %} <br>
+            {% if data.dy_url %}
+                <p>{{ data.dy_url }}</p>
+            {% elif url %}
+                <p>{{ url }}</p>
+            {% else %}
+                <p>你还没设置海报地址，赶快设置吧~~~~</p>
+            {% endif %}
+            <br>
+            <label for="input_name"><span class="glyphicon glyphicon-url"></span>&nbsp;国语电影院地址</label>
+            {% if data.key %}
+                <p>http://www.mutallip.cn/?key={{ data.key }}</p>
+                <label for="input_name"><span class="glyphicon glyphicon-url"></span>&nbsp;维语电影院地址</label>
+                 <p>http://www.mutallip.cn/uyvideo/index/?key={{ data.key }}</p>
+            {% else %}
+                <p>你还没没有属于自己的地址，请尽快联系管理员获取属于自己的电影院地址吧</p>
+            {% endif %}
+            {% if mes %}
+                <h3 style="color: green">{{ mes }}</h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}}
+
+{%block js %}
+    <script src="/static/js/layer/dialog.js"></script>
+    <script src="/static/js/layer/layer.js"></script>
+    <script src="/static/users/js/user_home.js"></script>
+
+<script>
+{#    dialog.error('test');#}
+    $(document).ready(function () {
+        $("#m-1").addClass(" active");
+
+
+    });
+</script>
+{% endblock %}

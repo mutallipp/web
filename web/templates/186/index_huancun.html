@@ -1,0 +1,43 @@
+{% extends '186/base_hauncun.html' %}
+{% block headcontent %}
+    <title>300Udak电影院</title>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+
+{% endblock %}
+{% block content %}
+
+<section class="tb_a">
+
+    <ul class="globalPicList threeList pt clearfix" id="data_list">
+        {% for v in vids_list %}
+
+        <li>
+            <div class="pic"><a href="/index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}" target="_self"><img
+                    src="{{ v.url_image }}"
+                    alt="{{ v.title }}" title="{{ v.title }}"><span class="sBottom">清晰</span></a></div>
+            <span class="sTit"><a href="/index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}" target="_self">{{ v.title }}</a></span>
+        </li>
+        {% endfor %}
+
+
+    </ul>
+</section>
+
+{% endblock %}
+

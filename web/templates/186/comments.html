@@ -1,0 +1,31 @@
+{% extends 'xiaoyao/base.html' %}
+
+{% block header %}
+    <title>300Udak电影院</title>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+{% endblock %}
+
+{% block dy_list %}
+
+
+    <ul class="clearfix">
+        <h1>这个功能正在开发中。。。。过几天再来试一试吧！后者给管理员发个邮箱。说你自己想看的电影的名字和相关信息，管理员会第一时间帮你找资源的！！！！！<br>管理员邮箱：741116327@qq.com</h1>
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+<head>
+    <meta charset="utf-8">
+    {% block headcontent %}{% endblock %}
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport"
+          name="viewport">
+    <meta content="" name="Description">
+    <meta content="" name="Keywords">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="applicable-device" content="mobile">
+    <link href="/static/186/css/global.v3.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/index.v3.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/static/users/base/images/logo.png">
+
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+</head>
+<body>
+<section class="wrapper">
+    <header class="header clearfix">
+
+{#        <input class="" name="search" placeholder="输入影片名称或演员名">#}
+    </header>
+    <div class="mask" id="common_mask"></div>
+
+    <section class="main">
+        <section class="rowAuto">
+            <section class="topLabel clearfix" id="texiao">
+
+                <a href="/index" class="cur">最新的</a>
+                {% if 'han' in request.path %}
+                    <a href="/index/han" class="cur">国语</a>
+                {% else %}
+                    <a href="/index/han" class="">国语</a>
+                {% endif %}
+                {% if 'wei' in request.path %}
+                    <a href="/index/wei" class="cur">维语</a>
+                {% else %}
+                    <a href="/index/wei" class="">维语</a>
+                {% endif %}
+            </section>
+        </section>
+        <section class="row globalMarginTop">
+            <section class="mod_a">
+                <section class="th_a">
+                    <i class="iLine"></i>
+                    <span class="sMark">最新</span>
+                </section>
+
+                {#电影列表#}
+                {% block content %}{% endblock %}
+
+
+                <div class="page">
+                    <ul>
+                        <li><a href="{{request.path}}">首页</a></li>
+                        {% if  vids_list.has_previous %}
+                            <li><a href="{{request.path}}?page={{ vids_list.previous_page_number }}" class="am-active">上一页</a>
+                            </li>
+                        {% else %}
+                            <li><a href="{{request.path}}?page={{ vids_list.start_index }}" class="">上一页</a></li>
+                        {% endif %}
+                        {% if page_num %}
+                            <li class="am-active">{{ page_num }}/{{ num_pages }}</li>
+                        {% else %}
+                            <li class="am-active">1/{{ num_pages }}</li>
+                        {% endif %}
+                        {% if  vids_list.has_next %}
+                            <li><a href="{{request.path}}?page={{ vids_list.next_page_number }}" class="am-active">下一页</a></li>
+                        {% else %}
+                            <li><a href="{{request.path}}?page={{ vids_list.end_index }}" class="">下一页</a></li>
+                        {% endif %}
+                        <li><a href="{{request.path}}?page={{ num_pages }}">尾页</a>
+                            {% if page_num %}
+                                <li class="nobg"><strong>第{{ page_num }}页 ，总页数{{ num_pages }}</strong></li>
+                            {% else %}
+                                <li class="nobg"><strong>第1页 ，总页数{{ num_pages }}</strong></li>
+                            {% endif %}
+
+
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="/static/186/js/zepto.js"></script>
+    <script type="text/javascript" src="/static/186/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/static/186/js/sea.js" id="seajsnode"></script>
+    <script type="text/javascript" src="/static/186/js/iscroll.js"></script>
+    <script>
+        seajs.config({
+            debug: true,
+            base: '/static/186/js/',
+        });
+        seajs.use('common.full.js');
+        seajs.use('list.js');
+
+{#        jQuery.get({#}
+{#   type: "GET",#}
+{#   url: "https://douban.uieee.com/v2/movie/in_theaters",#}
+{#   data: "start=0&count=25",#}
+{#   header: {#}
+{#        'content-type': 'application/xml' // 默认值#}
+{#      },#}
+{#   success: function(msg){#}
+{#     alert( "Data Saved: " + msg );#}
+{#   }#}
+{#{);#}
+{#        $.getJSON("http://api.douban.com/v2/movie/in_theaters", function(json){#}
+{#            #}
+{#  alert("JSON Data: " + json);#}
+{#  console.log(json)#}
+{#);#}
+
+    </script>
+{#<script type="text/javascript">#}
+{#               $.ajax({#}
+{#        url:"http://api.douban.com/v2/movie/in_theaters",#}
+{#        type:"get",#}
+{#        contentType: 'application/json',#}
+{#        dataType:"jsonp",#}
+{#          headers: {#}
+{##}
+{#  },#}
+{#        success:function(data){#}
+{#            alert(data + " is a a" + data);#}
+{#            var self=this#}
+{#            var d=data#}
+{#        }#}
+{#   });#}
+{#</script>#}
+    <footer class="footer">
+        <p class="pLinks">影片采集自互联网,如有侵权,我们会第一时间删除<br>联系邮箱：741116327@qq.com</p>
+        <div style="display:none;">
+            <script src="https://s4.cnzz.com/z_stat.php?id=5923995&web_id=5923995" language="JavaScript"></script>
+        </div>
+    </footer>
+
+    {#强制分享内容#}
+    {% block weixin %}{% endblock %}
+
+
+    <script type="text/javascript" language="javascript" src="/static/186/js/zhikouling.js"></script>
+    <script type="text/javascript" language="javascript" src="/static/186/js/key.js"></script>
+</section>
+</body>
+</html>

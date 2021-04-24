@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+{#检测是否手机端#}
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="author" content="lsl">
+    <meta name="generator" content="webstorm">
+    <!--移动端响应式-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!--支持IE的兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--页面style css-->
+    <link rel="stylesheet" href="/static/xiaoyao/css/weuix.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/xiaoyao/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/xiaoyao/css/li.css">
+    <link rel="stylesheet" href="/static/xiaoyao/css/swiper.min.css">
+
+    {#头部信息#}
+    {% block header %}{% endblock %}
+
+
+    <style type="text/css">
+        .leimu_zui {
+            width: auto
+        }
+
+        .weui-navigator-list li {
+            font-weight: 500
+        }
+
+        .weui-navigator-list li.weui-state-hover, .weui-navigator-list li.weui-state-active a:after {
+            background-color: none
+        }
+    </style>
+    <script type="text/javascript">
+  (function (designW) {
+    var docEl = document.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        docEl.style.fontSize = 100 * (clientWidth / designW) + 'px';
+      };
+    if (!document.addEventListener) return;
+          recalc();
+    window.addEventListener(resizeEvt, recalc, false);
+    document.addEventListener('DOMContentLoaded', recalc, false);
+  })(750);
+  </script>
+
+    <title>300Udak电影院</title>
+</head>
+<body>
+<section class="logo_box clearfix">
+    <div class="fl"><a href="#"><img class="logo_img" src="/static/logo.png"></a>
+    </div>
+    <div class="sosuo_box fl">
+        <form id="wap-search" action="/index/search/" method="post" >
+            <input class="btn_com btn_sosuo" type="text" placeholder="请输入关键词 敲回车进行搜索" name="wd" value="">
+            <div style="margin-top:0.17rem;margin-left:0.1rem;width: 0.4rem;height:0.4rem;float:right;text-align:center">
+                <input type="submit" style="position: absolute; top: 0; right: 0; width: 1.4rem; height: .88rem; line-height: .88rem; text-align: center; border: 0; background: 0 0; color:black ; font-size: .3rem; cursor: pointer;" value="搜索">
+            </div>
+        </form>
+    </div>
+    <div class="fr"><a class="tanchu" href="javascript:void(0)"><em class="jilu"></em></a></div>
+</section>
+<div id="tagnav" class="weui-navigator weui-navigator-wrapper">
+    <ul class="weui-navigator-list"
+        style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 400ms; transform: translate(0px, 0px) translateZ(0px);">
+
+        <li id="m-1" class="weui-state-active"><a href="/">首页</a></li>
+        {% if 'han' in request.path %}
+        <li id="m-2" class="weui-state-active"><a href="/index/han/">国语</a></li>
+        {% else %}
+        <li id="m-2" class=""><a href="/index/han/">国语</a></li>
+        {% endif %}
+        {% if 'wei' in request.path %}
+        <li id="m-3" class="weui-state-active"><a href="/index/wei">维语</a></li>
+        {% else %}
+        <li id="m-3" class=""><a href="/index/wei">维语</a></li>
+        {% endif %}
+        <li id="m-4" class="act13 weui-state"><a href="/index/comments/" target="_blank">留言求片</a></li>
+    </ul>
+</div>
+
+
+<style type="text/css">
+    #gongao {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #gongao #scroll_begin, #gongao #scroll_end {
+        display: inline
+    }
+</style>
+
+<section class="tuijian_box">
+    <div class="bgfff shaixuan clearfix">
+        <div class="fr shaixuan_2"><a href="javascript:;" id="shaixuan">条件筛选 <em class="shaixuan_icon"><img
+                src="/static/xiaoyao/images/icon_y4_03.jpg"></em></a></div>
+
+    </div>
+
+
+    <div class="dianying_box bgfff clearfix content">
+
+        {#        电影列表#}
+        {% block dy_list %} {% endblock %}
+
+
+        <div class="hy-page clearfix">
+            <ul class="cleafix">
+                {% if  vids_list.has_previous %}
+                    <a href="{{request.path}}?page={{ vids_list.previous_page_number }}" title="上一页"><<</a>
+                {% else %}
+                    <a href="#" title="上一页"></a>
+                {% endif %}
+                {% if page_num %}
+                    <li  class="page_current">{{ page_num }}/{{ num_pages }}</li>
+                {% else %}
+                    <li  class="page_current">1/{{ num_pages }}</li>
+                {% endif %}
+                {% if  vids_list.has_next %}
+                    <a href="{{request.path}}?page={{ vids_list.next_page_number }}" title="下一页">&gt;&gt;</a>
+                {% else %}
+                    <a href="{{request.path}}?page={{ vids_list.end_index }}" title="下一页">&gt;&gt;</a>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="./视频列表-神马小影视 - 在线免费高清电影！_files/dropload.min.js.下载"></script>
+<!-- 轮播 效果 JS文件   -->
+
+
+<div style="background: #f6f6f6;padding-top:60px;"></div>
+<footer class="footer">
+    <ul class="clearfix">
+        <li>
+            <a href="/index/"><em class="sopian"></em>
+                <p>尝鲜</p>
+            </a>
+        </li>
+        <li>
+            <a href="/index/"><em class="dianshi"></em>
+                <p>国语</p>
+            </a>
+        </li>
+        <li><a href="/index/"><em class="shexiang"></em></a></li>
+        <li>
+            <a href="#"><em class="faxian"></em>
+                <p>维语</p>
+            </a>
+        </li>
+        <li>
+            <a href="/index/comments/"><em class="wode"></em>
+                <p>求片</p>
+            </a>
+        </li>
+    </ul>
+</footer>
+{% block weixin %}{% endblock %}
+
+
+{% block js %}
+
+
+{% endblock %}
+</body>
+</html>

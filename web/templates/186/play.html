@@ -1,0 +1,177 @@
+{% extends '186/detal_base.html' %}
+{% block headcontent %}
+    <title>正在播放《{{ data.title }}》 </title>
+    <link href="/static/186/css/detail.common.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/index.v3.css" rel="stylesheet" type="text/css">
+    <link href="/static/186/css/neiye.v3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/186/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/static/186/js/jweixin-1.0.0.js"></script>
+
+{% endblock %}
+{% block detailbase %}
+    0
+    <div id="div" style="display: none"><p><img
+            src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2535096871.jpg"></p></div>
+    <div id="sec_info" class="info"><h2>当前位置：<a href='/'>首页</a>  »  <a href='/index'>电影</a>  »  <a
+            href='/index/play/?video_url={{ data.video_url }}&title={{ data.title }}&image={{ data.url_image }}'>{{ data.title }}</a></h2>
+
+        <ul>
+            <div class="b" id="play"
+                 style=" no-repeat 50% 50%;height:230px">
+                <iframe src="/uyvideo/playm3u8/?video_url={{ data.video_url }}"
+                        marginwidth="0" marginheight="0" border="0" scrolling="no" frameborder="0" topmargin="0"
+                        width="100%" height="100%"></iframe>
+{#                {% include 'uyvideo/playm3u8.html' %}#}
+            </div>
+        </ul>
+
+
+    </div>
+{% endblock %}
+
+{% block weixin %}
+
+
+    <script>
+        // JavaScript Document
+        var sec = 0;
+{#        $(".b").html($("#play").html());#}
+{#        setTimeout(function () {#}
+{#            $("#play").html("")#}
+{#            if ($("#play").html("")) {#}
+{#                $("#play").css("background", "#000000");#}
+{#                $("#play").css("height", "250px");#}
+{#                $("#play").css("color", "#ffffff");#}
+{#                $("#play").css("padding-top", "100px");#}
+{#                $("#play").css("padding-left", "10px");#}
+{#                $("#play").css("padding-right", "10px");#}
+{#                $("#play").css("font-size", "1rem");#}
+{#                $("#play").text("亲试看时间就到期了，把这个网页分享到朋友圈和一个群就能看到完整的电影了哦~~~~");#}
+{#            } else {#}
+{#            }#}
+{#        }, 300000);#}
+
+
+        var pyq = 0;
+        var dos = 0;
+        /////////////////////////
+        wx.config({
+            debug: false,
+            appId: '{{ appid }}',
+            timestamp: {{ signature.timestamp }},
+            nonceStr: '{{ signature.nonceStr }}',
+            signature: '{{ signature.signature }}',
+            jsApiList: [
+
+                "onMenuShareTimeline",
+
+                "onMenuShareAppMessage",
+
+                "hideMenuItems"
+
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+        });
+
+        wx.ready(function () {
+
+            wx.hideMenuItems({
+
+                menuList: [
+
+                    'menuItem:copyUrl',
+
+
+                ]
+
+            });
+
+
+            var wxData = {
+                appId: '', // 分享标题
+                title: '我正在看《{{ data.title }}》', // 分享标题
+                desc: '点进去免费看最新热播的电影', // 分享描述
+                link: 'http://www.mutallip.cn/index/share/?key={{ request.session.key }}', // 分享链接
+                imgUrl: '{{ data.url_image }}',
+            }
+
+
+            var str_mp = "/index/show/?video_url={{ video_url }}&title={{ title }}&image={{ image }}";//关注的链接，跳转的链接
+
+
+            wx.ready(function () {
+                // 2. 分享接口
+                // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareAppMessage({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+                    success: function () {
+
+                        dos = dos + 1;
+                        if (pyq == 1 && dos == 1) {
+                            alert('欢迎回来~~~~~~~')
+{#                            location.href = str_mp#}
+                             $("#play").html("")
+{#                            $("#play").css("padding-top", "100px");#}
+{#                            $("#play").css("padding-left", "10px");#}
+{#                            $("#play").css("padding-right", "10px");#}
+                            $("#play").css("font-size", "1rem");
+                            $("#play").html('<iframe frameborder=0 src="/uyvideo/playm3u8/?video_url={{ data.video_url }}" marginwidth="0" marginheight="0" border="0" scrolling="no" frameborder="0" topmargin="0"width="100%" height="100%"></iframe>');
+                        } else {
+                            alert('亲你已经分享到群里了，现在只发朋友圈就能看了哦~~~~~~~')
+
+                        }
+                    },
+                    cancel: function () {
+                        alert('不分享就看不了的哦，亲~~~~~~~~')
+                    }
+                });
+                wx.onMenuShareTimeline({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+
+                    success: function () {
+                        pyq = 1;
+                        if (pyq >= 1 && dos == 1) {
+                            {#                    if (pyq >= 1 && dos >= 2) {#}
+                            location.href = str_mp
+{#                            alert('欢迎回来~~~~~~~')#}
+                             $("#play").html("")
+{#                            $("#play").css("padding-top", "100px");#}
+{#                            $("#play").css("padding-left", "10px");#}
+{#                            $("#play").css("padding-right", "10px");#}
+                            $("#play").css("font-size", "1rem");
+                            $("#play").html('<iframe frameborder=0 src="/uyvideo/playm3u8/?video_url={{ data.video_url }}" marginwidth="0" marginheight="0" border="0" scrolling="no" frameborder="0" topmargin="0"width="100%" height="100%"></iframe>');
+                        } else {
+                            {#                        if (pyq >= 1 && dos < 2) {#}
+                            {#                            alert('你已经分享到朋友圈了，再发' + (parseInt(2) - parseInt(dos)) + '个群才能看的哦~~~~~~~~')#}
+                            alert('亲，你现在已经分享到朋友圈了，现在只需分享到1个群里就能看哦~~~~~~~~')
+                            {#                        }#}
+                        }
+                    },
+                    cancel: function () {
+                        alert('不分享就看不了的哦，亲~~~~~~~~')
+                    }
+
+                });
+
+            });
+
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareAppMessage(shareData);
+
+
+        });
+
+        wx.error(function (res) {
+            alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+        });
+    </script>
+
+
+
+{% endblock %}

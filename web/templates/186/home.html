@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="author" content="lsl">
+    <meta name="generator" content="webstorm">
+    <!--移动端响应式-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!--支持IE的兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--页面style css-->
+    <link rel="stylesheet" href="/static/xiaoyao/css/weuix.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/xiaoyao/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/xiaoyao/css/li.css">
+    <link rel="stylesheet" href="/static/xiaoyao/css/swiper.min.css">
+
+    
+    
+    <title>300Udak电影院</title>
+    <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+
+
+
+    <style type="text/css">
+        .leimu_zui {
+            width: auto
+        }
+
+        .weui-navigator-list li {
+            font-weight: 500
+        }
+
+        .weui-navigator-list li.weui-state-hover, .weui-navigator-list li.weui-state-active a:after {
+            background-color: none
+        }
+    </style>
+    <script type="text/javascript">
+  (function (designW) {
+    var docEl = document.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        docEl.style.fontSize = 100 * (clientWidth / designW) + 'px';
+      };
+    if (!document.addEventListener) return;
+          recalc();
+    window.addEventListener(resizeEvt, recalc, false);
+    document.addEventListener('DOMContentLoaded', recalc, false);
+  })(750);
+  </script>
+
+    <title>300Udak电影院</title>
+</head>
+<body>
+<section class="logo_box clearfix">
+    <div class="fl"><a href="#"><img class="logo_img" src="/static/logo.png"></a>
+    </div>
+    <div class="sosuo_box fl">
+        <form id="wap-search" action="/index/search/" method="post" >
+            <input class="btn_com btn_sosuo" type="text" placeholder="请输入关键词 敲回车进行搜索" name="wd" value="">
+            <div style="margin-top:0.17rem;margin-left:0.1rem;width: 0.4rem;height:0.4rem;float:right;text-align:center">
+                <input type="submit" style="position: absolute; top: 0; right: 0; width: 1.4rem; height: .88rem; line-height: .88rem; text-align: center; border: 0; background: 0 0; color:black ; font-size: .3rem; cursor: pointer;" value="搜索">
+            </div>
+        </form>
+    </div>
+    <div class="fr"><a class="tanchu" href="javascript:void(0)"><em class="jilu"></em></a></div>
+</section>
+<div id="tagnav" class="weui-navigator weui-navigator-wrapper">
+    <ul class="weui-navigator-list"
+        style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 400ms; transform: translate(0px, 0px) translateZ(0px);">
+
+        <li id="m-1" class="weui-state-active"><a href="/">首页</a></li>
+        
+        <li id="m-2" class=""><a href="/index/han/">国语</a></li>
+        
+        
+        <li id="m-3" class=""><a href="/index/wei">维语</a></li>
+        
+        <li id="m-4" class="act13 weui-state"><a href="/index/comments/" target="_blank">留言求片</a></li>
+    </ul>
+</div>
+
+
+<style type="text/css">
+    #gongao {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #gongao #scroll_begin, #gongao #scroll_end {
+        display: inline
+    }
+</style>
+
+<section class="tuijian_box">
+    <div class="bgfff shaixuan clearfix">
+        <div class="fr shaixuan_2"><a href="javascript:;" id="shaixuan">条件筛选 <em class="shaixuan_icon"><img
+                src="/static/xiaoyao/images/icon_y4_03.jpg"></em></a></div>
+
+    </div>
+
+
+    <div class="dianying_box bgfff clearfix content">
+
+        
+        
+
+
+    <ul class="clearfix">
+        
+            <li><a href="/index/detail/?video_url=https://cn2.zuidadianying.com/20181201/gSdJMzeM/index.m3u8&title=冒牌搭档&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540378595.jpg&id=815">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540378595.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://cn2.zuidadianying.com/20181201/gSdJMzeM/index.m3u8&title=冒牌搭档&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540378595.jpg&id=815">
+                    <span class="biaoti">冒牌搭档</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/0b0131fe5285890783288785435/4cxPVocYUeQA.mp4&title=恐怖鸡&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1758292824.jpg&id=813">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1758292824.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/0b0131fe5285890783288785435/4cxPVocYUeQA.mp4&title=恐怖鸡&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1758292824.jpg&id=813">
+                    <span class="biaoti">恐怖鸡</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://youku163.zuida-bofang.com/20181202/21727_f60669e0/index.m3u8&title=最美的时候遇见你&image=http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/i/i1t9l2f2vrcbku8.jpg&id=814">
+                <img src="http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/i/i1t9l2f2vrcbku8.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://youku163.zuida-bofang.com/20181202/21727_f60669e0/index.m3u8&title=最美的时候遇见你&image=http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/i/i1t9l2f2vrcbku8.jpg&id=814">
+                    <span class="biaoti">最美的时候遇见你</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://cn2.zuidadianying.com/20181130/VEY20Zrp/index.m3u8&title=二十岁&image=https://puui.qpic.cn/vcover_vt_pic/0/8wpvyah2vnx8fse1539218202/260&id=810">
+                <img src="https://puui.qpic.cn/vcover_vt_pic/0/8wpvyah2vnx8fse1539218202/260"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">清晰</span></p>
+                
+                <a href="index/detail/?video_url=http://cn2.zuidadianying.com/20181130/VEY20Zrp/index.m3u8&title=二十岁&image=https://puui.qpic.cn/vcover_vt_pic/0/8wpvyah2vnx8fse1539218202/260&id=810">
+                    <span class="biaoti">二十岁</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://sohu.zuida-163sina.com/20181130/cjWl5SGh/index.m3u8&title=河盗&image=https://eximg.hitv.com/u/o/archievideo/qq/collects/689ba7ac67aa9dc0269c805d31a3cb87.jpg&id=811">
+                <img src="https://eximg.hitv.com/u/o/archievideo/qq/collects/689ba7ac67aa9dc0269c805d31a3cb87.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://sohu.zuida-163sina.com/20181130/cjWl5SGh/index.m3u8&title=河盗&image=https://eximg.hitv.com/u/o/archievideo/qq/collects/689ba7ac67aa9dc0269c805d31a3cb87.jpg&id=811">
+                    <span class="biaoti">河盗</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://sohu.zuida-163sina.com/20181130/7SMUcFs0/index.m3u8&title=影&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2530513100.jpg&id=578">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2530513100.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://sohu.zuida-163sina.com/20181130/7SMUcFs0/index.m3u8&title=影&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2530513100.jpg&id=578">
+                    <span class="biaoti">影</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://sohu.zuida-163sina.com/20181127/Z0Lx5dND/index.m3u8&title=唐门龙棺凤胆&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540059396.jpg&id=809">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540059396.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://sohu.zuida-163sina.com/20181127/Z0Lx5dND/index.m3u8&title=唐门龙棺凤胆&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540059396.jpg&id=809">
+                    <span class="biaoti">唐门龙棺凤胆</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/b48db10a5285890783015028176/VoojOQb7kh8A.mp4&title=异族领主&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2540048544.jpg&id=808">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2540048544.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/b48db10a5285890783015028176/VoojOQb7kh8A.mp4&title=异族领主&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2540048544.jpg&id=808">
+                    <span class="biaoti">异族领主</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://cntv.hls.cdn.myqcloud.com/asp/hls/main/0303000a/3/default/f6820000-8c63-4431-8c8b-f1e600b62103/main.m3u8?maxbr=2048&title=ئالاھىدە خادىم007&image=http://ekranimtv.bookb.cn/Public/video/5b16b51a964bd.png&id=119">
+                <img src="http://ekranimtv.bookb.cn/Public/video/5b16b51a964bd.png"></a>
+                
+                <p class="clearfix leimu"><span class="fl"></span></p>
+                
+                <a href="index/detail/?video_url=http://cntv.hls.cdn.myqcloud.com/asp/hls/main/0303000a/3/default/f6820000-8c63-4431-8c8b-f1e600b62103/main.m3u8?maxbr=2048&title=ئالاھىدە خادىم007&image=http://ekranimtv.bookb.cn/Public/video/5b16b51a964bd.png&id=119">
+                    <span class="biaoti">ئالاھىدە خادىم007</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://cntv.hls.cdn.myqcloud.com/asp/hls/main/0303000a/3/default/e421423e-3cbd-4fa0-9df1-b1cef4d10301/main.m3u8&title=ئاجايىپ-غارايىپ&image=http://ekranimtv.bookb.cn/Public/video/5b16d73100d16.jpg&id=102">
+                <img src="http://ekranimtv.bookb.cn/Public/video/5b16d73100d16.jpg"></a>
+                
+                <p class="clearfix leimu"><span class="fl"></span></p>
+                
+                <a href="index/detail/?video_url=http://cntv.hls.cdn.myqcloud.com/asp/hls/main/0303000a/3/default/e421423e-3cbd-4fa0-9df1-b1cef4d10301/main.m3u8&title=ئاجايىپ-غارايىپ&image=http://ekranimtv.bookb.cn/Public/video/5b16d73100d16.jpg&id=102">
+                    <span class="biaoti">ئاجايىپ-غارايىپ</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/feed6eaf5285890782739817001/BWnMsOPjDc4A.mp4&title=碟中谍6全面瓦解&image=https://3img.hitv.com/preview/internettv/sp_images/ott/2018/dianying/322156/20180805235626465-new.jpg_220x308.jpg&id=625">
+                <img src="https://3img.hitv.com/preview/internettv/sp_images/ott/2018/dianying/322156/20180805235626465-new.jpg_220x308.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/feed6eaf5285890782739817001/BWnMsOPjDc4A.mp4&title=碟中谍6全面瓦解&image=https://3img.hitv.com/preview/internettv/sp_images/ott/2018/dianying/322156/20180805235626465-new.jpg_220x308.jpg&id=625">
+                    <span class="biaoti">碟中谍6全面瓦解</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://v-acfun.com/20180825/13536_e1c1a6e8/index.m3u8&title=护垫侠&image=http://pic.china-gif.com/pic/upload/vod/2018-08/15352109711.jpg&id=807">
+                <img src="http://pic.china-gif.com/pic/upload/vod/2018-08/15352109711.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">None</span></p>
+                
+                <a href="index/detail/?video_url=http://v-acfun.com/20180825/13536_e1c1a6e8/index.m3u8&title=护垫侠&image=http://pic.china-gif.com/pic/upload/vod/2018-08/15352109711.jpg&id=807">
+                    <span class="biaoti">护垫侠</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://iqiyi.com-v-iqiyi.com/20181020/7615_176ee5e6/index.m3u8&title=流浪猫鲍勃&image=http://pic.china-gif.com/pic/upload/vod/2018-10/15400115660.jpg&id=806">
+                <img src="http://pic.china-gif.com/pic/upload/vod/2018-10/15400115660.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">None</span></p>
+                
+                <a href="index/detail/?video_url=http://iqiyi.com-v-iqiyi.com/20181020/7615_176ee5e6/index.m3u8&title=流浪猫鲍勃&image=http://pic.china-gif.com/pic/upload/vod/2018-10/15400115660.jpg&id=806">
+                    <span class="biaoti">流浪猫鲍勃</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181123/21224_48111758/index.m3u8&title=无敌破坏王2：大闹互联网&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537667301.jpg&id=804">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537667301.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">TS</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181123/21224_48111758/index.m3u8&title=无敌破坏王2：大闹互联网&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537667301.jpg&id=804">
+                    <span class="biaoti">无敌破坏王2：大闹互联网</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://iqiyi.qq-zuidazy.com/20181124/1376_faa7ef9d/index.m3u8&title=新七侠五义之屠龙案&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540391602.jpg&id=805">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540391602.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://iqiyi.qq-zuidazy.com/20181124/1376_faa7ef9d/index.m3u8&title=新七侠五义之屠龙案&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2540391602.jpg&id=805">
+                    <span class="biaoti">新七侠五义之屠龙案</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://iqiyi.qq-zuidazy.com/20181124/1382_ec3c6fc5/index.m3u8&title=狄仁杰之无头神将&image=https://r1.ykimg.com/050E00005BEE92EAAD881AB7EC03545A&id=803">
+                <img src="https://r1.ykimg.com/050E00005BEE92EAAD881AB7EC03545A"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://iqiyi.qq-zuidazy.com/20181124/1382_ec3c6fc5/index.m3u8&title=狄仁杰之无头神将&image=https://r1.ykimg.com/050E00005BEE92EAAD881AB7EC03545A&id=803">
+                    <span class="biaoti">狄仁杰之无头神将</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/7c8f46155285890783014923976/57vogsDXcaIA.mp4&title=中国蓝盔&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2536557304.jpg&id=802">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2536557304.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/7c8f46155285890783014923976/57vogsDXcaIA.mp4&title=中国蓝盔&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2536557304.jpg&id=802">
+                    <span class="biaoti">中国蓝盔</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://106.12.6.19/mdparse/index.php?id=https://www.mgtv.com/b/327061/4698031.html&title=天方异谈&image=https://4img.hitv.com/preview/internettv/sp_images/ott/2018/11/22/dianying/327061/20181122220408212-new.jpg_220x308.jpg&id=801">
+                <img src="https://4img.hitv.com/preview/internettv/sp_images/ott/2018/11/22/dianying/327061/20181122220408212-new.jpg_220x308.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">None</span></p>
+                
+                <a href="index/detail/?video_url=http://106.12.6.19/mdparse/index.php?id=https://www.mgtv.com/b/327061/4698031.html&title=天方异谈&image=https://4img.hitv.com/preview/internettv/sp_images/ott/2018/11/22/dianying/327061/20181122220408212-new.jpg_220x308.jpg&id=801">
+                    <span class="biaoti">天方异谈</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://iqiyi.qq-zuidazy.com/20181122/1320_b47c4ce3/index.m3u8&title=邪不压正&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526297221.jpg&id=316">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526297221.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://iqiyi.qq-zuidazy.com/20181122/1320_b47c4ce3/index.m3u8&title=邪不压正&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526297221.jpg&id=316">
+                    <span class="biaoti">邪不压正</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181120/20991_c088c967/index.m3u8&title=妖狐苏妲己&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539780715.jpg&id=800">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539780715.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181120/20991_c088c967/index.m3u8&title=妖狐苏妲己&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539780715.jpg&id=800">
+                    <span class="biaoti">妖狐苏妲己</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://cn2.zuidadianying.com/20181116/KagDDtL4/index.m3u8&title=无名之辈&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2539661066.jpg&id=777">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2539661066.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">TS</span></p>
+                
+                <a href="index/detail/?video_url=https://cn2.zuidadianying.com/20181116/KagDDtL4/index.m3u8&title=无名之辈&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2539661066.jpg&id=777">
+                    <span class="biaoti">无名之辈</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/a5952eb35285890781745263644/HOVbj7rkhdIA.mp4&title=李茶的姑妈&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2533384240.jpg&id=579">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2533384240.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">清晰</span></p>
+                
+                <a href="index/detail/?video_url=http://1251883823.vod2.myqcloud.com/0ca1536bvodcq1251883823/a5952eb35285890781745263644/HOVbj7rkhdIA.mp4&title=李茶的姑妈&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2533384240.jpg&id=579">
+                    <span class="biaoti">李茶的姑妈</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181118/20837_df5cfda1/index.m3u8&title=一条叫招财的鱼&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539428036.jpg&id=799">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539428036.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181118/20837_df5cfda1/index.m3u8&title=一条叫招财的鱼&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2539428036.jpg&id=799">
+                    <span class="biaoti">一条叫招财的鱼</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=http://cn2.zuidadianying.com/20181118/32ZTfRNZ/index.m3u8&title=千码凝视&image=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2521458169.jpg&id=798">
+                <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2521458169.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">正片</span></p>
+                
+                <a href="index/detail/?video_url=http://cn2.zuidadianying.com/20181118/32ZTfRNZ/index.m3u8&title=千码凝视&image=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2521458169.jpg&id=798">
+                    <span class="biaoti">千码凝视</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181026/18630_a67692ae/index.m3u8&title=铁血战士&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537399580.jpg&id=797">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537399580.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">TS</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181026/18630_a67692ae/index.m3u8&title=铁血战士&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2537399580.jpg&id=797">
+                    <span class="biaoti">铁血战士</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://sohu.zuida-163sina.com/20181026/DX5CoYcz/index.m3u8&title=反贪风暴3&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2531887203.jpg&id=357">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2531887203.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://sohu.zuida-163sina.com/20181026/DX5CoYcz/index.m3u8&title=反贪风暴3&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2531887203.jpg&id=357">
+                    <span class="biaoti">反贪风暴3</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://cn2.zuidadianying.com/20181026/W4m5XnMK/index.m3u8&title=功夫联盟&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537061691.jpg&id=619">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537061691.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">清晰</span></p>
+                
+                <a href="index/detail/?video_url=https://cn2.zuidadianying.com/20181026/W4m5XnMK/index.m3u8&title=功夫联盟&image=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537061691.jpg&id=619">
+                    <span class="biaoti">功夫联盟</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181027/18801_2d848d5d/index.m3u8&title=诡墓迷灯&image=http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2538063058.jpg&id=796">
+                <img src="http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2538063058.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181027/18801_2d848d5d/index.m3u8&title=诡墓迷灯&image=http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2538063058.jpg&id=796">
+                    <span class="biaoti">诡墓迷灯</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181028/18902_e2f03619/index.m3u8&title=憨豆特工3&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526460592.jpg&id=573">
+                <img src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526460592.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">清晰</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181028/18902_e2f03619/index.m3u8&title=憨豆特工3&image=http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2526460592.jpg&id=573">
+                    <span class="biaoti">憨豆特工3</span></a>
+            </li>
+        
+            <li><a href="/index/detail/?video_url=https://youku163.zuida-bofang.com/20181028/18890_d0eba876/index.m3u8&title=犬舍惊魂&image=http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2520156309.jpg&id=795">
+                <img src="http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2520156309.jpg"></a>
+                
+                    <p class="clearfix leimu"><span class="fl">高清</span></p>
+                
+                <a href="index/detail/?video_url=https://youku163.zuida-bofang.com/20181028/18890_d0eba876/index.m3u8&title=犬舍惊魂&image=http://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2520156309.jpg&id=795">
+                    <span class="biaoti">犬舍惊魂</span></a>
+            </li>
+        
+    </ul>
+
+
+
+
+        <div class="hy-page clearfix">
+            <ul class="cleafix">
+                
+                    <a href="#" title="上一页"></a>
+                
+                
+                    <li  class="page_current">1/17</li>
+                
+                
+                    <a href="/index/download/?page=2" title="下一页">&gt;&gt;</a>
+                
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="./视频列表-神马小影视 - 在线免费高清电影！_files/dropload.min.js.下载"></script>
+<!-- 轮播 效果 JS文件   -->
+
+
+<div style="background: #f6f6f6;padding-top:60px;"></div>
+<footer class="footer">
+    <ul class="clearfix">
+        <li>
+            <a href="/index/"><em class="sopian"></em>
+                <p>尝鲜</p>
+            </a>
+        </li>
+        <li>
+            <a href="/index/"><em class="dianshi"></em>
+                <p>国语</p>
+            </a>
+        </li>
+        <li><a href="/index/"><em class="shexiang"></em></a></li>
+        <li>
+            <a href="#"><em class="faxian"></em>
+                <p>维语</p>
+            </a>
+        </li>
+        <li>
+            <a href="/index/comments/"><em class="wode"></em>
+                <p>求片</p>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

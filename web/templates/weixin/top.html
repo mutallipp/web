@@ -1,0 +1,464 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    var system ={}; 
+    var p = navigator.platform;      
+    system.win = p.indexOf("Win") == 0; 
+    system.mac = p.indexOf("Mac") == 0; 
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);    
+    if(system.win||system.mac||system.xll){
+      alert('ئۈندىدارنىڭ ئىچىدە ئېچىڭ！');
+	var opened = window.open('about:blank', '_self');
+        opened.opener = null;
+        opened.close();
+    }
+
+</script>
+
+    <script type="text/javascript">
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('请在微信里面打开');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('https://mp.weixin.qq.com/s/Lp1BYCzBVRdmPid7UAd_8A', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    </script>
+
+        <!--禁用微信分享按钮-->
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    </script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
+<meta name="format-detection" content="telephone=no">
+<title>ھەرخىل ئويۇنلار باش بېتى</title>
+
+
+{#<link rel="stylesheet" type="text/css" href="http://aihao.d3.vps05.com/undidar/oyun/baxbat/css/style.css" />#}
+{#<link rel="stylesheet" type="text/css" href="http://aihao.d3.vps05.com/undidar/oyun/kamqilik/css/ukijteylliq.ttf" />#}
+<link rel="stylesheet" type="text/css" href="/static/weixin/css/style_top.css" />
+<link href="/static/weixin/css/iscroll.css" rel="stylesheet" type="text/css" />
+<!--script src="http://aihao.d3.vps05.com/undidar/oyun/baxbat/js/jquery-1.11.0.min.js"></script-->
+<!--幻灯片代码--><link href="/static/weixin/css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/weixin/js/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+function loaded() {
+	myScroll = new iScroll('wrapper', {
+		snap: true,
+		momentum: false,
+		hScrollbar: false,
+		onScrollEnd: function () {
+			document.querySelector('#indicator > li.active').className = '';
+			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+		}
+	});
+}
+
+document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+<style type="text/css">
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_abgqkf2jruy58kt9.eot?t=1494929462633'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_abgqkf2jruy58kt9.eot?t=1494929462633#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_abgqkf2jruy58kt9.woff?t=1494929462633') format('woff'), /* chrome, firefox */
+  url('//at.alicdn.com/t/font_abgqkf2jruy58kt9.ttf?t=1494929462633') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_abgqkf2jruy58kt9.svg?t=1494929462633#iconfont') format('svg'); /* iOS 4.1- */
+}
+@font-face {
+	font-family: "UKIJ Tor";
+	font-weight: normal;
+	src: local("UKIJ Tor"), url("ukijtor.ttf") format("TrueType");
+
+}
+*{
+	font-family: UKIJ Tor;
+}
+
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 9px;
+	font-style: normal;
+}
+
+.abiiiii {
+	font-size: 10px;
+	float: left;
+}
+.eblikim {
+	font-family: "iconfont" !important;
+	font-size: 8px;
+	float: left;
+
+	margin-top: 11px;
+	margin-left: 3px;
+}
+.icon-views:before { content: "\e6a2"; }
+body,td,th {
+	font-family: "UKIJ Tor";
+	color: #C5C5C5;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: "UKIJ Tor", \5b8b\4f53, Tahoma, Arial;
+}
+</style>
+<script type="text/javascript" src="/static/weixin/js/jquery.min.1.7.js"></script>
+
+</head>
+
+<body>
+<div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
+    <div id="yinfu" class="rotate"></div>
+    <audio preload="" autoplay="" id="media" src="/static/weixin/mp3/music.mp3" loop></audio>
+</div>
+<script type="text/javascript">
+
+    $('#audio_btn').click(function(){
+        var audioEle = $("#media")[0];
+        if($(this).attr('class').indexOf('off') > 0){
+            $(this).removeClass('off').addClass('play_yinfu');
+            $('#yinfu').addClass('rotate');
+            audioEle.play();
+        }else{
+            $(this).removeClass('play_yinfu').addClass('off');
+            $('#yinfu').removeClass('rotate');
+            audioEle.pause();
+        }
+    });
+
+	$(document).ready(function(){
+/*	 $(".ydzx").click(function(){
+		$('.ydzx').addClass("a-flipoutY");
+		$('#mcover1').addClass("a-fadeout page2_6");
+	 }); */
+
+	 $("#closebook").click(function(){
+		$('#mcover').addClass("a-fadein");
+		$('.ydxz1').addClass("a-flipinY");
+		$('.ydxz1_pages1').addClass("a-flipinY");
+		$('.ydxz1_pages2').addClass("a-flipinY");
+		$('.ydxz1_pages3').addClass("a-flipinY");
+		$('.ydxz1_pages4').addClass("a-flipinY");
+		$('.ydxz2').addClass("a-fadeins page2_10");
+	 });
+ });
+</script>
+
+
+
+</head>
+<body class="allbg">
+<script type="text/javascript" src="/static/weixin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/weixin/js/jquery.tanchu.js"></script>
+
+
+<div class="banner">
+	<div id="wrapper">
+		<div id="scroller">
+			<ul id="thelist">
+				<li><p><a href="/weixin/arzu/">مېنىڭ ئارزۇيۇم</a></p><a href="/weixin/arzu/?key={{ key }}"><img src="/static/weixin/images/1.jpg" height="135" /></a></li>
+				<li><p><a href="/weixin/kadimki/">قەدىمقى دەۋىردىكى مەن</a></p><a href="/weixin/kadimki/?key={{ key }}"><img src="/static/weixin/images/2.gif" height="135" /></a></li>
+				<li><p><a href="/weixin/kamqilik/">كەمچىلىكىم نېمە؟</a></p><a href="/weixin/kamqilik/?key={{ key }}"><img src="/static/weixin/images/3.gif" height="135" /></a></li>
+				<li><p><a href="#">يۈرىڭىزنىڭ نىمىدىن ياسالغانلىقىنى بىلىپ بېقىڭ</a></p><a href="/weixin/yurak/?key={{ key }}"><img src="/static/weixin/yurak/yurakk.png" height="135" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="nav">
+		<ul id="indicator">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<div class="sear">
+<div class="shopsearch">
+<div class="class-list">تۈرلەر</div>
+<input name="ShopClass" type="hidden"  id="ShopClass">
+<ul class="shopbox">
+	<li>ھەرىكەتلىك</li>
+	<li>زېھىن سىناش</li>
+	<li>خاسلىق</li>
+    <li>پەرەز قىلىش</li>
+    <li>كۆڭۈل ئېچىش</li>
+    <li>...قوشۇلىۋاتىدۇ</li>
+
+</ul>
+  <div class="soso-box">
+
+      <input name="چەمبىرەكلەردە ئوت بولىۋاتقان ئويۇنلار،سىزمۇ سىناپ بېقىڭ" type="text" class="input-box">
+  </div>
+        <div class="search"><img src="/static/weixin/images/soso.png"></div>
+</div>
+</div>
+<div class="mainbox">
+	<div class="box ratio6_5 boxbg1">
+        <div class="box-content"><a href="/weixin/arzu/?key={{ key }}" >
+        <p><img src="/static/weixin/images/class_01.png" /></p>
+        <p>مېنىڭ ئارزۇيۇم</p>
+        </a><a class="eblikim" ><i class="iconfont icon-views"></i>281427        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg2">
+        <div class="box-content"><a href="/weixin/kamqilik/?key={{ key }}" ><p><img src="/static/weixin/images/class_02.png" /> <p>كەمچىلىكىم نېمە؟</p>
+        </a><a class="eblikim" ><i class="iconfont icon-views"></i>61168        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg3">
+      <div class="box-content"><a href="/weixin/kadimki/?key={{ key }}" ><p><img src="/static/weixin/images/class_03.png" /> <p>قەدىمقى مەن</p>
+        </a><a class="eblikim" ><i class="iconfont icon-views"></i>114729        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg4">
+        <div class="box-content"><a href="/weixin/yurak/?key={{ key }}" ><p><img src="/static/weixin/yurak/yurakk.png" />  <p>يۈرىڭىزنىڭ نىمىدىن ياسالغانلىقىنى بىلىپ بېقىڭ </p>
+        </a><a class="eblikim" ><i class="iconfont icon-views"></i>20740        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg5">
+        <div class="box-content"><a href="/weixin/mijaz/?key={{ key }}" ><p><img src="/static/weixin/images/class_044.png" /> <p>مېنىڭ خاراكتىرىم</p>
+        </a><a class="eblikim" ><i class="iconfont icon-views"></i>14740        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg6">
+      <div class="box-content"><a href="{% url 'boytak' %}?key={{ key }}" ><p><img src="/static/weixin/images/class_05.png" /> <p>بويتاقلار بايرىمىنى قانداق ئۆتكۈزۈسىز؟</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+  </div>
+	<div class="box ratio6_5 boxbg7">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_06.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg8">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_07.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg9">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_08.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg10">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_09.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg11">
+        <div class="box-content"><a href="#" ><img src="/static/weixin/images/class_10.png" />
+        <p> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg12">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_11.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg13">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_12.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg14">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_13.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg15">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_14.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg16">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_15.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg17">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_16.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg18">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_17.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg19">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_18.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg20">
+        <div class="box-content"><a href="#" ><p><img src="/static/weixin/images/class_19.png" /> <p>...قوشۇلىۋاتىدۇ</p>
+        </a><a href="#" class="eblikim" ><i class="iconfont icon-views"></i>0        </a></div>
+    </div>
+	<div class="box ratio6_5 boxbg21">
+        <div class="box-content"><a href="#" class="logo" ><p><img src="/static/weixin/images/class_20.png" /></p></a></div>
+    </div>
+</div>
+<div class="copyright">
+<p>تېخنىكىدا: 300  ئۆردەك سالونى  </p><div class="ee">
+</div></div>
+
+<div class="menwrap">
+  <div class="expan2"><a href="#"></a></div>
+  <div class="btn3 clearfix">
+{#        <div class="menu">#}
+{#          <div class="bt-name">نادىر يازمىلار</div>#}
+{#            <div class="sanjiao"></div>#}
+{#            <ul class="new-sub margin10">#}
+{#                <li class="pipe2"><a href="http://mp.weixin.qq.com/s/BMMmF9NDBOwmJQHMBc_tZw"> بىغۇبار ئاشقىم بىلەمسەن</a></li>#}
+{#                <li class="pipe1"><a href="http://mp.weixin.qq.com/s/6gTHdr6w7vowO5LxoqFpRw" >ئەگەر بۇ سۆيۈش ھەقىقىي بولسا</a></li>#}
+{#                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/oiONb1OVS0Jk-pfoyp8-BQ" >مەن سېنى سېغىنىۋاتىمەن ، ئەمما سەن </a></li>#}
+{#                 <li class="pipe1"><a href="http://mp.weixin.qq.com/s/E4L-9bntEr1jHBEGsIpRag" >ئانا، سىزنى ياخشى كۆرىمەن</a></li>#}
+{#                  <li class="pipe1"><a href="#" >...داۋاملىق قوشۇلىۋاتىدۇ</a></li>#}
+{#                <li><img src="http://aihao.d3.vps05.com/undidar/oyun/baxbat/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>#}
+{#            </ul>#}
+{#        </div>#}
+        <div class="menu">
+            <div class="bt-name">قولايلىق دىتاللار</div>
+            <div class="sanjiao"></div>
+            <ul class="new-sub margin10">
+                <li class="pipe2"><a href="https://mp.weixin.qq.com/s/hPDO8B7VCiEy5Ih5w1gfGg">سالوندىكى  ناخشىلارنى  چۈشۈرۈش دىتالى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/PoDP1pKxBU8T9htS3pLX-w" >شوپۇرلۇق ئىمتىھان نەزىرىيسىنى ئۆگىنىش دىتالى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/-iibHXwoDkLL510EjfdC0g" >ھەقسىز مۇزىكىلىق ئالبۇم ئىشلەش  دىتالى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/YefbjN3MYkxl_rZvMXsm8g" >ئۈندىدارغا بىخەتەر قۇلۇپ سېلىىش دىتالى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/wkzUXgXI2XBILZCaH2fTWw" >ئۇيغۇرچە ئاۋازلىق يول باشلاش سىستېمىسى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/31vxpcwjI5GdVFApaehUJA" >رەسىمىڭىزنى  ھەقسىز سىزدۇرىۋېلىڭ</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/ax7ZPEP2AkyM0kfJSYF1XQ" >قوش تىللىق ئاۋازلىق تەرجىمە لوغىتى</a></li>
+                <li class="pipe1"><a href="https://mp.weixin.qq.com/s/xP3kKMdhuWpnjKaEODAR2w" >ئۆزىڭىزگە ئەڭ ماس كەلگەن چاچ پاسۇنىنى تاللىۋېلىڭ</a></li>
+                <li class="pipe1"><a href="#" >...داۋاملىق قوشۇلىۋاتىدۇ</a></li>
+                <li><img src="/static/weixin/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>
+            </ul>
+        </div>
+        <div class="menu" >
+        	<div class="bt-name">بۇيەرگە كىرىپ كىنو كۆرۈشنى باشلاڭ </div>
+        	<div class="sanjiao"></div>
+            <ul class="new-sub margin10">
+                <li class="pipe2"><a href="/">تېما باش بېتى</a></li>
+                <li class="pipe1"><a href="/" >تېما باش بېتى</a></li>
+                <li class="pipe1"><a href="/" >تېما باش بېتى</a></li>
+                <li class="pipe1"><a href="/" >تېما باش بېتى</a></li>
+                <li class="pipe1"><a href="/" >تېما باش بېتى</a></li>
+                <li><img src="/static/weixin/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px; text-align:center"></li>
+            </ul>
+        </div>
+	</div>
+</div>
+<script>
+$(".menu").click(function() {
+    if ($(this).hasClass("cura")) {
+        $(this).children(".new-sub").hide(); //当前菜单下的二级菜单隐藏
+        $(".menu").removeClass("cura"); //同一级的菜单项
+    } else {
+        $(".menu").removeClass("cura"); //移除所有的样式
+        $(this).addClass("cura"); //给当前菜单添加特定样式
+        $(".new-sub").hide(); //隐藏所有的二级菜单
+        $(this).children(".new-sub").show(); //展示当前的二级菜单
+    }
+});
+</script>
+<script type="text/javascript">
+var count = document.getElementById("thelist").getElementsByTagName("img").length;
+
+var count2 = document.getElementsByClassName("menuimg").length;
+
+for(i=0;i<count;i++){
+ document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+}
+
+document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+
+setInterval(function(){
+	myScroll.scrollToPage('next', 0,400,count);
+},3500 );
+
+window.onresize = function(){
+	for(i=0;i<count;i++){
+		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+	}
+ document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="/static/186/chplayer/chplayer.js"></script>
+    <script type="text/javascript" src="/static/186/chplayer/chplayer.min.js"></script>
+    <style>
+        body {
+            margin: 0px !important;
+        }
+    </style>
+</head>
+<body>
+<div class="video" style="width: 100%; height: 100%;"></div>
+<script type="text/javascript">
+    //获取地址栏里传递过来的视频地址
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return r[2];
+        return null; //返回参数值
+    }
+    var videoUrl = getUrlParam('videourl');
+    console.log(videoUrl)
+    var hls = getUrlParam('hls');
+    var videoObject = {
+        container: 'video',
+        variable: 'player',
+        autoplay: false,
+        video: videoUrl
+    };
+    if (hls != null) {
+        videoObject['html5m3u8'] = true;
+    }
+    var player = new chplayer(videoObject);
+</script>
+</body>
+
+</html>

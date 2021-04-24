@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="" name="Keywords">
+    <meta content="" name="Description">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/index/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/index/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/index/css/swiper.min.css" type="text/css"/>
+
+    <script src="/static/index/js/jquery-1.11.2.min.js"></script>
+    <script src="{% static 'index/js/swiper.min.js' %}"></script>
+    <script src="/static/index/js/main.js"></script>
+    <script src="/static/index/css/bootstrap.css" type="text/javascript"></script>
+    <title>产品列表</title>
+</head>
+<style>
+
+    .swiper-slide {
+        text-align: center;
+        color: #919191;
+    }
+</style>
+<body>
+<!--头部导航begin-->
+<header>
+    <div class="container clearfix">
+        <div class="logo fl">
+            <img class="middle" src="/static/index/images/logo.png" alt="logo"/>
+        </div>
+        <ul class="nav fl">
+            <li class="fl"><a href="/index">推荐</a></li>
+            <li class="fl"><a class="current" href="/index/library">片库</a></li>
+            <li class="fl"><a href="/index/honor">榜单</a></li>
+        </ul>
+        <div class="search fr rlt">
+            <form action="" method="post">
+                <input class="hide abs" id="keyword" type="text" placeholder="电影、影人、影院、电视剧"/>
+                <input class="middle" id="search" type="button" value="" onClick="submit_btn()"/>
+            </form>
+        </div>
+    </div>
+</header>
+<section>
+    <!--头部导航end-->
+    <!--轮播图begin-->
+    <div class="demo1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg"
+                                                                       alt=""/></a></div>
+                <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg"
+                                                                       alt=""/></a></div>
+                <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg"
+                                                                       alt=""/></a></div>
+                <div class="swiper-slide"><a href="/index/detail"><img class="auto" src="/static/index/images/slider.jpg"
+                                                                       alt=""/></a></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!--轮播图end-->
+    <!--电影筛选begin-->
+{#    <div class="select">#}
+{#        <div class="container">#}
+{#            <div class="demo2">#}
+{#                <div class="swiper-container">#}
+{#                    <div class="swiper-wrapper">#}
+{#                        <div class="swiper-slide selected">全部</div>#}
+{#                        <div class="swiper-slide">战争片</div>#}
+{#                        <div class="swiper-slide">恐怖片</div>#}
+{#                        <div class="swiper-slide">传记片</div>#}
+{#                        <div class="swiper-slide">灾难片</div>#}
+{#                        <div class="swiper-slide">剧情片</div>#}
+{#                        <div class="swiper-slide">悬疑片</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="demo3">#}
+{#                <div class="swiper-container">#}
+{#                    <div class="swiper-wrapper">#}
+{#                        <div class="swiper-slide">全部</div>#}
+{#                        <div class="swiper-slide">香港</div>#}
+{#                        <div class="swiper-slide">美国</div>#}
+{#                        <div class="swiper-slide">英国</div>#}
+{#                        <div class="swiper-slide selected">韩国</div>#}
+{#                        <div class="swiper-slide">日本</div>#}
+{#                        <div class="swiper-slide">泰国</div>#}
+{#                        <div class="swiper-slide">其他</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="demo4">#}
+{#                <div class="swiper-container">#}
+{#                    <div class="swiper-wrapper">#}
+{#                        <div class="swiper-slide">全部</div>#}
+{#                        <div class="swiper-slide selected">2015</div>#}
+{#                        <div class="swiper-slide">2014</div>#}
+{#                        <div class="swiper-slide">2013</div>#}
+{#                        <div class="swiper-slide">2012</div>#}
+{#                        <div class="swiper-slide">2011</div>#}
+{#                        <div class="swiper-slide">2010</div>#}
+{#                        <div class="swiper-slide">其他</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="demo5">#}
+{#                <div class="swiper-container" style="border: none">#}
+{#                    <div class="swiper-wrapper">#}
+{#                        <div class="swiper-slide">全部</div>#}
+{#                        <div class="swiper-slide selected">人气榜</div>#}
+{#                        <div class="swiper-slide">好评榜</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    <!--电影筛选end-->
+    <!--筛选结果显示begin-->
+    <div class="recommend clearfix"
+         style="background-color: white;border-top: 1px solid #dbdbdb;border-bottom: 1px solid #dbdbdb;padding: 20px 0">
+        <div class="container">
+            <div class="row">
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie1.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">你们被包围了</a></dd>
+                </dl>
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie2.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">我的爱属于你</a></dd>
+                </dl>
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie3.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">trot恋人</a></dd>
+                </dl>
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie1.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">你们被包围了</a></dd>
+                </dl>
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie2.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">我的爱属于你</a></dd>
+                </dl>
+                <dl class="col-xs-6 col-md-6">
+
+                    <dt><a target="_blank" href="#" class="bq">更新第12集</a>
+                        <a href="/index/detail"><img class="auto" src="/static/index/images/movie3.png" alt=""/></a>
+                    <div class="only abs">独播</div>
+                    </dt>
+                    <dd><a style="color: #000" href="/index/detail">trot恋人</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--筛选结果显示end-->
+    <div class="full hide"></div>
+    <!--底部begin-->
+    <div class="foot1">
+        Copyright© 2015-2025 Dianying.com
+    </div>
+</section>
+</body>
+</html>

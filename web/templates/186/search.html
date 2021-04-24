@@ -1,0 +1,29 @@
+{% extends '186/base.html' %}
+
+{% block headcontent %}
+    <title>查询结果</title>
+{% endblock %}
+{% block content %}
+
+<section class="tb_a">
+
+    <ul class="globalPicList threeList pt clearfix" id="data_list">
+        {% for v in vids_list %}
+
+        <li>
+            <div class="pic"><a href="/index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}&id={{ v.id }}" target="_self"><img src="{{ v.url_image }}" alt="{{ v.title }}" title="{{ v.title }}">
+                {% if v.suzuk %}
+                <span class="sBottom">{{ v.suzuk }}</span>
+                {% else %}
+                <span class="sBottom"></span>
+                {% endif %}
+            </a></div>
+            <span class="sTit"><a href="/index/detail/?video_url={{ v.video_url }}&title={{ v.title }}&image={{ v.url_image }}&id={{ v.id }}" target="_self">{{ v.title }}</a></span>
+        </li>
+        {% endfor %}
+
+
+    </ul>
+</section>
+
+{% endblock %}

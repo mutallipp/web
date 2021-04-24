@@ -1,0 +1,277 @@
+{% extends 'uyvideo/base.html' %}
+
+{% block header %}
+    <title>{{ data.title }} </title>
+        <script type="text/javascript" src="/static/186/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/static/186/js/jweixin-1.0.0.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+{% block body %}
+    <!--فىلىم قويۇش رايۇنى-->
+    <style>
+        #share_mask {
+            height: 214px;
+            width: 100%;
+            background: #2f2f2f;
+            display: none;
+        }
+
+        #share_mask img {
+            width: 20%;
+            margin: 35px 40% 0;
+        }
+
+        #share_mask p {
+            direction: rtl;
+            width: 100%;
+            line-height: 25px;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        #share_mask p span {
+            color: #e6e069;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .tew_list:nth-child(1) .img img {
+            width: 100%;
+        }
+
+
+    </style>
+
+    <div class="alert" id="code_alert">
+        <div class="text">
+            <p>سالونىمىزنى قوشىۋېلىپ تېخىمۇ نادىر مەزمۇنلارنى ھوزۇرلىنىڭ</p>
+            <img width="90%" style="margin: 0 5%" src="https://open.weixin.qq.com/qr/qrcode?username=muzika225">
+        </div>
+        <div class="btn">
+            <p class="alert_no"><a href="javascript:;">قايتىش</a></p>
+        </div>
+    </div>
+
+    <div class="play_box">
+
+        <div id="share_mask" >
+            <img src="https://izqut.wxnet.cc/kino/img/pyq.png">
+            <p style="color: #ff9898; margin-bottom: 5px">ھەقسىز كۆرۈش ۋاقتىڭىز توشتى !</p>
+            <p style="font-size: 14px">بۇ فىلىمنى <span>چەمبىرەككە</span> يوللىغاندىن كىيىن كۆرەلەيسىز !</p>
+        </div>
+
+        <div class="b" id="play">
+{#            <iframe frameborder=0 src="/uyvideo/playm3u8/?video_url={{ data.video_url }}" ></iframe>#}
+            <iframe frameborder=0 src="{{ data.video_url }}" ></iframe>
+        </div>
+
+
+    </div>
+
+
+    <div class="play_text">
+        <div class="title">{{ data.title }}</div>
+        <div class="tur_name">ئاۋاتلىقى : {{ data.views }}</div>
+{#        <div class="tur_name">تۇلۇق كۈرۈش ھوقۇقىڭىز يوق </div>#}
+        <div class="baxbet_btn">
+            <a href="/uyvideo/index/">
+                <img src="https://izqut.wxnet.cc/kino/img/home_fill.png">
+            </a>
+        </div>
+    </div>
+
+    <div class="play_qisim" style="background: #fff">
+        <div class="qisim_scroll">
+            <!--     <p class="qisim_p">1 - قىسىم</p> -->
+        </div>
+
+    </div>
+
+    <!--تەۋسىيە كىنولار-->
+
+    <div class="tur_box">
+    <div class="title">
+        <p><span>تەۋسىيە</span></p>
+        <p></p>
+    </div>
+
+    {% for v in like %}
+
+
+            <div class="tur_list">
+            <a href="/uyvideo/play/?id={{ v.id }}">
+                <div class="img"><img class="lazy" src="{{ v.image_url }}"></div>
+                <div class="list_title">{{ v.title }}</div>
+            </a>
+        </div>
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+    <script>
+{#$(".b").html($("#play").html());#}
+{#        setTimeout(function () {#}
+{#            $("#play").html("")#}
+{#            if ($("#play").html("")) {#}
+{#                $("#play").css("padding-top", "100px");#}
+{#                $("#play").css("padding-left", "10px");#}
+{#                $("#play").css("padding-right", "10px");#}
+{#                $("#play").css("font-size", "1rem");#}
+{#                $("#play").html('<iframe frameborder=0 src="http://weixin.gcc921.cn/addons/iweite_vipvods/template/themes/images/fx.gif"></iframe>');#}
+{#            } else {#}
+{#            }#}
+{#        }, 300000);#}
+
+
+
+   var pyq = 0;
+        var dos = 0;
+        /////////////////////////
+        wx.config({
+            debug: false,
+            appId: '{{ appid }}',
+            timestamp: {{ signature.timestamp }},
+            nonceStr: '{{ signature.nonceStr }}',
+            signature: '{{ signature.signature }}',
+            jsApiList: [
+
+                "onMenuShareTimeline",
+
+                "onMenuShareAppMessage",
+
+                "hideMenuItems"
+
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+        });
+
+        wx.ready(function () {
+
+            wx.hideMenuItems({
+
+                menuList: [
+
+                    'menuItem:copyUrl',
+
+
+                ]
+
+            });
+            var wxData = {
+                appId: '', // 分享标题
+                title: '《{{ data.title }}》', // 分享标题
+                desc: 'مۇشۇ جاينى بېسىپلا  كۈرۈڭ ', // 分享描述
+                link: 'http://www.mutallip.cn/index/share/?key={{ request.session.key }}', // 分享链接
+                imgUrl: 'http://www.mutallip.cn{{ data.image_url }}'
+
+            };
+
+
+{#            var str_mp = "/uyvideo/show/?video_url={{ video_url }}&title={{ title }}&images={{ images }}";//关注的链接，跳转的链接#}
+            var str_mp = "/uyvideo/show/?video_url={{ video_url }}&title={{ title }}&image={{ image }}";//关注的链接，跳转的链接
+
+
+
+            wx.ready(function () {
+                // 2. 分享接口
+                // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                wx.onMenuShareAppMessage({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+                    success: function () {
+
+                        dos = dos + 1;
+                        if (pyq >= 1 && dos >= 1) {
+                            alert('欢迎回来~~~~~~~')
+{#                            document.getElementById('share_mask').style.display = "none";#}
+                            $("#play").html("")
+                            $("#play").css("padding-top", "100px");
+                            $("#play").css("padding-left", "10px");
+                            $("#play").css("padding-right", "10px");
+                            $("#play").css("font-size", "1rem");
+                            $("#play").html('<iframe frameborder=0 src="/uyvideo/playm3u8/?video_url={{ data.video_url }}"></iframe>');
+{#                            document.getElementById('box').innerHTML = ' <iframe frameborder=0 src="https://wx.remdp.com/ckplayer/m3u8.php?url={{ data.video_url }}" controls></iframe>';#}
+{#                            location.href = str_mp#}
+                        } else {
+                            alert('ئەمدى دوستلار چەمبىرىكىگە يوللىۋېتىپ كۆرسىڭىز بولىدۇ')
+
+                        }
+                    },
+                    cancel: function () {
+                        alert('يوللىمىسىڭىز كۈرەلمەيسىز')
+                    }
+                });
+                wx.onMenuShareTimeline({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+
+                    success: function () {
+                        pyq = 1;
+                        if (pyq >= 1 && dos >= 1) {
+                            {#                    if (pyq >= 1 && dos >= 2) {#}
+                            $("#play").html("")
+                            $("#play").css("padding-top", "100px");
+                            $("#play").css("padding-left", "10px");
+                            $("#play").css("padding-right", "10px");
+                            $("#play").css("font-size", "1rem");
+                            $("#play").html('<iframe frameborder=0 src="/uyvideo/playm3u8/?video_url={{ data.video_url }}"></iframe>');
+{#                            document.getElementById('share_mask').style.display = "none";#}
+{#                            document.getElementById('box').innerHTML = ' <iframe frameborder=0 src="https://wx.remdp.com/ckplayer/m3u8.php?url={{ data.video_url }}" controls></iframe>';#}
+{#                            location.href = str_mp#}
+{#                            alert('欢迎回来~~~~~~~')#}
+                        } else {
+                            {#                        if (pyq >= 1 && dos < 2) {#}
+                            {#                            alert('你已经分享到朋友圈了，再发' + (parseInt(2) - parseInt(dos)) + '个群才能看的哦~~~~~~~~')#}
+                            alert('ئەمدى ئۈندىدار توپىغا يوللىۋېتىپ كۆرسىڭىز بولىدۇ')
+                            {#                        }#}
+                        }
+                    },
+                    cancel: function () {
+                        alert('يوللىمىسىڭىز كۈرەلمەيسىز')
+                    }
+
+                });
+
+            });
+
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareAppMessage(shareData);
+
+
+        });
+
+        wx.error(function (res) {
+            alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+        });
+
+    </script>
+    <script src="https://izqut.wxnet.cc/kino/js/jquery.lazyload.js?v=1.9.1"></script>
+{#        <script type="text/javascript" src="/static/186/js/jquery-3.3.1.min.js"></script>#}
+    <script type="text/javascript" src="/static/186/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(function () {
+
+            $("img.lazy").lazyload({effect: "fadeIn"});
+
+        });
+
+    </script>
+{% endblock %}
+
+
